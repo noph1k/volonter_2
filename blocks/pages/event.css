@@ -1,0 +1,122 @@
+﻿/* Блок event-detail */
+.event-detail {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Элементы event-detail */
+.event-detail__image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-bottom: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.1);
+}
+
+.event-detail__meta {
+    margin-bottom: var(--spacing-md);
+}
+
+.event-detail__info {
+    background-color: var(--color-gray-light);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.event-detail__row {
+    margin-bottom: var(--spacing-sm);
+}
+
+.event-detail__row:last-child {
+    margin-bottom: 0;
+}
+
+.event-detail__row-text {
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.event-detail__row-text:last-child {
+    margin-bottom: 0;
+}
+
+.event-detail__section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.event-detail__section:last-child {
+    margin-bottom: 0;
+}
+
+.event-detail__heading {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.event-detail__text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.event-detail__schedule {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-dark);
+    background-color: var(--color-gray-light);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    white-space: pre-line;
+    margin: 0;
+}
+
+.event-content__link {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-base);
+    font-weight: 500;
+}
+
+.event-content__link:hover {
+    color: var(--color-dark);
+    text-decoration: underline;
+}
+
+/* Адаптивность для страницы события */
+@media (max-width: 768px) {
+    .event-detail__info {
+        padding: var(--spacing-sm);
+    }
+    
+    .event-detail__heading {
+        font-size: 18px;
+    }
+    
+    .event-detail__text {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-detail__image {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .event-detail__schedule {
+        font-size: 14px;
+        padding: var(--spacing-sm);
+    }
+}
+

@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="ru" itemscope itemtype="https://schema.org/ProfilePage">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Форма регистрации волонтёра, избранные проекты и поданные заявки." />
+    <meta name="author" content="Сергей Тумачек" />
+    <title>Моё волонтёрство</title>
+    <link rel="stylesheet" href="../blocks/__blocks.css" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "ВолонтёрГород",
+                "url": "https://kagutsuchi-106.github.io/catalog_art/",
+                "email": "info@volonter-gorod.ru",
+                "telephone": "+373 (22) 123-45"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Страница «Моё волонтёрство»",
+                "url": "https://kagutsuchi-106.github.io/catalog_art/pages/volunteering.html"
+            },
+            {
+                "@type": "Event",
+                "name": "Волонтёрское мероприятие города",
+                "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "organizer": { "@type": "Organization", "name": "ВолонтёрГород" }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="page-shell page-volunteering">
+    <header class="header">
+        <div class="header__container home-shell">
+            <a class="header__brand" href="../index.html" aria-label="ВолонтёрГород — главная">
+                <span class="header__brand-icon">♥</span>
+                <span class="header__brand-text">
+                    <strong>ВолонтёрГород</strong>
+                    <small>Социальные инициативы</small>
+                </span>
+            </a>
+
+            <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn">
+                <span class="header__burger-line header__burger-line--first"></span>
+                <span class="header__burger-line header__burger-line--second"></span>
+                <span class="header__burger-line header__burger-line--third"></span>
+            </button>
+
+            <nav class="nav" id="mainNav" aria-label="Основная навигация">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="events.html" class="nav__link">Проекты</a></li>
+                    <li class="nav__item"><a href="timeline.html" class="nav__link">Мероприятия</a></li>
+                    <li class="nav__item"><a href="stories.html" class="nav__link">Истории</a></li><li class="nav__item"><a href="education.html" class="nav__link">О портале</a></li>
+                </ul>
+            </nav>
+
+            <a class="header__cta" href="volunteering.html">Стать волонтёром</a>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <section class="page-hero page-hero--volunteering">
+            <div class="page-hero__overlay"></div>
+            <div class="page-hero__content home-shell">
+                <p class="page-hero__chip">Личный кабинет волонтёра</p>
+                <h1 class="page-hero__title">Моё волонтёрство</h1>
+                <p class="page-hero__text">Оставь заявку, сохрани интересные проекты и отслеживай свои обращения в одном месте.</p>
+            </div>
+        </section>
+
+        <section class="page-section page-section--pullup">
+            <div class="home-shell volunteer-dashboard">
+                <div class="dashboard-grid">
+                    <article class="dashboard-card dashboard-card--accent">
+                        <span class="dashboard-card__eyebrow">Сводка</span>
+                        <h2>Твой кабинет помощи</h2>
+                        <p>Заполни анкету, сохрани проекты в избранное и быстро возвращайся к тем направлениям, которые тебе подходят.</p>
+                        <div class="dashboard-card__stats">
+                            <div>
+                                <strong id="appsCount">0</strong>
+                                <span>заявок</span>
+                            </div>
+                            <div>
+                                <strong id="favCount">0</strong>
+                                <span>избранных проектов</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="dashboard-card dashboard-card--soft">
+                        <span class="dashboard-card__eyebrow">Подсказка</span>
+                        <h2>Как это работает</h2>
+                        <ul class="dashboard-list">
+                            <li>Заполни обязательные поля анкеты.</li>
+                            <li>Отметь удобные дни, время и навыки.</li>
+                            <li>После отправки заявка сохранится в браузере.</li>
+                            <li>Проекты можно добавлять и убирать из избранного.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="home-shell page-layout">
+                <div class="surface-card surface-card--form">
+                    <div class="surface-card__head">
+                        <p class="surface-card__kicker">Шаг 1</p>
+                        <h2>Форма регистрации волонтёра</h2>
+                        <p>Расскажи немного о себе, чтобы мы подобрали подходящие направления и формат участия.</p>
+                    </div>
+
+                    <form id="volunteerForm" class="volunteer-form" novalidate>
+                        <div class="volunteer-form__grid">
+                            <label class="field-group">
+                                <span>Имя *</span>
+                                <input id="firstName" name="firstName" type="text" required autocomplete="given-name" />
+                                <small class="field-group__error" data-error-for="firstName"></small>
+                            </label>
+                            <label class="field-group">
+                                <span>Фамилия *</span>
+                                <input id="lastName" name="lastName" type="text" required autocomplete="family-name" />
+                                <small class="field-group__error" data-error-for="lastName"></small>
+                            </label>
+                            <label class="field-group">
+                                <span>Телефон *</span>
+                                <input id="phone" name="phone" type="tel" placeholder="+373 69 123 456" required autocomplete="tel" pattern="^\+373[0-9\s\-()]{8,}$" title="Номер должен начинаться с +373" />
+                                <small class="field-group__error" data-error-for="phone"></small>
+                            </label>
+                            <label class="field-group">
+                                <span>Email *</span>
+                                <input id="email" name="email" type="email" required autocomplete="email" />
+                                <small class="field-group__error" data-error-for="email"></small>
+                            </label>
+                            <label class="field-group field-group--full">
+                                <span>Предпочтительное направление помощи *</span>
+                                <select id="preferredDirection" name="preferredDirection" required>
+                                    <option value="">Выберите направление</option>
+                                    <option value="Пожилые">Помощь пожилым</option>
+                                    <option value="Экология">Экология</option>
+                                    <option value="Дети">Образование и дети</option>
+                                    <option value="Животные">Помощь животным</option>
+                                    <option value="Городская среда">Благоустройство</option>
+                                </select>
+                                <small class="field-group__error" data-error-for="preferredDirection"></small>
+                            </label>
+                        </div>
+
+                        <div class="chips-grid">
+                            <fieldset class="choice-card" data-group="availabilityDay">
+                                <legend>Доступные дни *</legend>
+                                <div class="choice-card__options">
+                                    <label class="choice-pill"><input type="checkbox" name="availabilityDay" value="Будни" /> <span>Будни</span></label>
+                                    <label class="choice-pill"><input type="checkbox" name="availabilityDay" value="Выходные" /> <span>Выходные</span></label>
+                                </div>
+                                <small class="field-group__error" data-error-for="availabilityDay"></small>
+                            </fieldset>
+
+                            <fieldset class="choice-card" data-group="availabilitySlot">
+                                <legend>Удобное время *</legend>
+                                <div class="choice-card__options">
+                                    <label class="choice-pill"><input type="checkbox" name="availabilitySlot" value="Утро" /> <span>Утро</span></label>
+                                    <label class="choice-pill"><input type="checkbox" name="availabilitySlot" value="День" /> <span>День</span></label>
+                                    <label class="choice-pill"><input type="checkbox" name="availabilitySlot" value="Вечер" /> <span>Вечер</span></label>
+                                </div>
+                                <small class="field-group__error" data-error-for="availabilitySlot"></small>
+                            </fieldset>
+                        </div>
+
+                        <fieldset class="choice-card choice-card--skills" data-group="skills">
+                            <legend>Навыки и опыт *</legend>
+                            <div class="choice-card__options choice-card__options--wrap">
+                                <label class="choice-pill"><input type="checkbox" name="skills" value="Организаторские" /> <span>Организаторские</span></label>
+                                <label class="choice-pill"><input type="checkbox" name="skills" value="Физические" /> <span>Физические</span></label>
+                                <label class="choice-pill"><input type="checkbox" name="skills" value="Творческие" /> <span>Творческие</span></label>
+                                <label class="choice-pill"><input type="checkbox" name="skills" value="Педагогические" /> <span>Педагогические</span></label>
+                            </div>
+                            <small class="field-group__error" data-error-for="skills"></small>
+                        </fieldset>
+
+                        <div class="form-actions">
+                            <p id="volunteerFormMessage" class="form-message" aria-live="polite"></p>
+                            <button type="submit" class="button button--primary">Отправить заявку</button>
+                        </div>
+                    </form>
+                </div>
+
+                <aside class="surface-card surface-card--sidebar">
+                    <div class="surface-card__head">
+                        <p class="surface-card__kicker">Шаг 2</p>
+                        <h2>Быстрый подбор</h2>
+                        <p>Сохрани понравившиеся проекты в избранное прямо из кабинета.</p>
+                    </div>
+                    <div id="suggestedProjects" class="suggested-projects"></div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="page-section page-section--compact">
+            <div class="home-shell volunteer-panels">
+                <section class="surface-card">
+                    <div class="surface-card__head surface-card__head--row">
+                        <div>
+                            <p class="surface-card__kicker">Избранное</p>
+                            <h2>Сохранённые проекты</h2>
+                        </div>
+                        <span class="surface-card__badge" id="favoritesBadge">0 проектов</span>
+                    </div>
+                    <div id="favoritesList" class="record-list"></div>
+                </section>
+
+                <section class="surface-card">
+                    <div class="surface-card__head surface-card__head--row">
+                        <div>
+                            <p class="surface-card__kicker">Заявки</p>
+                            <h2>Поданные анкеты</h2>
+                        </div>
+                        <span class="surface-card__badge" id="applicationsBadge">0 заявок</span>
+                    </div>
+                    <div id="applicationsList" class="record-list"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <div id="applicationModal" class="portal-modal" aria-hidden="true" role="dialog" aria-labelledby="applicationModalTitle">
+        <div class="portal-modal__overlay" data-app-modal-close></div>
+        <div class="portal-modal__dialog">
+            <button class="portal-modal__close" type="button" aria-label="Закрыть" data-app-modal-close>×</button>
+            <p class="portal-modal__eyebrow">Заявка отправлена</p>
+            <h3 id="applicationModalTitle" class="portal-modal__title">Спасибо, мы всё получили</h3>
+            <p class="portal-modal__description">Анкета сохранена локально и отправлена на обработку. Координатор свяжется с тобой после подтверждения участия.</p>
+            <button class="button button--primary" type="button" data-app-modal-close>Понятно</button>
+        </div>
+    </div>
+
+    <footer class="footer footer--portal">
+        <div class="footer__inner home-shell">
+            <div class="footer__grid">
+                <div class="footer__brand-block">
+                    <a class="footer__brand" href="../index.html">
+                        <span class="footer__brand-icon">♥</span>
+                        <span>ВолонтёрГород</span>
+                    </a>
+                    <p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять мир к лучшему вместе.</p>
+                    <div class="footer__socials" aria-label="Социальные сети">
+                        <a href="#" aria-label="Instagram">◉</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Telegram">✈</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Навигация</h3>
+                    <a class="footer__link" href="../index.html">Главная</a>
+                    <a class="footer__link" href="events.html">Проекты</a>
+                    <a class="footer__link" href="timeline.html">Мероприятия</a>
+                    <a class="footer__link" href="education.html">О портале</a>
+                    <a class="footer__link" href="volunteering.html">Стать волонтёром</a>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Направления</h3>
+                    <a class="footer__link" href="events.html">Помощь пожилым</a>
+                    <a class="footer__link" href="events.html">Экология</a>
+                    <a class="footer__link" href="events.html">Образование</a>
+                    <a class="footer__link" href="events.html">Животные</a>
+                    <a class="footer__link" href="events.html">Здоровье</a>
+                    <a class="footer__link" href="events.html">Помощь детям</a>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Контакты</h3>
+                    <p class="footer__contact">ул. Ленина, 42, г. Тирасполь</p>
+                    <p class="footer__contact">+373 (22) 123-45</p>
+                    <p class="footer__contact">info@volonter-gorod.ru</p>
+                </div>
+            </div>
+
+            <div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p><p>&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1095;&#1080;&#1082;: &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1058;&#1091;&#1084;&#1072;&#1095;&#1077;&#1082;</p></div>
+        </div>
+    </footer>
+
+    <script src="../scripts/polyfills.js"></script>
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/common.js"></script>
+    <script src="../blocks/header/header.js"></script>
+    <script src="../scripts/volunteering.js"></script>
+</body>
+</html>
+
+
+
+
+

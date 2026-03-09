@@ -1,0 +1,22 @@
+/* Base */
+@import url('./base/_variables.css');
+@import url('./base/_reset.css');
+@import url('./base/_typography.css');
+@import url('./base/_accessibility.css');
+
+/* Blocks */
+@import url('./header/header.css');
+@import url('./footer/footer.css');
+@import url('./grid/grid.css');
+@import url('./section/section.css');
+@import url('./modal/modal.css');
+@import url('./portfolio-modal/portfolio-modal.css');
+@import url('./filters/filters.css');
+
+/* Page styles */
+@import url('./pages/home.css');
+@import url('./pages/pages.css');
+@import url('./pages/event.css');
+@import url('./pages/map.css');
+
+

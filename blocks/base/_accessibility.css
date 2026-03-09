@@ -1,0 +1,87 @@
+﻿/* Стили для доступности */
+
+/* Скрытый контент для скринридеров */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Фокус для интерактивных элементов */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Улучшение видимости фокуса для клавиатурной навигации */
+*:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Убираем outline для мыши, но оставляем для клавиатуры */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Улучшение контраста для текста */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Улучшение читаемости для людей с нарушениями зрения */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Улучшение контраста для ссылок */
+a {
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+/* Улучшение видимости кнопок */
+button {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Улучшение видимости полей ввода */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    min-height: 44px;
+}
+

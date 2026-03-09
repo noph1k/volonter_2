@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Интерактивная SVG-карта волонтёрских мероприятий Тирасполя." />
+    <title>Карта мероприятий</title>
+    <link rel="stylesheet" href="../blocks/__blocks.css" />
+</head>
+<body class="page-shell page-map">
+    <header class="header">
+        <div class="header__container home-shell">
+            <a class="header__brand" href="../index.html" aria-label="ВолонтёрГород — главная">
+                <span class="header__brand-icon">♥</span>
+                <span class="header__brand-text">
+                    <strong>ВолонтёрГород</strong>
+                    <small>Социальные инициативы</small>
+                </span>
+            </a>
+            <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn">
+                <span class="header__burger-line header__burger-line--first"></span>
+                <span class="header__burger-line header__burger-line--second"></span>
+                <span class="header__burger-line header__burger-line--third"></span>
+            </button>
+            <nav class="nav" id="mainNav" aria-label="Основная навигация">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="events.html" class="nav__link">Проекты</a></li>
+                    <li class="nav__item"><a href="timeline.html" class="nav__link">Мероприятия</a></li>
+                    <li class="nav__item"><a href="map.html" class="nav__link nav__link--active">Карта</a></li>
+                    <li class="nav__item"><a href="stories.html" class="nav__link">Истории</a></li>
+                    <li class="nav__item"><a href="education.html" class="nav__link">О портале</a></li>
+                </ul>
+            </nav>
+            <a class="header__cta" href="volunteering.html">Стать волонтёром</a>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <section class="page-hero page-hero--map">
+            <div class="page-hero__overlay"></div>
+            <div class="page-hero__content home-shell">
+                <p class="page-hero__chip">Интерактивная SVG-карта</p>
+                <h1 class="page-hero__title">Точки волонтёрских мероприятий по районам Тирасполя</h1>
+                <p class="page-hero__text">Выбирай направление помощи, приближай карту для детального просмотра районов, наводи на маркеры для быстрой подсказки и открывай подробную карточку площадки по клику.</p>
+            </div>
+        </section>
+
+        <section class="page-section page-section--compact">
+            <div class="home-shell">
+                <div class="timeline-layout map-layout">
+                    <section class="surface-card surface-card--wide">
+                        <div class="timeline-filters map-filters">
+                            <label class="field-group">
+                                <span>Направление</span>
+                                <select id="mapDirectionFilter">
+                                    <option value="all">Все направления</option>
+                                </select>
+                            </label>
+                            <label class="field-group">
+                                <span>Формат участия</span>
+                                <select id="mapTypeFilter">
+                                    <option value="all">Все форматы</option>
+                                </select>
+                            </label>
+                            <label class="field-group field-group--full">
+                                <span>Поиск по точке или адресу</span>
+                                <input id="mapSearchInput" type="search" placeholder="Название проекта, район, адрес" />
+                            </label>
+                        </div>
+
+                        <div class="map-canvas-shell">
+                            <div class="map-canvas-toolbar">
+                                <div class="map-legend" id="mapLegend"></div>
+                                <div class="map-canvas-toolbar__actions">
+                                    <div class="map-district-pills" id="mapDistrictPills"></div>
+                                    <div class="map-zoom-controls" aria-label="Масштаб карты">
+                                        <button class="button button--outline map-zoom-button" type="button" id="mapZoomOut">−</button>
+                                        <button class="button button--outline map-zoom-button" type="button" id="mapZoomReset">100%</button>
+                                        <button class="button button--outline map-zoom-button" type="button" id="mapZoomIn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="map-canvas-frame" id="mapViewport">
+                                <svg id="cityMap" class="city-map city-map--tiraspol" viewBox="0 0 960 620" preserveAspectRatio="xMidYMid meet" aria-label="Интерактивная карта Тирасполя с волонтёрскими точками">
+                                    <defs>
+                                        <filter id="districtShadow" x="-10%" y="-10%" width="120%" height="120%">
+                                            <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#1a204d" flood-opacity="0.12" />
+                                        </filter>
+                                        <radialGradient id="markerPulse" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55" />
+                                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                                        </radialGradient>
+                                        <linearGradient id="riverFill" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#66b4eb" />
+                                            <stop offset="100%" stop-color="#90caf4" />
+                                        </linearGradient>
+                                    </defs>
+
+                                    <g id="mapScene">
+                                        <rect x="0" y="0" width="960" height="620" fill="#eef1f6"></rect>
+                                        <path class="city-map__river" d="M70 488 C178 440, 276 470, 344 532 C386 568, 430 564, 488 520 C540 482, 604 454, 702 476 C764 490, 834 486, 902 434 L902 620 L70 620 Z"></path>
+
+                                        <g class="city-map__district-layer" filter="url(#districtShadow)">
+                                            <path id="district-west" class="city-map__district city-map__district--west" data-district="Западный" d="M90 260 L250 200 L390 230 L390 360 L240 390 L80 360 Z"></path>
+                                            <path id="district-center" class="city-map__district city-map__district--center" data-district="Центр" d="M390 230 L560 210 L560 350 L390 360 Z"></path>
+                                            <path id="district-north" class="city-map__district city-map__district--north" data-district="Северный" d="M250 200 L360 70 L530 60 L560 210 L390 230 Z"></path>
+                                            <path id="district-east" class="city-map__district city-map__district--east" data-district="Балка" d="M560 210 L700 240 L860 260 L850 370 L720 390 L560 350 Z"></path>
+                                            <path id="district-south" class="city-map__district city-map__district--south" data-district="Южный" d="M240 390 L390 360 L560 350 L560 530 L380 540 L200 500 Z"></path>
+                                            <path id="district-riverside" class="city-map__district city-map__district--riverside" data-district="Набережный" d="M560 350 L720 390 L850 370 L800 540 L560 530 Z"></path>
+                                        </g>
+
+                                        <g class="city-map__grid">
+                                            <path d="M150 240 L226 378"></path>
+                                            <path d="M238 218 L312 392"></path>
+                                            <path d="M380 68 L404 212"></path>
+                                            <path d="M444 48 L470 220"></path>
+                                            <path d="M520 44 L530 214"></path>
+                                            <path d="M644 222 L718 398"></path>
+                                            <path d="M738 204 L812 370"></path>
+                                            <path d="M286 404 L520 430"></path>
+                                            <path d="M566 410 L844 436"></path>
+                                        </g>
+
+                                        <g class="city-map__roads">
+                                            <path class="city-map__road city-map__road--major" d="M0 282 L158 264 L324 286 L520 282 L710 298 L960 274"></path>
+                                            <path class="city-map__road city-map__road--major" d="M268 0 L312 118 L340 230 L352 620"></path>
+                                            <path class="city-map__road city-map__road--major" d="M644 116 L636 232 L664 328 L714 620"></path>
+                                            <path class="city-map__road" d="M154 236 L266 208 L372 154 L506 146 L626 180 L756 172"></path>
+                                            <path class="city-map__road" d="M148 340 L272 330 L420 344 L584 356 L790 344"></path>
+                                            <path class="city-map__road" d="M202 466 L320 438 L458 456 L612 474 L770 492"></path>
+                                            <path class="city-map__road city-map__road--dashed" d="M544 72 L560 210 L574 388"></path>
+                                            <path class="city-map__road city-map__road--dashed" d="M430 88 L444 254 L462 520"></path>
+                                        </g>
+
+                                        <g class="city-map__labels">
+                                            <text x="68" y="54" class="city-map__title">Тирасполь</text>
+                                            <text x="68" y="78" class="city-map__subtitle">Схема районов и волонтёрских точек</text>
+                                            <text x="116" y="306" class="city-map__district-label">Западный</text>
+                                            <text x="412" y="292" class="city-map__district-label">Центр</text>
+                                            <text x="430" y="118" class="city-map__district-label">Северный</text>
+                                            <text x="710" y="304" class="city-map__district-label">Балка</text>
+                                            <text x="334" y="468" class="city-map__district-label">Южный</text>
+                                            <text x="660" y="494" class="city-map__district-label">Набережный</text>
+                                        </g>
+
+                                        <g id="mapMarkersLayer"></g>
+                                    </g>
+                                </svg>
+                                <div class="map-tooltip" id="mapTooltip" hidden></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <aside class="surface-card surface-card--sidebar map-sidebar">
+                        <div class="surface-card__head">
+                            <p class="surface-card__kicker">Выбранная точка</p>
+                            <h2 id="mapVenueTitle">Выбери точку на карте</h2>
+                            <p id="mapVenueSubtitle">Кликни по маркеру или карточке площадки, чтобы увидеть связанные события.</p>
+                        </div>
+                        <div id="mapVenueMeta" class="record-card__details"></div>
+                        <div id="mapVenueProjects" class="map-venue-projects"></div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section page-section--compact">
+            <div class="home-shell">
+                <section class="surface-card surface-card--wide">
+                    <div class="surface-card__head surface-card__head--row">
+                        <div>
+                            <p class="surface-card__kicker">Список точек</p>
+                            <h2>Площадки по районам</h2>
+                        </div>
+                        <span class="surface-card__badge" id="mapProjectsBadge">0 мероприятий</span>
+                    </div>
+                    <div id="mapVenueList" class="map-venue-list"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-shell" id="mapEventModal" hidden>
+        <div class="modal-shell__backdrop" data-map-modal-close></div>
+        <div class="modal-card modal-card--wide" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
+            <button class="modal-card__close" type="button" aria-label="Закрыть" data-map-modal-close>×</button>
+            <div class="modal-card__media" id="mapModalMedia"></div>
+            <div class="modal-card__body">
+                <div class="modal-card__meta" id="mapModalMeta"></div>
+                <h2 id="mapModalTitle">Событие</h2>
+                <p id="mapModalDescription"></p>
+                <div class="modal-card__details" id="mapModalDetails"></div>
+                <div class="modal-card__actions" id="mapModalActions"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer--portal">
+        <div class="footer__inner home-shell">
+            <div class="footer__grid">
+                <div class="footer__brand-block">
+                    <a class="footer__brand" href="../index.html"><span class="footer__brand-icon">♥</span><span>ВолонтёрГород</span></a>
+                    <p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять город к лучшему вместе.</p>
+                    <div class="footer__socials" aria-label="Социальные сети"><a href="#" aria-label="Instagram">◉</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Telegram">✈</a></div>
+                </div>
+                <div>
+                    <h3 class="footer__heading">Навигация</h3>
+                    <a class="footer__link" href="../index.html">Главная</a>
+                    <a class="footer__link" href="events.html">Проекты</a>
+                    <a class="footer__link" href="timeline.html">Мероприятия</a>
+                    <a class="footer__link" href="stories.html">Истории</a>
+                    <a class="footer__link" href="map.html">Карта</a>
+                </div>
+                <div>
+                    <h3 class="footer__heading">Направления</h3>
+                    <a class="footer__link" href="events.html?direction=Экология">Экология</a>
+                    <a class="footer__link" href="events.html?direction=Дети">Дети</a>
+                    <a class="footer__link" href="events.html?direction=Пожилые">Пожилые люди</a>
+                    <a class="footer__link" href="events.html?direction=Животные">Животные</a>
+                    <a class="footer__link" href="events.html?direction=Городская среда">Городская среда</a>
+                </div>
+                <div>
+                    <h3 class="footer__heading">Контакты</h3>
+                    <p class="footer__contact">ул. Ленина, 42, г. Тирасполь</p>
+                    <p class="footer__contact">+7 (383) 123-45-67</p>
+                    <p class="footer__contact">info@volonter-gorod.ru</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2026 ВолонтёрГород. Все права защищены.</p>
+                <p>Сделано с <span>♥</span> для города и людей</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/common.js"></script>
+    <script src="../blocks/header/header.js"></script>
+    <script src="../scripts/map.js"></script>
+</body>
+</html>
+
+

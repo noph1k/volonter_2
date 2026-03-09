@@ -1,0 +1,17 @@
+﻿/* Блок footer */
+.footer {
+    margin-top: 80px;
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid rgba(229, 229, 229, 0.9);
+    text-align: center;
+}
+
+/* Элементы footer */
+.footer__text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-dark);
+    opacity: 0.65;
+}
+
