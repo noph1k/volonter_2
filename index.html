@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Портал волонтёрских инициатив города: проекты, мероприятия и истории людей, которые меняют город к лучшему.">
-    <meta name="author" content="Сергей Тумачек" />
+        <meta name="author" content="Сергей Тумачек">
         <meta name="keywords" content="волонтёрство, социальные инициативы, проекты, помощь людям, город">
         <meta property="og:type" content="website">
         <meta property="og:title" content="ВолонтёрГород">
@@ -83,9 +83,9 @@
                         </div>
                     </div>
                     <div class="promo-slider" id="promoSlider"></div>
-                    <div class="promo-slider__controls" aria-label="Управление слайдером акций">
+                    <div class="promo-slider__controls" role="group" aria-label="Управление слайдером акций">
                         <button class="button button--outline promo-slider__btn" type="button" data-promo-prev>Назад</button>
-                        <div class="promo-slider__dots" id="promoDots" aria-label="Навигация по акциям"></div>
+                        <div class="promo-slider__dots" id="promoDots" role="group" aria-label="Навигация по акциям"></div>
                         <button class="button button--outline promo-slider__btn" type="button" data-promo-next>Вперёд</button>
                     </div>
                 </div>
@@ -198,7 +198,7 @@
                         <a class="button button--ghost-light" href="pages/stories.html">Раздел историй</a>
                     </div>
                     <div id="voicesSlider"></div>
-                    <div class="voices__dots" id="voicesDots" aria-label="Навигация по цитатам"></div>
+                    <div class="voices__dots" id="voicesDots" role="group" aria-label="Навигация по цитатам"></div>
                 </div>
             </section>
 
@@ -224,11 +224,11 @@
                             <span>ВолонтёрГород</span>
                         </a>
                         <p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять мир к лучшему вместе.</p>
-                        <div class="footer__socials" aria-label="Социальные сети">
+                        <nav class="footer__socials" aria-label="Социальные сети">
                             <a href="#" aria-label="Instagram">◉</a>
                             <a href="#" aria-label="Facebook">f</a>
                             <a href="#" aria-label="Telegram">✈</a>
-                        </div>
+                        </nav>
                     </div>
 
                     <div>
@@ -243,11 +243,11 @@
 
                     <div>
                         <h3 class="footer__heading">Направления</h3>
-                        <a class="footer__link" href="pages/events.html?direction=Пожилые">Помощь пожилым</a>
-                        <a class="footer__link" href="pages/events.html?direction=Экология">Экология</a>
-                        <a class="footer__link" href="pages/events.html?direction=Дети">Дети</a>
-                        <a class="footer__link" href="pages/events.html?direction=Животные">Животные</a>
-                        <a class="footer__link" href="pages/events.html?direction=Городская среда">Городская среда</a>
+                        <a class="footer__link" href="pages/events.html?direction=%D0%9F%D0%BE%D0%B6%D0%B8%D0%BB%D1%8B%D0%B5">Помощь пожилым</a>
+                        <a class="footer__link" href="pages/events.html?direction=%D0%AD%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F">Экология</a>
+                        <a class="footer__link" href="pages/events.html?direction=%D0%94%D0%B5%D1%82%D0%B8">Дети</a>
+                        <a class="footer__link" href="pages/events.html?direction=%D0%96%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D0%B5">Животные</a>
+                        <a class="footer__link" href="pages/events.html?direction=%D0%93%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%20%D1%81%D1%80%D0%B5%D0%B4%D0%B0">Городская среда</a>
                     </div>
 
                     <div>
@@ -269,10 +269,4 @@
         <script src="scripts/home-ui.js"></script>
     </body>
 </html>
-
-
-
-
-
-
 
