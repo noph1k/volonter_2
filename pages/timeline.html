@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="ru" itemscope itemtype="https://schema.org/CollectionPage">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Таймлайн предстоящих волонтёрских мероприятий с фильтрами, диаграммой и подробностями." />
+    <meta name="author" content="Сергей Тумачек" />
+    <title>Таймлайн мероприятий</title>
+    <link rel="stylesheet" href="../blocks/__blocks.css" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "ВолонтёрГород",
+                "url": "https://kagutsuchi-106.github.io/catalog_art/",
+                "email": "info@volonter-gorod.ru",
+                "telephone": "+373 (22) 123-45"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Страница таймлайна",
+                "url": "https://kagutsuchi-106.github.io/catalog_art/pages/timeline.html"
+            },
+            {
+                "@type": "Event",
+                "name": "Волонтёрское мероприятие города",
+                "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "organizer": { "@type": "Organization", "name": "ВолонтёрГород" }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="page-shell page-timeline">
+    <header class="header">
+        <div class="header__container home-shell">
+            <a class="header__brand" href="../index.html" aria-label="ВолонтёрГород — главная">
+                <span class="header__brand-icon">♥</span>
+                <span class="header__brand-text">
+                    <strong>ВолонтёрГород</strong>
+                    <small>Социальные инициативы</small>
+                </span>
+            </a>
+
+            <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn">
+                <span class="header__burger-line header__burger-line--first"></span>
+                <span class="header__burger-line header__burger-line--second"></span>
+                <span class="header__burger-line header__burger-line--third"></span>
+            </button>
+
+            <nav class="nav" id="mainNav" aria-label="Основная навигация">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="events.html" class="nav__link">Проекты</a></li>
+                    <li class="nav__item"><a href="timeline.html" class="nav__link nav__link--active">Мероприятия</a></li>
+                    <li class="nav__item"><a href="stories.html" class="nav__link">Истории</a></li><li class="nav__item"><a href="education.html" class="nav__link">О портале</a></li>
+                </ul>
+            </nav>
+
+            <a class="header__cta" href="volunteering.html">Стать волонтёром</a>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <section class="page-hero page-hero--timeline">
+            <div class="page-hero__overlay"></div>
+            <div class="page-hero__content home-shell">
+                <p class="page-hero__chip">Календарь добрых дел</p>
+                <h1 class="page-hero__title">Таймлайн мероприятий</h1>
+                <p class="page-hero__text">Смотри ближайшие инициативы, фильтруй по направлениям помощи и анализируй распределение событий по месяцам.</p>
+            </div>
+        </section>
+
+        <section class="page-section page-section--pullup">
+            <div class="home-shell timeline-overview">
+                <article class="dashboard-card dashboard-card--accent">
+                    <span class="dashboard-card__eyebrow">Режим</span>
+                    <h2>Ближайшие события города</h2>
+                    <p>Лента показывает только предстоящие мероприятия, отсортированные по времени: самые близкие события всегда наверху.</p>
+                </article>
+                <article class="dashboard-card dashboard-card--soft">
+                    <span class="dashboard-card__eyebrow">Статистика</span>
+                    <h2 id="timelineCount">Найдено мероприятий: 0</h2>
+                    <p id="timelineHint">Выбери направление или формат участия, чтобы быстро найти подходящий вариант.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="page-section page-section--compact">
+            <div class="home-shell timeline-layout">
+                <section class="surface-card surface-card--wide">
+                    <div class="surface-card__head surface-card__head--row timeline-toolbar">
+                        <div>
+                            <p class="surface-card__kicker">Фильтры</p>
+                            <h2>Управление лентой</h2>
+                        </div>
+                        <div class="timeline-switch" role="tablist" aria-label="Режим отображения таймлайна">
+                            <button class="timeline-switch__btn timeline-switch__btn--active" data-timeline-mode="nearest" type="button">Ближайшие</button>
+                            <button class="timeline-switch__btn" data-timeline-mode="months" type="button">По месяцам</button>
+                        </div>
+                    </div>
+
+                    <div class="timeline-filters">
+                        <label class="field-group">
+                            <span>Направление</span>
+                            <select id="timelineGenreFilter">
+                                <option value="all">Все направления</option>
+                            </select>
+                        </label>
+                        <label class="field-group">
+                            <span>Формат участия</span>
+                            <select id="timelineTypeFilter">
+                                <option value="all">Все форматы</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="timeline-panel timeline-panel--active" id="timelineNearestPanel">
+                        <div id="timelineList" class="timeline-list"></div>
+                    </div>
+
+                    <div class="timeline-panel" id="timelineMonthsPanel">
+                        <div class="chart-shell">
+                            <canvas id="timelineMonthsChart" height="140" aria-label="Диаграмма мероприятий по месяцам"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="surface-card surface-card--sidebar">
+                    <div class="surface-card__head">
+                        <p class="surface-card__kicker">Легенда</p>
+                        <h2>Цвета направлений</h2>
+                    </div>
+                    <div class="legend-list">
+                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot--eco"></i> Экология</span>
+                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot--kids"></i> Образование и дети</span>
+                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot--elderly"></i> Помощь пожилым</span>
+                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot--animals"></i> Животные</span>
+                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot--urban"></i> Городская среда</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <div id="timelineModal" class="portal-modal" aria-hidden="true" role="dialog" aria-labelledby="timelineModalTitle">
+        <div class="portal-modal__overlay" data-timeline-modal-close></div>
+        <div class="portal-modal__dialog portal-modal__dialog--wide">
+            <button class="portal-modal__close" type="button" aria-label="Закрыть" data-timeline-modal-close>×</button>
+            <div id="timelineModalBody"></div>
+        </div>
+    </div>
+
+    <footer class="footer footer--portal">
+        <div class="footer__inner home-shell">
+            <div class="footer__grid">
+                <div class="footer__brand-block">
+                    <a class="footer__brand" href="../index.html">
+                        <span class="footer__brand-icon">♥</span>
+                        <span>ВолонтёрГород</span>
+                    </a>
+                    <p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять мир к лучшему вместе.</p>
+                    <div class="footer__socials" aria-label="Социальные сети">
+                        <a href="#" aria-label="Instagram">◉</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Telegram">✈</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Навигация</h3>
+                    <a class="footer__link" href="../index.html">Главная</a>
+                    <a class="footer__link" href="events.html">Проекты</a>
+                    <a class="footer__link" href="timeline.html">Мероприятия</a>
+                    <a class="footer__link" href="education.html">О портале</a>
+                    <a class="footer__link" href="volunteering.html">Стать волонтёром</a>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Направления</h3>
+                    <a class="footer__link" href="events.html">Помощь пожилым</a>
+                    <a class="footer__link" href="events.html">Экология</a>
+                    <a class="footer__link" href="events.html">Образование</a>
+                    <a class="footer__link" href="events.html">Животные</a>
+                    <a class="footer__link" href="events.html">Здоровье</a>
+                    <a class="footer__link" href="events.html">Помощь детям</a>
+                </div>
+
+                <div>
+                    <h3 class="footer__heading">Контакты</h3>
+                    <p class="footer__contact">ул. Ленина, 42, г. Тирасполь</p>
+                    <p class="footer__contact">+373 (22) 123-45</p>
+                    <p class="footer__contact">info@volonter-gorod.ru</p>
+                </div>
+            </div>
+
+            <div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p><p>&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1095;&#1080;&#1082;: &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1058;&#1091;&#1084;&#1072;&#1095;&#1077;&#1082;</p></div>
+        </div>
+    </footer>
+
+    <script src="../scripts/polyfills.js"></script>
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/common.js"></script>
+    <script src="../blocks/header/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="../scripts/timeline.js"></script>
+</body>
+</html>
+
+
+
+

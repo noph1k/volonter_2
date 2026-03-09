@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Кроссбраузерные стили */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Fallback для CSS Grid */
+.no-grid .catalog-grid,
+.no-grid .events-grid,
+.no-grid .portfolio-masonry {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.no-grid .event-card-wrapper,
+.no-grid .portfolio-item {
+    flex: 1 1 300px;
+    margin: var(--spacing-md);
+}

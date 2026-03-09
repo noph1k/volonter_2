@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="ru" itemscope itemtype="https://schema.org/CollectionPage">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Истории волонтёров, отзывы участников и фотогалерея прошедших мероприятий." />
+    <meta name="author" content="Сергей Тумачек" />
+    <title>Истории участников</title>
+    <link rel="stylesheet" href="../blocks/__blocks.css" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "ВолонтёрГород",
+                "url": "https://kagutsuchi-106.github.io/catalog_art/",
+                "email": "info@volonter-gorod.ru",
+                "telephone": "+373 (22) 123-45"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Страница историй",
+                "url": "https://kagutsuchi-106.github.io/catalog_art/pages/stories.html"
+            },
+            {
+                "@type": "Event",
+                "name": "Волонтёрское мероприятие города",
+                "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+                "eventStatus": "https://schema.org/EventScheduled",
+                "organizer": { "@type": "Organization", "name": "ВолонтёрГород" }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="page-shell page-stories">
+    <header class="header">
+        <div class="header__container home-shell">
+            <a class="header__brand" href="../index.html" aria-label="ВолонтёрГород — главная"><span class="header__brand-icon">♥</span><span class="header__brand-text"><strong>ВолонтёрГород</strong><small>Социальные инициативы</small></span></a>
+            <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn"><span class="header__burger-line header__burger-line--first"></span><span class="header__burger-line header__burger-line--second"></span><span class="header__burger-line header__burger-line--third"></span></button>
+            <nav class="nav" id="mainNav" aria-label="Основная навигация"><ul class="nav__list"><li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li><li class="nav__item"><a href="events.html" class="nav__link">Проекты</a></li><li class="nav__item"><a href="timeline.html" class="nav__link">Мероприятия</a></li><li class="nav__item"><a href="stories.html" class="nav__link nav__link--active">Истории</a></li><li class="nav__item"><a href="education.html" class="nav__link">База знаний</a></li></ul></nav>
+            <a class="header__cta" href="volunteering.html">Стать волонтёром</a>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <section class="page-hero page-hero--education">
+            <div class="page-hero__overlay"></div>
+            <div class="page-hero__content home-shell">
+                <p class="page-hero__chip">Истории и отзывы</p>
+                <h1 class="page-hero__title">Люди, которые уже изменили свой город</h1>
+                <p class="page-hero__text">В этом разделе собраны живые истории волонтёров, лучшие цитаты участников, фотографии прошедших мероприятий и форма для нового отзыва. Раздел показывает не только проекты, но и человеческий опыт за каждым из них.</p>
+            </div>
+        </section>
+
+        <section class="page-section page-section--pullup">
+            <div class="home-shell education-hub-grid">
+                <article class="dashboard-card dashboard-card--accent">
+                    <span class="dashboard-card__eyebrow">Истории сообщества</span>
+                    <h2>Опыт людей важен не меньше цифр</h2>
+                    <p>Карточки ниже помогают увидеть, как участие влияет на человека, команду и район. Это важный слой доверия для новых волонтёров.</p>
+                    <div class="dashboard-card__stats"><div><strong>8</strong><span>историй волонтёров</span></div><div><strong>8</strong><span>кадров с мероприятий</span></div></div>
+                </article>
+                <article class="dashboard-card dashboard-card--soft">
+                    <span class="dashboard-card__eyebrow">Фильтрация</span>
+                    <h2>Выбери близкое направление</h2>
+                    <p>Можно быстро посмотреть истории только по экологии, детям, пожилым, животным или городской среде.</p>
+                    <span class="surface-card__badge" id="storiesCount">0 историй</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="page-section page-section--compact">
+            <div class="home-shell">
+                <section class="surface-card surface-card--wide">
+                    <div class="surface-card__head surface-card__head--row"><div><p class="surface-card__kicker">Истории волонтёров</p><h2>Карточки участников</h2></div><div id="storiesFilters" class="stories-filters"></div></div>
+                    <div class="stories-grid" id="storiesGrid"></div>
+                </section>
+            </div>
+        </section>
+
+        <section class="page-section page-section--compact">
+            <div class="home-shell">
+                <section class="surface-card surface-card--wide">
+                    <div class="surface-card__head"><p class="surface-card__kicker">Фотогалерея</p><h2>Прошедшие мероприятия</h2><p>Галерея загружается с lazy loading, чтобы страница оставалась лёгкой.</p></div>
+                    <div class="stories-gallery-grid" id="storiesGalleryGrid"></div>
+                </section>
+            </div>
+        </section>
+
+        <section class="page-section page-section--compact">
+            <div class="home-shell education-article-layout">
+                <section class="surface-card">
+                    <div class="surface-card__head"><p class="surface-card__kicker">Отзыв участника</p><h2>Оставить впечатление о мероприятии</h2></div>
+                    <form class="stories-form" id="storiesForm">
+                        <label class="field-group"><span>Имя</span><input type="text" name="name" class="stories-form__input" required></label>
+                        <label class="field-group"><span>Текст отзыва</span><textarea name="text" class="stories-form__textarea" rows="5" required></textarea></label>
+                        <label class="field-group"><span>Оценка</span><select name="rating" class="stories-form__input" required><option value="">Выберите оценку</option><option value="5">5 — Отлично</option><option value="4">4 — Хорошо</option><option value="3">3 — Неплохо</option><option value="2">2 — Средне</option><option value="1">1 — Нужно улучшить</option></select></label>
+                        <button class="button button--primary" type="submit">Отправить отзыв</button>
+                        <p class="stories-form-result" id="storiesFormResult"></p>
+                    </form>
+                </section>
+                <aside class="surface-card surface-card--sidebar">
+                    <div class="surface-card__head"><p class="surface-card__kicker">Зачем это нужно</p><h2>Отзывы помогают расти</h2></div>
+                    <ul class="education-checklist"><li><strong>Новичкам:</strong> увидеть, как чувствуют себя участники после первых смен.</li><li><strong>Координаторам:</strong> понимать, какие форматы действительно работают лучше.</li><li><strong>Партнёрам:</strong> видеть не только метрики, но и живой эффект от проектов.</li></ul>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer footer--portal"><div class="footer__inner home-shell"><div class="footer__grid"><div class="footer__brand-block"><a class="footer__brand" href="../index.html"><span class="footer__brand-icon">♥</span><span>ВолонтёрГород</span></a><p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять город к лучшему вместе.</p></div><div><h3 class="footer__heading">Навигация</h3><a class="footer__link" href="../index.html">Главная</a><a class="footer__link" href="events.html">Проекты</a><a class="footer__link" href="timeline.html">Мероприятия</a><a class="footer__link" href="stories.html">Истории</a></div><div><h3 class="footer__heading">Разделы</h3><a class="footer__link" href="education.html">База знаний</a><a class="footer__link" href="volunteering.html">Моё волонтёрство</a><a class="footer__link" href="map.html">Карта</a></div><div><h3 class="footer__heading">Контакты</h3><p class="footer__contact">ул. Ленина, 42, г. Тирасполь</p><p class="footer__contact">+373 (22) 123-45</p><p class="footer__contact">info@volonter-gorod.ru</p></div></div><div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p><p>&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1095;&#1080;&#1082;: &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1058;&#1091;&#1084;&#1072;&#1095;&#1077;&#1082;</p></div></div></footer>
+
+    <script src="../scripts/data.js"></script>
+    <script src="../blocks/header/header.js"></script>
+    <script src="../scripts/stories.js"></script>
+</body>
+</html>
+
+
+
