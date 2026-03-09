@@ -130,4 +130,4 @@ cd catalog_art
 
 ## Ссылки
 
-- GitHub Pages: https://kagutsuchi-106.github.io/catalog_art/index.html
+- GitHub Pages: https://noph1k.github.io/volonter_2/
