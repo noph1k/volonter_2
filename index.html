@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Портал волонтёрских инициатив города: проекты, мероприятия и истории людей, которые меняют город к лучшему.">
-        <meta name="author" content="Сергей Тумачек">
+        <meta name="author" content="Сергей Тумачек" />
         <meta name="keywords" content="волонтёрство, социальные инициативы, проекты, помощь людям, город">
         <meta property="og:type" content="website">
         <meta property="og:title" content="ВолонтёрГород">
@@ -15,7 +15,7 @@
         <meta name="twitter:title" content="ВолонтёрГород">
         <meta name="twitter:description" content="Социальные инициативы и волонтёрские проекты города">
         <title>ВолонтёрГород</title>
-        <link rel="stylesheet" href="blocks/__blocks.css">
+        <link rel="stylesheet" href="pages/index.css">
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -38,16 +38,16 @@
                 </a>
 
                 <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn">
-                    <span class="header__burger-line header__burger-line--first"></span>
-                    <span class="header__burger-line header__burger-line--second"></span>
-                    <span class="header__burger-line header__burger-line--third"></span>
+                    <span class="header__burger-line header__burger-line_first"></span>
+                    <span class="header__burger-line header__burger-line_second"></span>
+                    <span class="header__burger-line header__burger-line_third"></span>
                 </button>
 
                 <nav class="nav" id="mainNav" aria-label="Основная навигация">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Главная</a></li>
+                        <li class="nav__item"><a href="index.html" class="nav__link nav__link_active">Главная</a></li>
                         <li class="nav__item"><a href="pages/events.html" class="nav__link">Проекты</a></li>
-                        <li class="nav__item"><a href="pages/timeline.html" class="nav__link">Мероприятия</a></li>
+                        <li class="nav__item"><a href="pages/timeline.html" class="nav__link">Мероприятия</a></li><li class="nav__item"><a href="pages/map.html" class="nav__link">Карта</a></li>
                         <li class="nav__item"><a href="pages/stories.html" class="nav__link">Истории</a></li>
                         <li class="nav__item"><a href="pages/education.html" class="nav__link">О портале</a></li>
                     </ul>
@@ -60,21 +60,21 @@
         <main class="home-main">
             <section class="hero" aria-labelledby="heroTitle">
                 <div class="hero__backdrop"></div>
-                <div class="hero__glow hero__glow--left"></div>
-                <div class="hero__glow hero__glow--right"></div>
+                <div class="hero__glow hero__glow_left"></div>
+                <div class="hero__glow hero__glow_right"></div>
                 <div class="hero__content home-shell">
                     <p class="hero__chip"><span>♥</span> Портал волонтёрских инициатив города</p>
                     <h1 class="hero__title" id="heroTitle">Меняй мир вокруг себя <span>начни сегодня</span></h1>
                     <p class="hero__subtitle">Присоединяйся к сообществу неравнодушных людей. Вместе мы создаём добрые перемены в нашем городе — каждый день, каждый час.</p>
                     <div class="hero__actions">
-                        <a class="button button--primary" href="pages/volunteering.html">Стать волонтёром <span>→</span></a>
-                        <a class="button button--ghost-light" href="pages/events.html">Все проекты</a>
+                        <a class="button button_primary" href="pages/volunteering.html">Стать волонтёром <span>→</span></a>
+                        <a class="button button_ghost-light" href="pages/events.html">Все проекты</a>
                     </div>
                     <a class="hero__scroll" href="#stats">Прокрути вниз <span></span></a>
                 </div>
             </section>
 
-            <section class="promos section-panel section-panel--compact" aria-labelledby="promosTitle">
+            <section class="promos section-panel section-panel_compact" aria-labelledby="promosTitle">
                 <div class="section-panel__inner home-shell">
                     <div class="section-head">
                         <div>
@@ -84,9 +84,9 @@
                     </div>
                     <div class="promo-slider" id="promoSlider"></div>
                     <div class="promo-slider__controls" role="group" aria-label="Управление слайдером акций">
-                        <button class="button button--outline promo-slider__btn" type="button" data-promo-prev>Назад</button>
+                        <button class="button button_outline promo-slider__btn" type="button" data-promo-prev>Назад</button>
                         <div class="promo-slider__dots" id="promoDots" role="group" aria-label="Навигация по акциям"></div>
-                        <button class="button button--outline promo-slider__btn" type="button" data-promo-next>Вперёд</button>
+                        <button class="button button_outline promo-slider__btn" type="button" data-promo-next>Вперёд</button>
                     </div>
                 </div>
             </section>
@@ -95,7 +95,7 @@
                 <div class="stats__grid home-shell"></div>
             </section>
 
-            <section class="section-panel section-panel--compact" aria-labelledby="overviewTitle">
+            <section class="section-panel section-panel_compact" aria-labelledby="overviewTitle">
                 <div class="section-panel__inner home-shell">
                     <div class="section-head">
                         <div>
@@ -109,12 +109,12 @@
                                 <p class="surface-card__kicker">Проекты</p>
                                 <h3>Распределение по направлениям</h3>
                             </div>
-                            <div class="chart-shell chart-shell--home">
+                            <div class="chart-shell chart-shell_home">
                                 <canvas id="homeDirectionsChart" aria-label="Диаграмма распределения проектов"></canvas>
                             </div>
                         </article>
                         <article class="surface-card">
-                            <div class="surface-card__head surface-card__head--row">
+                            <div class="surface-card__head surface-card__head_row">
                                 <div>
                                     <p class="surface-card__kicker">Ближайшие мероприятия</p>
                                     <h3>Начинаются скоро</h3>
@@ -128,74 +128,74 @@
 
             <section class="directions section-panel" aria-labelledby="directionsTitle">
                 <div class="section-panel__inner home-shell">
-                    <h2 class="section-title section-title--center" id="directionsTitle">Направления волонтёрства</h2>
-                    <p class="section-lead section-lead--center">Найди близкое тебе дело — каждое направление важно для нашего города</p>
+                    <h2 class="section-title section-title_center" id="directionsTitle">Направления волонтёрства</h2>
+                    <p class="section-lead section-lead_center">Найди близкое тебе дело — каждое направление важно для нашего города</p>
                     <div class="directions__grid"></div>
                 </div>
             </section>
 
-            <section class="projects section-panel section-panel--compact" aria-labelledby="projectsTitle">
+            <section class="projects section-panel section-panel_compact" aria-labelledby="projectsTitle">
                 <div class="section-panel__inner home-shell">
                     <div class="section-head">
                         <div>
                             <h2 class="section-title" id="projectsTitle">Активные проекты</h2>
                             <p class="section-lead">Присоединяйся к команде прямо сейчас</p>
                         </div>
-                        <a class="button button--outline" href="pages/events.html">Все проекты <span>→</span></a>
+                        <a class="button button_outline" href="pages/events.html">Все проекты <span>→</span></a>
                     </div>
                     <div class="projects__grid"></div>
                 </div>
             </section>
 
-            <section class="section-panel section-panel--compact" aria-labelledby="monthProjectTitle">
+            <section class="section-panel section-panel_compact" aria-labelledby="monthProjectTitle">
                 <div class="section-panel__inner home-shell">
                     <div class="section-head">
                         <div>
                             <h2 class="section-title" id="monthProjectTitle">Проект месяца</h2>
                             <p class="section-lead">Самый заметный кейс месяца и история человека, который был внутри проекта</p>
                         </div>
-                        <a class="button button--outline" href="pages/stories.html">Все истории <span>→</span></a>
+                        <a class="button button_outline" href="pages/stories.html">Все истории <span>→</span></a>
                     </div>
                     <div id="projectMonthRoot"></div>
                 </div>
             </section>
 
-            <section class="steps section-panel section-panel--compact" aria-labelledby="stepsTitle">
+            <section class="steps section-panel section-panel_compact" aria-labelledby="stepsTitle">
                 <div class="section-panel__inner home-shell">
-                    <h2 class="visually-hidden" id="stepsTitle">Как начать</h2>
+                    <h2 class="a11y__visually-hidden" id="stepsTitle">Как начать</h2>
                     <div class="steps__grid">
                         <article class="step-card">
-                            <span class="step-card__number step-card__number--orange">01</span>
+                            <span class="step-card__number step-card__number_orange">01</span>
                             <h3>Выбери направление</h3>
                             <p>Просмотри проекты и найди то, что близко твоим ценностям и возможностям.</p>
                         </article>
                         <span class="steps__arrow">→</span>
                         <article class="step-card">
-                            <span class="step-card__number step-card__number--teal">02</span>
+                            <span class="step-card__number step-card__number_teal">02</span>
                             <h3>Подай заявку</h3>
                             <p>Заполни простую форму. Мы свяжемся с тобой в течение 1 рабочего дня.</p>
                         </article>
                         <span class="steps__arrow">→</span>
                         <article class="step-card">
-                            <span class="step-card__number step-card__number--violet">03</span>
+                            <span class="step-card__number step-card__number_violet">03</span>
                             <h3>Начни менять мир</h3>
                             <p>Пройди короткий инструктаж и приступай к делу вместе с командой.</p>
                         </article>
                     </div>
                     <div class="steps__action">
-                        <a class="button button--primary" href="pages/volunteering.html">Хочу помогать</a>
+                        <a class="button button_primary" href="pages/volunteering.html">Хочу помогать</a>
                     </div>
                 </div>
             </section>
 
             <section class="voices" aria-labelledby="voicesTitle">
                 <div class="voices__inner home-shell">
-                    <div class="section-head section-head--light">
+                    <div class="section-head section-head_light">
                         <div>
-                            <h2 class="section-title section-title--light" id="voicesTitle">Голоса волонтёров</h2>
-                            <p class="section-lead section-lead--light">Лучшие цитаты участников и живые истории после уже проведённых мероприятий</p>
+                            <h2 class="section-title section-title_light" id="voicesTitle">Голоса волонтёров</h2>
+                            <p class="section-lead section-lead_light">Лучшие цитаты участников и живые истории после уже проведённых мероприятий</p>
                         </div>
-                        <a class="button button--ghost-light" href="pages/stories.html">Раздел историй</a>
+                        <a class="button button_ghost-light" href="pages/stories.html">Раздел историй</a>
                     </div>
                     <div id="voicesSlider"></div>
                     <div class="voices__dots" id="voicesDots" role="group" aria-label="Навигация по цитатам"></div>
@@ -205,17 +205,17 @@
             <section class="join-banner" aria-labelledby="joinTitle">
                 <div class="join-banner__inner home-shell">
                     <div class="join-banner__spark">✶</div>
-                    <h2 class="section-title section-title--light section-title--center" id="joinTitle">Готов присоединиться?</h2>
-                    <p class="section-lead section-lead--light section-lead--center">Тысячи волонтёров уже делают наш город лучше. Стань частью этого движения — любой вклад важен.</p>
+                    <h2 class="section-title section-title_light section-title_center" id="joinTitle">Готов присоединиться?</h2>
+                    <p class="section-lead section-lead_light section-lead_center join-banner__lead">Тысячи волонтёров уже делают наш город лучше. Стань частью этого движения — любой вклад важен.</p>
                     <div class="join-banner__actions">
-                        <a class="button button--light" href="pages/volunteering.html">Подать заявку</a>
-                        <a class="button button--ghost" href="pages/education.html">Узнать больше</a>
+                        <a class="button button_light" href="pages/volunteering.html">Подать заявку</a>
+                        <a class="button button_ghost" href="pages/education.html">Узнать больше</a>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="footer footer--portal">
+        <footer class="footer footer_portal">
             <div class="footer__inner home-shell">
                 <div class="footer__grid">
                     <div class="footer__brand-block">
@@ -225,9 +225,9 @@
                         </a>
                         <p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять мир к лучшему вместе.</p>
                         <nav class="footer__socials" aria-label="Социальные сети">
-                            <a href="#" aria-label="Instagram">◉</a>
-                            <a href="#" aria-label="Facebook">f</a>
-                            <a href="#" aria-label="Telegram">✈</a>
+                            <a class="footer__social-link" href="#" aria-label="Instagram">◉</a>
+                            <a class="footer__social-link" href="#" aria-label="Facebook">f</a>
+                            <a class="footer__social-link" href="#" aria-label="Telegram">✈</a>
                         </nav>
                     </div>
 
@@ -258,15 +258,22 @@
                     </div>
                 </div>
 
-                <div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p><p>&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1095;&#1080;&#1082;: &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1058;&#1091;&#1084;&#1072;&#1095;&#1077;&#1082;</p></div>
+                <div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p></div>
             </div>
         </footer>
 
-        <script src="scripts/data.js"></script>
-        <script src="scripts/common.js"></script>
-        <script src="blocks/header/header.js"></script>
+        <script src="scripts/data.js?v=20260312"></script>
+        <script src="scripts/common.js?v=20260312"></script>
+        <script src="blocks/layout/header/header.js?v=20260312"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-        <script src="scripts/home-ui.js"></script>
+        <script src="scripts/home-ui.js?v=20260312"></script>
     </body>
 </html>
+
+
+
+
+
+
+
 

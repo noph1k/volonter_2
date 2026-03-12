@@ -1,0 +1,12 @@
+.stories-filters {
+display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+@media (max-width: 760px) {
+.stories-filters {
+justify-content: flex-start;
+}
+}

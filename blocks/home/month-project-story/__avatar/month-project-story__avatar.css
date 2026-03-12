@@ -1,0 +1,6 @@
+.month-project-story__avatar {
+width: 72px;
+    height: 72px;
+    border-radius: 22px;
+    object-fit: cover;
+}

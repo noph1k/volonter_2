@@ -1,0 +1,17 @@
+.story-card__meta {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.story-card__meta span {
+display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #f3f5fa;
+    color: #58627c;
+    font-size: 13px;
+    font-weight: 700;
+}

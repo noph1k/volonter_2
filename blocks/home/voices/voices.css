@@ -1,0 +1,14 @@
+@import url('./__dots/voices__dots.css');
+@import url('./__grid/voices__grid.css');
+
+.voices {
+background: #15183d;
+    padding: 116px 0 112px;
+}
+
+@media (max-width: 640px) {
+.voices {
+padding-top: 72px;
+        padding-bottom: 72px;
+}
+}

@@ -1,0 +1,28 @@
+.voice-spotlight__body {
+display: grid;
+    align-content: center;
+    gap: 12px;
+}
+
+.voice-spotlight__body p {
+margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.45;
+    max-width: 18ch;
+}
+
+.voice-spotlight__body strong {
+color: #fff;
+    font-size: 22px;
+}
+
+.voice-spotlight__body span {
+color: rgba(255, 255, 255, 0.68);
+    font-size: 15px;
+}
+
+.voice-spotlight__body small {
+color: rgba(255, 255, 255, 0.68);
+    font-size: 15px;
+}

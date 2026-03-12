@@ -1,0 +1,10 @@
+.record-card__meta {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.record-card__meta {
+color: #7a7f93;
+    font-size: 14px;
+}

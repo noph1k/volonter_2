@@ -1,0 +1,28 @@
+@import url('./__meta/education-source-card__meta.css');
+
+.education-source-card h3 {
+margin: 0;
+    color: #151c49;
+}
+
+.education-source-card p {
+margin: 0;
+    color: #6f758b;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.education-source-card {
+display: grid;
+    gap: 14px;
+    padding: 22px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #fff9f3 100%);
+    border: 1px solid rgba(20, 27, 72, 0.08);
+}
+
+.education-source-card a {
+width: fit-content;
+}
+
+

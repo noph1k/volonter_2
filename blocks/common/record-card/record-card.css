@@ -1,0 +1,42 @@
+@import url('./__actions/record-card__actions.css');
+@import url('./__button/record-card__button.css');
+@import url('./__details/record-card__details.css');
+@import url('./__line/record-card__line.css');
+@import url('./__meta/record-card__meta.css');
+@import url('./__muted/record-card__muted.css');
+@import url('./__pill/_soft/record-card__pill_soft.css');
+@import url('./__pill/record-card__pill.css');
+
+.record-card {
+padding: 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(20, 27, 72, 0.08);
+    background: #fff;
+}
+
+.record-card h3 {
+margin: 14px 0 10px;
+    font-size: 22px;
+    line-height: 1.2;
+    color: #151c49;
+}
+
+.record-card p {
+margin: 0;
+    color: #6d7288;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.record-card {
+display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: start;
+}
+
+@media (max-width: 860px) {
+.record-card {
+grid-template-columns: 1fr;
+}
+}

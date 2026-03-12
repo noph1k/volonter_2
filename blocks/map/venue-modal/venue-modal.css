@@ -1,0 +1,26 @@
+@import url('./__body/venue-modal__body.css');
+@import url('./__close/venue-modal__close.css');
+@import url('./__content/venue-modal__content.css');
+@import url('./__header/venue-modal__header.css');
+@import url('./__image/venue-modal__image.css');
+@import url('./__img/venue-modal__img.css');
+@import url('./__info/venue-modal__info.css');
+@import url('./__overlay/venue-modal__overlay.css');
+@import url('./__title/venue-modal__title.css');
+@import url('./__type/venue-modal__type.css');
+@import url('./_active/venue-modal_active.css');
+
+.venue-modal {
+position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+}

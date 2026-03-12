@@ -1,0 +1,8 @@
+.venue-tooltip__name {
+display: block;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 4px;
+}

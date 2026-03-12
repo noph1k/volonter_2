@@ -1,0 +1,6 @@
+@import url('./_compact/page-section_compact.css');
+@import url('./_pullup/page-section_pullup.css');
+
+.page-section {
+padding: 48px 0;
+}

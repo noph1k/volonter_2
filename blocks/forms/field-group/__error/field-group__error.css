@@ -1,0 +1,6 @@
+.field-group__error {
+min-height: 18px;
+    color: #de4b3f;
+    font-size: 13px;
+    line-height: 1.3;
+}

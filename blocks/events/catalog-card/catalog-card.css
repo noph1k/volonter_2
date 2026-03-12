@@ -1,0 +1,14 @@
+@import url('./__actions/_stack/catalog-card__actions_stack.css');
+@import url('./__actions/catalog-card__actions.css');
+@import url('./__body/catalog-card__body.css');
+@import url('./__image/catalog-card__image.css');
+@import url('./__status-row/catalog-card__status-row.css');
+@import url('./_interactive/catalog-card_interactive.css');
+
+.catalog-card {
+overflow: hidden;
+    border-radius: 28px;
+    background: #fff;
+    border: 1px solid rgba(20, 27, 72, 0.08);
+    box-shadow: 0 18px 42px rgba(25, 31, 68, 0.08);
+}

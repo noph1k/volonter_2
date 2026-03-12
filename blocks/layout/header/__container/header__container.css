@@ -1,0 +1,9 @@
+.header__container {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px 0;
+    position: relative;
+}

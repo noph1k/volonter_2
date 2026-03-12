@@ -1,0 +1,5 @@
+.map-filter-btn_active {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-accent);
+}

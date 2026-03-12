@@ -1,0 +1,10 @@
+.home-shell {
+width: min(1160px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+.home-shell {
+width: min(100% - 32px, 1160px);
+}
+}

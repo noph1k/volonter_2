@@ -1,0 +1,12 @@
+.record-card__actions {
+display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (max-width: 860px) {
+.record-card__actions {
+flex-direction: row;
+        flex-wrap: wrap;
+}
+}

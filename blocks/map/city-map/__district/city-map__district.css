@@ -1,0 +1,16 @@
+.city-map__district {
+stroke-width: 2;
+}
+
+.city-map__district {
+cursor: pointer;
+    stroke: transparent;
+    stroke-width: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease, fill 0.2s ease, stroke 0.2s ease;
+}
+
+.city-map__district:hover {
+stroke: #151c49;
+    stroke-width: 3;
+    filter: brightness(1.02);
+}

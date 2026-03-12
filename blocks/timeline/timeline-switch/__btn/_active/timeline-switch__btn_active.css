@@ -1,0 +1,5 @@
+.timeline-switch__btn_active {
+background: #fff;
+    color: #151c49;
+    box-shadow: 0 8px 20px rgba(26, 31, 69, 0.08);
+}

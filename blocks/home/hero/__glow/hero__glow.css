@@ -1,0 +1,5 @@
+.hero__glow {
+position: absolute;
+    inset: 0;
+    pointer-events: none;
+}

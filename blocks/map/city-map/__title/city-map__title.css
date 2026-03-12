@@ -1,0 +1,9 @@
+.city-map__title {
+font-family: var(--font-heading);
+    fill: #141c48;
+}
+
+.city-map__title {
+font-size: 28px;
+    font-weight: 800;
+}

@@ -1,0 +1,12 @@
+@import url('./__dot/_animals/legend-list__dot_animals.css');
+@import url('./__dot/_eco/legend-list__dot_eco.css');
+@import url('./__dot/_elderly/legend-list__dot_elderly.css');
+@import url('./__dot/_kids/legend-list__dot_kids.css');
+@import url('./__dot/_urban/legend-list__dot_urban.css');
+@import url('./__dot/legend-list__dot.css');
+@import url('./__item/legend-list__item.css');
+
+.legend-list {
+display: grid;
+    gap: 14px;
+}

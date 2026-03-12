@@ -1,0 +1,10 @@
+@import url('./_center/section-title_center.css');
+@import url('./_light/section-title_light.css');
+
+.section-title {
+margin: 0;
+    font-size: clamp(38px, 4vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: #151c49;
+}

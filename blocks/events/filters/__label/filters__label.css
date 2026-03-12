@@ -1,0 +1,14 @@
+.filters__label {
+font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+.filters__label {
+font-size: 12px;
+}
+}

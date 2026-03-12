@@ -1,0 +1,11 @@
+.venue-info__schedule {
+font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-dark);
+    background-color: var(--color-gray-light);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    white-space: pre-line;
+    margin: 0;
+}

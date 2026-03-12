@@ -1,0 +1,36 @@
+@import url('./__action/promo-card__action.css');
+@import url('./__badge/promo-card__badge.css');
+@import url('./__content/promo-card__content.css');
+@import url('./__media/promo-card__media.css');
+@import url('./__meta/promo-card__meta.css');
+
+.promo-card {
+display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 24px;
+    padding: 28px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #fff7ef 0%, #ffffff 100%);
+    box-shadow: 0 16px 34px rgba(20, 24, 55, 0.08);
+}
+
+.promo-card h3 {
+margin: 0;
+    color: #151c49;
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.1;
+}
+
+.promo-card p {
+margin: 0;
+    color: #5f6880;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+.promo-card {
+grid-template-columns: 1fr;
+        padding: 20px;
+}
+}

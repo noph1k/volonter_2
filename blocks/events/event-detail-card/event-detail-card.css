@@ -1,0 +1,10 @@
+@import url('./__body/event-detail-card__body.css');
+@import url('./__grid/event-detail-card__grid.css');
+@import url('./__hero/event-detail-card__hero.css');
+@import url('./__image/event-detail-card__image.css');
+@import url('./__overlay/event-detail-card__overlay.css');
+
+.event-detail-card {
+display: grid;
+    gap: 24px;
+}

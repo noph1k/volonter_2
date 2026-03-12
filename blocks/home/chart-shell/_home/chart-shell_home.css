@@ -1,0 +1,9 @@
+.chart-shell_home {
+min-height: 240px;
+}
+
+@media (min-width: 901px) {
+.chart-shell_home {
+min-height: 280px;
+}
+}

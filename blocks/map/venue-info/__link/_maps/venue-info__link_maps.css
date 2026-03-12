@@ -1,0 +1,15 @@
+.venue-info__link_maps {
+display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-gray-light);
+    border-radius: 8px;
+    transition: background-color var(--transition-base);
+}
+
+.venue-info__link_maps:hover {
+background-color: var(--color-gray);
+    text-decoration: none;
+}

@@ -1,4 +1,4 @@
-﻿const FAVORITES_KEY = 'favorites';
+const FAVORITES_KEY = 'favorites';
 const REGISTERED_EVENTS_KEY = 'registeredEvents';
 const MOLDOVA_PHONE_PREFIX = '+373';
 
@@ -154,6 +154,12 @@ function getFocusableElements(container) {
         .filter(node => !node.hasAttribute('hidden') && node.offsetParent !== null);
 }
 
+function getClosestTarget(target, selector) {
+    if (!target || !selector) return null;
+    if (target instanceof Element) return target.closest(selector);
+    if (target.parentElement) return target.parentElement.closest(selector);
+    return null;
+}
 function trapFocusInModal(modal, options = {}) {
     if (!modal) return () => {};
 

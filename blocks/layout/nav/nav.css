@@ -1,0 +1,23 @@
+@import url('./__list/nav__list.css');
+@import url('./__item/nav__item.css');
+@import url('./__link/nav__link.css');
+@import url('./__link/_active/nav__link_active.css');
+@import url('./_active/nav_active.css');
+
+.nav {
+    width: auto;
+}
+
+@media (max-width: 900px) {
+    .nav {
+        display: none;
+        width: 100%;
+        margin-top: 12px;
+        padding: 14px;
+        background: #fff;
+        border: 1px solid rgba(20, 27, 72, 0.06);
+        border-radius: 18px;
+        box-shadow: 0 20px 32px rgba(20, 24, 55, 0.08);
+        order: 3;
+    }
+}

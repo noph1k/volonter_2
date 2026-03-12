@@ -1,0 +1,8 @@
+.city-map__district_center {
+fill: rgba(255, 184, 0, 0.12);
+    stroke: rgba(255, 184, 0, 0.54);
+}
+
+.city-map__district_center {
+fill: #dfe7bf;
+}

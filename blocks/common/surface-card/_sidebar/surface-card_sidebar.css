@@ -1,0 +1,10 @@
+.surface-card_sidebar {
+position: sticky;
+    top: 94px;
+}
+
+@media (max-width: 1100px) {
+.surface-card_sidebar {
+position: static;
+}
+}

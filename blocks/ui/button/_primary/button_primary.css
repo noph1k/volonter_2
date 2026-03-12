@@ -1,0 +1,6 @@
+.button_primary {
+    padding: 18px 30px;
+    background: linear-gradient(180deg, #ff8300 0%, #ff6900 100%);
+    color: #fff;
+    box-shadow: 0 16px 28px rgba(255, 111, 0, 0.24);
+}

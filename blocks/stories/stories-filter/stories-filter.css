@@ -1,0 +1,23 @@
+@import url('./_active/stories-filter_active.css');
+
+.stories-filter {
+padding: 10px 16px;
+    border: 1px solid rgba(20, 27, 72, 0.1);
+    border-radius: 999px;
+    background: #fff;
+    color: #56607a;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.stories-filter:hover {
+transform: translateY(-1px);
+    border-color: rgba(255, 122, 0, 0.34);
+}
+
+.stories-filter:focus-visible {
+transform: translateY(-1px);
+    border-color: rgba(255, 122, 0, 0.34);
+}

@@ -1,0 +1,31 @@
+.choice-pill {
+position: relative;
+}
+
+.choice-pill input {
+position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.choice-pill span {
+display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(20, 27, 72, 0.12);
+    background: #fff;
+    color: #38405f;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.choice-pill input:checked + span {
+background: #ff7a00;
+    border-color: #ff7a00;
+    color: #fff;
+    transform: translateY(-1px);
+}

@@ -1,0 +1,23 @@
+@import url('./__options/_wrap/choice-card__options_wrap.css');
+@import url('./__options/choice-card__options.css');
+@import url('./_skills/choice-card_skills.css');
+
+.choice-card legend {
+font-size: 15px;
+    font-weight: 700;
+    color: #161d4a;
+}
+
+\.choice-card_invalid {
+border-color: #de4b3f;
+    box-shadow: 0 0 0 4px rgba(222, 75, 63, 0.1);
+}
+
+.choice-card {
+margin: 0;
+    padding: 20px;
+    border-radius: 22px;
+    border: 1px solid rgba(20, 27, 72, 0.08);
+    background: #fbfbfd;
+}
+

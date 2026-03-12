@@ -1,0 +1,9 @@
+.promo-card__badge {
+width: fit-content;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #fff1e7;
+    color: #e65100;
+    font-size: 13px;
+    font-weight: 700;
+}

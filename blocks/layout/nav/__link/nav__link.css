@@ -1,0 +1,19 @@
+.nav__link {
+    display: block;
+    width: auto;
+    padding: 12px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #4e4e55;
+    font-family: var(--font-heading);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.nav__link:hover {
+    color: #ef6b00;
+    background: #fff1e7;
+}

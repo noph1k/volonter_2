@@ -1,0 +1,18 @@
+.header__brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.header__brand-text strong {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    line-height: 1;
+    color: #ef6b00;
+}
+
+.header__brand-text small {
+    font-size: 12px;
+    line-height: 1;
+    color: #9798a6;
+}

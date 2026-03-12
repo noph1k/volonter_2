@@ -1,0 +1,13 @@
+.modal-card__close {
+position: absolute;
+    right: 18px;
+    top: 18px;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #151c49;
+    font-size: 24px;
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+@import url('./_center/section-lead_center.css');
+@import url('./_light/section-lead_light.css');
+
+.section-lead {
+max-width: 560px;
+    margin: 18px 0 0;
+    color: #7c7f92;
+    font-size: 18px;
+}

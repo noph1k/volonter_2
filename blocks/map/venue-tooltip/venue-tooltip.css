@@ -1,0 +1,17 @@
+@import url('./__address/venue-tooltip__address.css');
+@import url('./__events/venue-tooltip__events.css');
+@import url('./__name/venue-tooltip__name.css');
+@import url('./__type/venue-tooltip__type.css');
+
+.venue-tooltip {
+background-color: var(--color-white);
+    border: 2px solid var(--color-gray);
+    border-radius: 8px;
+    padding: 10px 12px;
+    min-width: 200px;
+    max-width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.4;
+}

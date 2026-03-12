@@ -1,0 +1,27 @@
+@import url('./__actions/voice-spotlight__actions.css');
+@import url('./__body/voice-spotlight__body.css');
+@import url('./__media/voice-spotlight__media.css');
+
+.voice-spotlight {
+display: grid;
+    grid-template-columns: minmax(280px, 0.86fr) minmax(0, 1fr);
+    gap: 28px;
+    padding: 28px;
+    border-radius: 34px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 1200px) {
+.voice-spotlight {
+grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 640px) {
+.voice-spotlight {
+padding: 20px;
+        border-radius: 28px;
+}
+}

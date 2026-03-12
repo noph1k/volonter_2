@@ -1,0 +1,8 @@
+.catalog-card_interactive {
+cursor: pointer;
+}
+
+.catalog-card_interactive:focus-visible {
+outline: 3px solid rgba(255, 122, 0, 0.45);
+    outline-offset: 4px;
+}

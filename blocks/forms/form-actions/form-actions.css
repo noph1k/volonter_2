@@ -1,0 +1,14 @@
+.form-actions {
+display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+.form-actions {
+flex-direction: column;
+        align-items: flex-start;
+}
+}

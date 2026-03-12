@@ -1,0 +1,5 @@
+.record-card__line {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

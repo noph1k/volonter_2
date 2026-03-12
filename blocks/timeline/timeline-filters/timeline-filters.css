@@ -1,0 +1,30 @@
+.timeline-filters select {
+width: 100%;
+    min-height: 54px;
+    border-radius: 16px;
+    border: 1px solid rgba(20, 27, 72, 0.12);
+    background: #fbfbfd;
+    padding: 0 16px;
+    font-size: 15px;
+    color: #1f2340;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.timeline-filters select:focus {
+outline: none;
+    border-color: #ff7a00;
+    box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.12);
+    background: #fff;
+}
+
+.timeline-filters {
+display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+@media (max-width: 860px) {
+.timeline-filters {
+grid-template-columns: 1fr;
+}
+}

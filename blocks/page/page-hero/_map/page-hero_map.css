@@ -1,0 +1,5 @@
+.page-hero_map {
+    background:
+        linear-gradient(110deg, rgba(6, 7, 14, 0.985), rgba(6, 7, 14, 0.93), rgba(6, 7, 14, 0.86)),
+        url('../../../../assets/map.png') center/cover no-repeat;
+}

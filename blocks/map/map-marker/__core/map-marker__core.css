@@ -1,0 +1,7 @@
+.map-marker__core {
+transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map-marker__core {
+transition: transform 0.2s ease, opacity 0.2s ease;
+}

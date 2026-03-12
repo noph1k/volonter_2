@@ -1,0 +1,15 @@
+@import url('./__description/portfolio-modal-work__description.css');
+@import url('./__image-wrapper/portfolio-modal-work__image-wrapper.css');
+@import url('./__image/portfolio-modal-work__image.css');
+@import url('./__info/portfolio-modal-work__info.css');
+@import url('./__meta-item/portfolio-modal-work__meta-item.css');
+@import url('./__meta-label/portfolio-modal-work__meta-label.css');
+@import url('./__meta-value/_year/portfolio-modal-work__meta-value_year.css');
+@import url('./__meta-value/portfolio-modal-work__meta-value.css');
+@import url('./__meta/portfolio-modal-work__meta.css');
+
+.portfolio-modal-work {
+display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}

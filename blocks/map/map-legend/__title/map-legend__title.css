@@ -1,0 +1,7 @@
+.map-legend__title {
+font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-dark);
+}

@@ -1,0 +1,5 @@
+.events-count__number {
+font-weight: 600;
+    color: var(--color-accent);
+    opacity: 1;
+}

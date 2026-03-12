@@ -1,0 +1,5 @@
+.venue-events__item_empty {
+font-style: italic;
+    opacity: 0.6;
+    background-color: transparent;
+}

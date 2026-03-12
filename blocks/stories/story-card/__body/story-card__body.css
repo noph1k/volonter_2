@@ -1,0 +1,37 @@
+.story-card__body {
+display: grid;
+    gap: 16px;
+    padding: 24px;
+}
+
+.story-card__body h3 {
+margin: 0;
+}
+
+.story-card__body p {
+margin: 0;
+}
+
+.story-card__body blockquote {
+margin: 0;
+}
+
+.story-card__body h3 {
+color: #151c49;
+    font-size: 28px;
+    line-height: 1.15;
+}
+
+.story-card__body p {
+color: #6f758b;
+    line-height: 1.8;
+}
+
+.story-card__body blockquote {
+padding: 18px 20px;
+    border-radius: 22px;
+    background: rgba(255, 122, 0, 0.08);
+    color: #262d58;
+    font-size: 17px;
+    line-height: 1.75;
+}

@@ -1,0 +1,6 @@
+.button_ghost {
+    padding: 18px 36px;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.8);
+    background: transparent;
+}

@@ -1,0 +1,12 @@
+.timeline-entry__arrow {
+color: #c8cbd8;
+    font-size: 26px;
+    line-height: 1;
+    padding-top: 8px;
+}
+
+@media (max-width: 640px) {
+.timeline-entry__arrow {
+display: none;
+}
+}

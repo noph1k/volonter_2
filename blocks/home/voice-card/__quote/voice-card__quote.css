@@ -1,0 +1,7 @@
+.voice-card__quote {
+display: inline-block;
+    margin-bottom: 18px;
+    font-size: 48px;
+    line-height: 1;
+    font-family: var(--font-heading);
+}

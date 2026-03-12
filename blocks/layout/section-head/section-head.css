@@ -1,0 +1,16 @@
+@import url('./_light/section-head_light.css');
+
+.section-head {
+margin-bottom: 34px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+.section-head {
+flex-direction: column;
+        align-items: flex-start;
+}
+}

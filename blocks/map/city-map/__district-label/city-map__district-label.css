@@ -1,0 +1,10 @@
+.city-map__district-label {
+font-family: var(--font-heading);
+    fill: #141c48;
+}
+
+.city-map__district-label {
+font-size: 20px;
+    font-weight: 700;
+    opacity: 0.62;
+}

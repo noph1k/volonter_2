@@ -1,0 +1,10 @@
+@import url('./__btn/_active/timeline-switch__btn_active.css');
+@import url('./__btn/timeline-switch__btn.css');
+
+.timeline-switch {
+display: inline-flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 18px;
+    background: #f1f2f8;
+}

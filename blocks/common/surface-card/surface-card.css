@@ -1,0 +1,31 @@
+@import url('./__badge/surface-card__badge.css');
+@import url('./__head/_row/surface-card__head_row.css');
+@import url('./__head/surface-card__head.css');
+@import url('./__kicker/surface-card__kicker.css');
+@import url('./_compact/surface-card_compact.css');
+@import url('./_sidebar/surface-card_sidebar.css');
+
+.surface-card {
+border-radius: 30px;
+    background: #fff;
+    border: 1px solid rgba(25, 32, 70, 0.08);
+    box-shadow: 0 20px 48px rgba(24, 28, 56, 0.08);
+}
+
+.surface-card h2 {
+margin: 0;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    color: #141c49;
+}
+
+.surface-card {
+padding: 32px;
+}
+
+@media (max-width: 640px) {
+.surface-card {
+padding: 24px;
+        border-radius: 24px;
+}
+}

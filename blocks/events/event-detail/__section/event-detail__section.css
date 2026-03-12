@@ -1,0 +1,7 @@
+.event-detail__section {
+margin-bottom: var(--spacing-lg);
+}
+
+.event-detail__section:last-child {
+margin-bottom: 0;
+}

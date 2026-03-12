@@ -1,0 +1,14 @@
+.event-detail__image {
+width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-bottom: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.1);
+}
+
+@media (max-width: 480px) {
+.event-detail__image {
+margin-bottom: var(--spacing-md);
+}
+}

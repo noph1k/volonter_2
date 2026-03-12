@@ -1,0 +1,9 @@
+.catalog-card__actions {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.catalog-card__actions {
+margin-top: 22px;
+}

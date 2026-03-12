@@ -1,4 +1,4 @@
-﻿const homeQuoteState = {
+const homeQuoteState = {
     index: 0,
     timer: null,
     promoIndex: 0,
@@ -113,9 +113,9 @@ function renderHomeStats() {
     const totalHours = 12400;
 
     root.innerHTML = `
-        <article class="stats__item"><span class="stats__icon stats__icon--orange">O</span><strong data-counter-target="${totalVolunteers}">0</strong><span>Волонтёров</span></article>
-        <article class="stats__item"><span class="stats__icon stats__icon--teal">*</span><strong data-counter-target="${totalProjects}">0</strong><span>Проведённых мероприятий</span></article>
-        <article class="stats__item"><span class="stats__icon stats__icon--violet">+</span><strong data-counter-target="${totalHours}">0</strong><span>Часов помощи</span></article>
+        <article class="stats__item"><span class="stats__icon stats__icon_orange">O</span><strong data-counter-target="${totalVolunteers}">0</strong><span>Волонтёров</span></article>
+        <article class="stats__item"><span class="stats__icon stats__icon_teal">*</span><strong data-counter-target="${totalProjects}">0</strong><span>Проведённых мероприятий</span></article>
+        <article class="stats__item"><span class="stats__icon stats__icon_violet">+</span><strong data-counter-target="${totalHours}">0</strong><span>Часов помощи</span></article>
     `;
 
     initStatsAnimation();
@@ -156,7 +156,7 @@ function renderNearestEvents() {
                 <span class="record-card__pill">${direction.label}</span>
                 <h4>${event.title}</h4>
                 <p>${event.date}</p>
-                <a class="button button--outline record-card__button" href="pages/event.html?id=${event.id}">Открыть</a>
+                <a class="button button_outline record-card__button" href="pages/event.html?id=${event.id}">Открыть</a>
             </article>
         `;
     }).join('');
@@ -176,7 +176,7 @@ function renderPromoSlide() {
                 <h3>${slide.title}</h3>
                 <p>${slide.description}</p>
                 <div class="promo-card__meta">${slide.meta}</div>
-                <a class="button button--primary promo-card__action" href="${slide.link}">${slide.action}</a>
+                <a class="button button_primary promo-card__action" href="${slide.link}">${slide.action}</a>
             </div>
             <div class="promo-card__media">
                 <img src="${slide.image}" alt="${slide.title}" loading="lazy">
@@ -185,7 +185,7 @@ function renderPromoSlide() {
     `;
 
     dots.innerHTML = items.map((_, index) => `
-        <button class="voice-dot ${index === homeQuoteState.promoIndex ? 'voice-dot--active' : ''}" type="button" data-promo-dot="${index}" aria-label="Слайд ${index + 1}"></button>
+        <button class="voice-dot ${index === homeQuoteState.promoIndex ? 'voice-dot_active' : ''}" type="button" data-promo-dot="${index}" aria-label="Слайд ${index + 1}"></button>
     `).join('');
 }
 
@@ -212,7 +212,7 @@ function renderHomeDirections() {
     root.innerHTML = directions.map(direction => {
         const count = events.filter(event => event.genre === direction).length;
         const meta = getDirectionMeta(direction);
-        return `<a class="direction-card direction-card--${meta.tone}" href="pages/events.html?direction=${encodeURIComponent(direction)}">
+        return `<a class="direction-card direction-card_${meta.tone}" href="pages/events.html?direction=${encodeURIComponent(direction)}">
                 <span class="direction-card__content"><strong>${meta.label}</strong><small>${count} ${pluralize(count, 'проект', 'проекта', 'проектов')}</small></span>
                 <span class="direction-card__arrow">&rsaquo;</span>
             </a>`;
@@ -230,18 +230,18 @@ function renderFeaturedProjects() {
             <article class="project-card">
                 <div class="project-card__image-wrap">
                     <img class="project-card__image" src="${event.photos[0]}" alt="${event.title}" loading="lazy">
-                    <span class="project-card__status ${event.status === 'Мест мало' ? 'project-card__status--green' : ''}">• ${event.status}</span>
+                    <span class="project-card__status ${event.status === 'Мест мало' ? 'project-card__status_green' : ''}">• ${event.status}</span>
                 </div>
                 <div class="project-card__body">
-                    <div class="project-card__user-statuses">${labels.map(label => `<span class="project-status project-status--${label.key}">${label.text}</span>`).join('')}</div>
-                    <span class="project-card__tag project-card__tag--${meta.tone === 'elderly' ? 'violet' : meta.tone === 'eco' ? 'teal' : 'orange'}">${meta.label}</span>
+                    <div class="project-card__user-statuses">${labels.map(label => `<span class="project-status project-status_${label.key}">${label.text}</span>`).join('')}</div>
+                    <span class="project-card__tag project-card__tag_${meta.tone === 'elderly' ? 'violet' : meta.tone === 'eco' ? 'teal' : 'orange'}">${meta.label}</span>
                     <h3>${event.title}</h3>
                     <p>${event.description.slice(0, 170)}...</p>
                     <div class="project-card__meta"><span>${event.type}</span><span>${event.freeSpots} мест</span></div>
-                    <div class="project-card__meta project-card__meta--bottom"><span>${event.place.venueName || event.place.address}</span></div>
+                    <div class="project-card__meta project-card__meta_bottom"><span>${event.place.venueName || event.place.address}</span></div>
                     <div class="project-card__actions-row">
-                        <a class="button button--card" href="pages/event.html?id=${event.id}">Подробнее <span>></span></a>
-                        <button class="button button--ghost-dark project-card__quick" type="button" data-home-favorite="${event.id}">${isFavorite(event.id) ? 'Убрать' : 'В избранное'}</button>
+                        <a class="button button_card" href="pages/event.html?id=${event.id}">Подробнее <span>></span></a>
+                        <button class="button button_ghost-dark project-card__quick" type="button" data-home-favorite="${event.id}">${isFavorite(event.id) ? 'Убрать' : 'В избранное'}</button>
                     </div>
                 </div>
             </article>
@@ -275,8 +275,8 @@ function renderProjectOfMonth() {
                     </div>
                 </div>
                 <div class="project-card__actions-row">
-                    <a class="button button--card" href="pages/event.html?id=${event.id}">Открыть проект <span>></span></a>
-                    <a class="button button--outline project-card__quick" href="pages/stories.html">Читать историю</a>
+                    <a class="button button_card" href="pages/event.html?id=${event.id}">Открыть проект <span>></span></a>
+                    <a class="button button_outline project-card__quick" href="pages/stories.html">Читать историю</a>
                 </div>
             </div>
         </article>
@@ -298,22 +298,22 @@ function renderQuoteSlide() {
                 <img src="${story.photo}" alt="${story.author}" loading="lazy">
             </div>
             <div class="voice-spotlight__body">
-                <span class="voice-card__quote voice-card__quote--${tone}">"</span>
+                <span class="voice-card__quote voice-card__quote_${tone}">"</span>
                 <p>${story.quote}</p>
                 <strong>${story.author}</strong>
                 <span>${story.role}</span>
                 <small>${story.direction}</small>
                 <div class="voice-spotlight__actions">
-                    <button class="button button--ghost-light" type="button" data-voices-prev><</button>
-                    <a class="button button--light" href="pages/stories.html">Все истории</a>
-                    <button class="button button--ghost-light" type="button" data-voices-next>></button>
+                    <button class="button button_ghost-light" type="button" data-voices-prev><</button>
+                    <a class="button button_light" href="pages/stories.html">Все истории</a>
+                    <button class="button button_ghost-light" type="button" data-voices-next>></button>
                 </div>
             </div>
         </article>
     `;
 
     dots.innerHTML = list.map((_, index) => `
-        <button class="voice-dot ${index === homeQuoteState.index ? 'voice-dot--active' : ''}" type="button" data-voice-dot="${index}" aria-label="Цитата ${index + 1}"></button>
+        <button class="voice-dot ${index === homeQuoteState.index ? 'voice-dot_active' : ''}" type="button" data-voice-dot="${index}" aria-label="Цитата ${index + 1}"></button>
     `).join('');
 }
 
@@ -335,14 +335,14 @@ function stopQuoteSlider() {
 }
 
 document.addEventListener('click', event => {
-    const favoriteButton = event.target.closest('[data-home-favorite]');
+    const favoriteButton = getClosestTarget(event.target, '[data-home-favorite]');
     if (favoriteButton) {
         toggleFavorite(Number(favoriteButton.dataset.homeFavorite));
         renderFeaturedProjects();
         return;
     }
 
-    if (event.target.closest('[data-promo-prev]')) {
+    if (getClosestTarget(event.target, '[data-promo-prev]')) {
         const items = getPromoItems();
         homeQuoteState.promoIndex = (homeQuoteState.promoIndex - 1 + items.length) % items.length;
         renderPromoSlide();
@@ -350,7 +350,7 @@ document.addEventListener('click', event => {
         return;
     }
 
-    if (event.target.closest('[data-promo-next]')) {
+    if (getClosestTarget(event.target, '[data-promo-next]')) {
         const items = getPromoItems();
         homeQuoteState.promoIndex = (homeQuoteState.promoIndex + 1) % items.length;
         renderPromoSlide();
@@ -358,7 +358,7 @@ document.addEventListener('click', event => {
         return;
     }
 
-    const promoDot = event.target.closest('[data-promo-dot]');
+    const promoDot = getClosestTarget(event.target, '[data-promo-dot]');
     if (promoDot) {
         homeQuoteState.promoIndex = Number(promoDot.dataset.promoDot);
         renderPromoSlide();
@@ -366,7 +366,7 @@ document.addEventListener('click', event => {
         return;
     }
 
-    if (event.target.closest('[data-voices-prev]')) {
+    if (getClosestTarget(event.target, '[data-voices-prev]')) {
         const list = getFeaturedStories();
         homeQuoteState.index = (homeQuoteState.index - 1 + list.length) % list.length;
         renderQuoteSlide();
@@ -374,7 +374,7 @@ document.addEventListener('click', event => {
         return;
     }
 
-    if (event.target.closest('[data-voices-next]')) {
+    if (getClosestTarget(event.target, '[data-voices-next]')) {
         const list = getFeaturedStories();
         homeQuoteState.index = (homeQuoteState.index + 1) % list.length;
         renderQuoteSlide();
@@ -382,7 +382,7 @@ document.addEventListener('click', event => {
         return;
     }
 
-    const dot = event.target.closest('[data-voice-dot]');
+    const dot = getClosestTarget(event.target, '[data-voice-dot]');
     if (dot) {
         homeQuoteState.index = Number(dot.dataset.voiceDot);
         renderQuoteSlide();
@@ -414,4 +414,5 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.addEventListener('mouseleave', startQuoteSlider);
     }
 });
+
 

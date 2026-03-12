@@ -1,0 +1,7 @@
+@import url('./__btn/promo-slider__btn.css');
+@import url('./__controls/promo-slider__controls.css');
+@import url('./__dots/promo-slider__dots.css');
+
+.promo-slider {
+margin-top: 14px;
+}

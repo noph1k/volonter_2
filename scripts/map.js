@@ -1,4 +1,4 @@
-﻿const mapState = {
+const mapState = {
     direction: 'all',
     type: 'all',
     search: '',
@@ -143,7 +143,7 @@ function renderDistrictPills() {
 
     const districts = ['all', 'Западный', 'Центр', 'Северный', 'Балка', 'Южный', 'Набережный'];
     root.innerHTML = districts.map(district => `
-        <button class="map-district-pill ${district === mapState.activeDistrict ? 'map-district-pill--active' : ''}" type="button" data-map-district-pill="${district}">
+        <button class="map-district-pill ${district === mapState.activeDistrict ? 'map-district-pill_active' : ''}" type="button" data-map-district-pill="${district}">
             ${district === 'all' ? 'Все районы' : district}
         </button>
     `).join('');
@@ -174,7 +174,7 @@ function renderMarkers(groups) {
         const { svgX, svgY } = group.venue.coordinates;
         const active = group.venue.id === mapState.selectedVenueId;
         return `
-            <g class="map-marker ${active ? 'map-marker--active' : ''}" data-map-venue="${group.venue.id}" transform="translate(${svgX * 2.2} ${svgY * 1.72})" tabindex="0" role="button" aria-label="${group.venue.name}">
+            <g class="map-marker ${active ? 'map-marker_active' : ''}" data-map-venue="${group.venue.id}" transform="translate(${svgX * 2.2} ${svgY * 1.72})" tabindex="0" role="button" aria-label="${group.venue.name}">
                 <circle class="map-marker__pulse" r="34" fill="url(#markerPulse)"></circle>
                 <circle class="map-marker__ring" r="24" fill="#ffffff" stroke="${color}" stroke-width="3"></circle>
                 <circle class="map-marker__core" r="14" fill="${color}"></circle>
@@ -197,11 +197,11 @@ function renderVenueList(groups) {
         const nearest = group.events[0];
         const active = group.venue.id === mapState.selectedVenueId;
         return `
-            <article class="record-card map-venue-card ${active ? 'map-venue-card--active' : ''}" data-map-select="${group.venue.id}">
+            <article class="record-card map-venue-card ${active ? 'map-venue-card_active' : ''}" data-map-select="${group.venue.id}">
                 <div>
                     <div class="record-card__line">
                         <span class="record-card__pill">${group.district}</span>
-                        <span class="record-card__pill record-card__pill--soft">${group.events.length} ${getNoun(group.events.length, 'событие', 'события', 'событий')}</span>
+                        <span class="record-card__pill record-card__pill_soft">${group.events.length} ${getNoun(group.events.length, 'событие', 'события', 'событий')}</span>
                     </div>
                     <h3>${group.venue.name}</h3>
                     <p>${group.venue.address}</p>
@@ -211,7 +211,7 @@ function renderVenueList(groups) {
                     </div>
                 </div>
                 <div class="record-card__actions">
-                    <button class="button button--outline record-card__button" type="button" data-map-select="${group.venue.id}">Показать</button>
+                    <button class="button button_outline record-card__button" type="button" data-map-select="${group.venue.id}">Показать</button>
                 </div>
             </article>
         `;
@@ -246,9 +246,9 @@ function renderSelectedVenue(group) {
             <article class="mini-project map-project-card">
                 <div class="mini-project__top">
                     <span class="mini-project__tag">${getDirectionMeta(event.genre).label}</span>
-                    <span class="record-card__pill record-card__pill--soft">${event.status}</span>
+                    <span class="record-card__pill record-card__pill_soft">${event.status}</span>
                 </div>
-                <div class="project-card__user-statuses">${buildStatusLabels(event.id).map(label => `<span class="project-status project-status--${label.key}">${label.text}</span>`).join('')}</div>
+                <div class="project-card__user-statuses">${buildStatusLabels(event.id).map(label => `<span class="project-status project-status_${label.key}">${label.text}</span>`).join('')}</div>
                 <h3>${event.title}</h3>
                 <p>${event.description.slice(0, 150)}...</p>
                 <div class="record-card__details">
@@ -256,10 +256,10 @@ function renderSelectedVenue(group) {
                     <span><strong>Формат:</strong> ${event.type}</span>
                     <span><strong>Свободно:</strong> ${event.freeSpots} мест</span>
                 </div>
-                <div class="catalog-card__actions catalog-card__actions--stack">
-                    <button class="button button--outline record-card__button" type="button" data-map-open-event="${event.id}">Подробнее</button>
-                    <button class="button ${state.favorite ? 'button--ghost-dark' : 'button--primary'} record-card__button" type="button" data-map-favorite="${event.id}">${state.favorite ? 'Убрать из избранного' : 'В избранное'}</button>
-                    <button class="button ${state.registered ? 'button--ghost-dark' : 'button--primary'} record-card__button" type="button" data-map-register="${event.id}">${state.registered ? 'Отменить запись' : 'Записаться'}</button>
+                <div class="catalog-card__actions catalog-card__actions_stack">
+                    <button class="button button_outline record-card__button" type="button" data-map-open-event="${event.id}">Подробнее</button>
+                    <button class="button ${state.favorite ? 'button_ghost-dark' : 'button_primary'} record-card__button" type="button" data-map-favorite="${event.id}">${state.favorite ? 'Убрать из избранного' : 'В избранное'}</button>
+                    <button class="button ${state.registered ? 'button_ghost-dark' : 'button_primary'} record-card__button" type="button" data-map-register="${event.id}">${state.registered ? 'Отменить запись' : 'Записаться'}</button>
                 </div>
             </article>
         `;
@@ -300,9 +300,9 @@ function renderDistrictState(groups) {
     document.querySelectorAll('[data-district]').forEach(node => {
         const name = node.dataset.district;
         const hasEvents = groups.some(group => group.district === name);
-        node.classList.toggle('city-map__district--active', mapState.activeDistrict === name);
-        node.classList.toggle('city-map__district--muted', mapState.activeDistrict !== 'all' && mapState.activeDistrict !== name);
-        node.classList.toggle('city-map__district--empty', !hasEvents);
+        node.classList.toggle('city-map__district_active', mapState.activeDistrict === name);
+        node.classList.toggle('city-map__district_muted', mapState.activeDistrict !== 'all' && mapState.activeDistrict !== name);
+        node.classList.toggle('city-map__district_empty', !hasEvents);
     });
     renderDistrictPills();
 }
@@ -344,9 +344,9 @@ function openMapModal(eventId) {
     }
     if (actions) {
         actions.innerHTML = `
-            <a class="button button--outline" href="event.html?id=${event.id}">Страница проекта</a>
-            <button class="button ${userState.favorite ? 'button--ghost-dark' : 'button--primary'}" type="button" data-map-favorite="${event.id}">${userState.favorite ? 'Убрать из избранного' : 'В избранное'}</button>
-            <button class="button ${userState.registered ? 'button--ghost-dark' : 'button--primary'}" type="button" data-map-register="${event.id}">${userState.registered ? 'Отменить запись' : 'Записаться'}</button>
+            <a class="button button_outline" href="event.html?id=${event.id}">Страница проекта</a>
+            <button class="button ${userState.favorite ? 'button_ghost-dark' : 'button_primary'}" type="button" data-map-favorite="${event.id}">${userState.favorite ? 'Убрать из избранного' : 'В избранное'}</button>
+            <button class="button ${userState.registered ? 'button_ghost-dark' : 'button_primary'}" type="button" data-map-register="${event.id}">${userState.registered ? 'Отменить запись' : 'Записаться'}</button>
         `;
     }
 
@@ -393,14 +393,14 @@ function bindMapFilters() {
 
 function initMapEvents() {
     document.addEventListener('click', event => {
-        const districtButton = event.target.closest('[data-map-district-pill]');
+        const districtButton = getClosestTarget(event.target, '[data-map-district-pill]');
         if (districtButton) {
             mapState.activeDistrict = districtButton.dataset.mapDistrictPill;
             renderMapScene();
             return;
         }
 
-        const district = event.target.closest('[data-district]');
+        const district = getClosestTarget(event.target, '[data-district]');
         if (district) {
             const next = district.dataset.district;
             mapState.activeDistrict = mapState.activeDistrict === next ? 'all' : next;
@@ -408,7 +408,7 @@ function initMapEvents() {
             return;
         }
 
-        const marker = event.target.closest('[data-map-venue]');
+        const marker = getClosestTarget(event.target, '[data-map-venue]');
         if (marker) {
             mapState.selectedVenueId = Number(marker.dataset.mapVenue);
             const group = getSelectedVenueGroup();
@@ -417,20 +417,22 @@ function initMapEvents() {
             return;
         }
 
-        const selectTrigger = event.target.closest('[data-map-select]');
+        const selectTrigger = getClosestTarget(event.target, '[data-map-select]');
         if (selectTrigger) {
             mapState.selectedVenueId = Number(selectTrigger.dataset.mapSelect);
+            const group = getSelectedVenueGroup();
+            if (group?.events?.[0]) openMapModal(group.events[0].id);
             renderMapScene();
             return;
         }
 
-        const openEvent = event.target.closest('[data-map-open-event]');
+        const openEvent = getClosestTarget(event.target, '[data-map-open-event]');
         if (openEvent) {
             openMapModal(Number(openEvent.dataset.mapOpenEvent));
             return;
         }
 
-        const favorite = event.target.closest('[data-map-favorite]');
+        const favorite = getClosestTarget(event.target, '[data-map-favorite]');
         if (favorite) {
             toggleFavorite(Number(favorite.dataset.mapFavorite));
             renderMapScene();
@@ -438,7 +440,7 @@ function initMapEvents() {
             return;
         }
 
-        const register = event.target.closest('[data-map-register]');
+        const register = getClosestTarget(event.target, '[data-map-register]');
         if (register) {
             toggleEventRegistration(Number(register.dataset.mapRegister));
             renderMapScene();
@@ -446,13 +448,13 @@ function initMapEvents() {
             return;
         }
 
-        if (event.target.closest('[data-map-modal-close]')) {
+        if (getClosestTarget(event.target, '[data-map-modal-close]')) {
             closeMapModal();
         }
     });
 
     document.addEventListener('mouseover', event => {
-        const marker = event.target.closest('[data-map-venue]');
+        const marker = getClosestTarget(event.target, '[data-map-venue]');
         if (!marker) return;
         const groups = groupEventsByVenue(getMapFilteredEvents());
         const group = groups.find(item => item.venue.id === Number(marker.dataset.mapVenue));
@@ -460,7 +462,7 @@ function initMapEvents() {
     });
 
     document.addEventListener('mousemove', event => {
-        const marker = event.target.closest('[data-map-venue]');
+        const marker = getClosestTarget(event.target, '[data-map-venue]');
         const tooltip = document.getElementById('mapTooltip');
         if (!marker || !tooltip || tooltip.hidden) return;
         tooltip.style.left = `${event.clientX + 16}px`;
@@ -468,13 +470,13 @@ function initMapEvents() {
     });
 
     document.addEventListener('mouseout', event => {
-        if (event.target.closest('[data-map-venue]')) hideMapTooltip();
+        if (getClosestTarget(event.target, '[data-map-venue]')) hideMapTooltip();
     });
 
     document.addEventListener('keydown', event => {
         if (event.key === 'Escape') closeMapModal();
 
-        const marker = event.target.closest('[data-map-venue]');
+        const marker = getClosestTarget(event.target, '[data-map-venue]');
         if (!marker) return;
         if (event.key !== 'Enter' && event.key !== ' ') return;
         event.preventDefault();
@@ -512,3 +514,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initMapZoom();
     renderMapScene();
 });
+

@@ -1,0 +1,14 @@
+.a11y__skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.a11y__skip-link:focus {
+    top: 0;
+}

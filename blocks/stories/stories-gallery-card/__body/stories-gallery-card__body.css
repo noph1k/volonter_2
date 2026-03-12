@@ -1,0 +1,22 @@
+.stories-gallery-card__body {
+display: grid;
+    gap: 8px;
+    padding: 18px;
+}
+
+.stories-gallery-card__body strong {
+margin: 0;
+}
+
+.stories-gallery-card__body p {
+margin: 0;
+}
+
+.stories-gallery-card__body strong {
+color: #151c49;
+}
+
+.stories-gallery-card__body p {
+color: #6f758b;
+    line-height: 1.7;
+}

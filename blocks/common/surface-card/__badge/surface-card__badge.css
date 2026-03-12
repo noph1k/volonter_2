@@ -1,0 +1,10 @@
+.surface-card__badge {
+display: inline-flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #fff1e7;
+    color: #ef6b00;
+    font-size: 14px;
+    font-weight: 700;
+}

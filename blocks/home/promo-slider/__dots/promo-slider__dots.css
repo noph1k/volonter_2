@@ -1,0 +1,13 @@
+.promo-slider__dots {
+display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 640px) {
+.promo-slider__dots {
+width: 100%;
+        order: -1;
+}
+}

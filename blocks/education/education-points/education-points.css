@@ -1,0 +1,20 @@
+.education-points {
+display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.education-points li {
+list-style: none;
+    padding: 18px 20px;
+    border-radius: 20px;
+    background: #fbfbfd;
+    border: 1px solid rgba(20, 27, 72, 0.08);
+    color: #404966;
+    line-height: 1.7;
+}
+
+.education-points li strong {
+color: #151c49;
+}

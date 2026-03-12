@@ -1,0 +1,11 @@
+.filters__buttons {
+display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+.filters__buttons {
+gap: var(--spacing-xs);
+}
+}

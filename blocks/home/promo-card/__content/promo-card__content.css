@@ -1,0 +1,5 @@
+.promo-card__content {
+display: grid;
+    align-content: start;
+    gap: 14px;
+}

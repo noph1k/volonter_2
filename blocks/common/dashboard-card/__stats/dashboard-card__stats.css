@@ -1,0 +1,33 @@
+.dashboard-card__stats {
+display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.dashboard-card__stats div {
+padding: 18px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(12px);
+}
+
+.dashboard-card__stats strong {
+display: block;
+    font-family: var(--font-heading);
+    font-size: 34px;
+    line-height: 1;
+}
+
+.dashboard-card__stats span {
+display: block;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+}
+
+@media (max-width: 640px) {
+.dashboard-card__stats {
+grid-template-columns: 1fr;
+}
+}

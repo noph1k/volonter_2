@@ -1,0 +1,15 @@
+.event-detail__heading {
+font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+@media (max-width: 768px) {
+.event-detail__heading {
+font-size: 18px;
+}
+}

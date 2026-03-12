@@ -1,0 +1,17 @@
+.join-banner__actions {
+display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.join-banner__actions {
+margin-top: 34px;
+    justify-content: center;
+}
+
+@media (max-width: 640px) {
+.join-banner__actions {
+flex-direction: column;
+        align-items: stretch;
+}
+}

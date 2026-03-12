@@ -1,0 +1,17 @@
+.month-project-card__stats {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.month-project-card__stats span {
+display: inline-flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid rgba(20, 27, 72, 0.08);
+    color: #4f5974;
+    font-size: 13px;
+    font-weight: 700;
+}

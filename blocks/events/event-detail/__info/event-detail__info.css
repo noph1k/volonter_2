@@ -1,0 +1,12 @@
+.event-detail__info {
+background-color: var(--color-gray-light);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+.event-detail__info {
+padding: var(--spacing-sm);
+}
+}

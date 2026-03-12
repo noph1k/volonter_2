@@ -1,0 +1,11 @@
+.venue-info__link {
+color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-base);
+    font-weight: 500;
+}
+
+.venue-info__link:hover {
+color: var(--color-dark);
+    text-decoration: underline;
+}

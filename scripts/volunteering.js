@@ -1,4 +1,4 @@
-﻿const VOLUNTEER_APPLICATIONS_KEY = 'volunteerApplications';
+const VOLUNTEER_APPLICATIONS_KEY = 'volunteerApplications';
 let applicationModalCleanup = null;
 
 function loadApplications() {
@@ -65,10 +65,10 @@ function renderSuggestedProjects() {
     root.innerHTML = getSuggestedProjects().map(item => {
         const favorite = isFavorite(item.id);
         return `
-            <article class="mini-project">
+            <article class="mini-project mini-project_interactive" data-mini-project-open="${item.id}" tabindex="0" role="link" aria-label="Открыть проект ${item.title}">
                 <div class="mini-project__top">
                     <span class="mini-project__tag">${item.genre}</span>
-                    <button class="mini-project__favorite ${favorite ? 'mini-project__favorite--active' : ''}" type="button" data-toggle-favorite="${item.id}">
+                    <button class="mini-project__favorite ${favorite ? 'mini-project__favorite_active' : ''}" type="button" data-toggle-favorite="${item.id}">
                         ${favorite ? 'В избранном' : 'В избранное'}
                     </button>
                 </div>
@@ -98,7 +98,7 @@ function renderFavorites() {
     }
 
     root.innerHTML = favoriteEvents.map(item => `
-        <article class="record-card record-card--favorite">
+        <article class="record-card record-card_favorite">
             <div class="record-card__content">
                 <div class="record-card__line">
                     <span class="record-card__pill">${item.genre}</span>
@@ -112,8 +112,8 @@ function renderFavorites() {
                 </div>
             </div>
             <div class="record-card__actions">
-                <a class="button button--outline record-card__button" href="event.html?id=${item.id}">Открыть проект</a>
-                <button class="button button--ghost-dark record-card__button" type="button" data-remove-favorite="${item.id}">Убрать</button>
+                <a class="button button_outline record-card__button" href="event.html?id=${item.id}">Открыть проект</a>
+                <button class="button button_ghost-dark record-card__button" type="button" data-remove-favorite="${item.id}">Убрать</button>
             </div>
         </article>
     `).join('');
@@ -133,7 +133,7 @@ function renderApplications() {
         <article class="record-card">
             <div class="record-card__content">
                 <div class="record-card__line">
-                    <span class="record-card__pill record-card__pill--soft">Подано ${formatCreatedAt(app.createdAt)}</span>
+                    <span class="record-card__pill record-card__pill_soft">Подано ${formatCreatedAt(app.createdAt)}</span>
                     <span class="record-card__muted">${app.preferredDirection}</span>
                 </div>
                 <h3>${app.firstName} ${app.lastName}</h3>
@@ -146,7 +146,7 @@ function renderApplications() {
                 </div>
             </div>
             <div class="record-card__actions">
-                <button class="button button--ghost-dark record-card__button" type="button" data-remove-application="${app.id}">Удалить заявку</button>
+                <button class="button button_ghost-dark record-card__button" type="button" data-remove-application="${app.id}">Удалить заявку</button>
             </div>
         </article>
     `).join('');
@@ -157,27 +157,31 @@ function setFieldError(name, message) {
     if (errorNode) errorNode.textContent = message || '';
 
     const field = document.getElementById(name);
-    if (field) field.classList.toggle('is-invalid', Boolean(message));
+    if (field) {
+        const group = field.closest('.field-group');
+        if (group) group.classList.toggle('field-group_invalid', Boolean(message));
+    }
 
     if (!field) {
         const group = document.querySelector(`[data-group="${name}"]`);
-        if (group) group.classList.toggle('is-invalid', Boolean(message));
+        if (group) group.classList.toggle('choice-card_invalid', Boolean(message));
     }
 }
-
 function clearErrors() {
     document.querySelectorAll('[data-error-for]').forEach(node => {
         node.textContent = '';
     });
-    document.querySelectorAll('.is-invalid').forEach(node => node.classList.remove('is-invalid'));
+    document.querySelectorAll('.field-group_invalid, .choice-card_invalid').forEach(node => {
+        node.classList.remove('field-group_invalid');
+        node.classList.remove('choice-card_invalid');
+    });
 }
-
 function showFormMessage(text, type) {
     const node = document.getElementById('volunteerFormMessage');
     if (!node) return;
     node.textContent = text;
     node.className = 'form-message';
-    if (type) node.classList.add(`form-message--${type}`);
+    if (type) node.classList.add(`form-message_${type}`);
 }
 
 function validateForm(form) {
@@ -242,7 +246,7 @@ function validateForm(form) {
 function openModal() {
     const modal = document.getElementById('applicationModal');
     if (!modal) return;
-    modal.classList.add('portal-modal--open');
+    modal.classList.add('portal-modal_open');
     modal.setAttribute('aria-hidden', 'false');
 
     if (applicationModalCleanup) applicationModalCleanup();
@@ -255,7 +259,7 @@ function openModal() {
 function closeModal() {
     const modal = document.getElementById('applicationModal');
     if (!modal) return;
-    modal.classList.remove('portal-modal--open');
+    modal.classList.remove('portal-modal_open');
     modal.setAttribute('aria-hidden', 'true');
 
     if (applicationModalCleanup) {
@@ -309,7 +313,16 @@ function initVolunteerForm() {
 }
 
 document.addEventListener('click', event => {
-    const favoriteToggle = event.target.closest('[data-toggle-favorite]');
+    const miniProject = getClosestTarget(event.target, '[data-mini-project-open]');
+    if (miniProject && !getClosestTarget(event.target, 'button, a, input, select, textarea, label')) {
+        const id = Number(miniProject.dataset.miniProjectOpen);
+        if (!Number.isFinite(id)) return;
+        window.location.href = 'event.html?id=' + id;
+        return;
+    }
+
+
+    const favoriteToggle = getClosestTarget(event.target, '[data-toggle-favorite]');
     if (favoriteToggle) {
         const id = Number(favoriteToggle.dataset.toggleFavorite);
         toggleFavorite(id);
@@ -318,7 +331,7 @@ document.addEventListener('click', event => {
         updateSummary();
     }
 
-    const removeFav = event.target.closest('[data-remove-favorite]');
+    const removeFav = getClosestTarget(event.target, '[data-remove-favorite]');
     if (removeFav) {
         const id = Number(removeFav.dataset.removeFavorite);
         toggleFavorite(id);
@@ -327,7 +340,7 @@ document.addEventListener('click', event => {
         updateSummary();
     }
 
-    const removeApp = event.target.closest('[data-remove-application]');
+    const removeApp = getClosestTarget(event.target, '[data-remove-application]');
     if (removeApp) {
         const id = Number(removeApp.dataset.removeApplication);
         saveApplications(loadApplications().filter(item => item.id !== id));
@@ -335,13 +348,22 @@ document.addEventListener('click', event => {
         updateSummary();
     }
 
-    if (event.target.closest('[data-app-modal-close]')) {
+    if (getClosestTarget(event.target, '[data-app-modal-close]')) {
         closeModal();
     }
 });
 
 document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeModal();
+
+    const miniProject = getClosestTarget(event.target, '[data-mini-project-open]');
+    if (!miniProject) return;
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+
+    const id = Number(miniProject.dataset.miniProjectOpen);
+    if (!Number.isFinite(id)) return;
+    window.location.href = 'event.html?id=' + id;
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -351,5 +373,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSummary();
     initVolunteerForm();
 });
+
 
 

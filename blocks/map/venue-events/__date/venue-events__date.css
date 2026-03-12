@@ -1,0 +1,7 @@
+.venue-events__date {
+font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--color-dark);
+    opacity: 0.7;
+    white-space: nowrap;
+}

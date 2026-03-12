@@ -1,0 +1,36 @@
+@import url('./_primary/button_primary.css');
+@import url('./_card/button_card.css');
+@import url('./_ghost-light/button_ghost-light.css');
+@import url('./_outline/button_outline.css');
+@import url('./_light/button_light.css');
+@import url('./_ghost/button_ghost.css');
+@import url('./_ghost-dark/button_ghost-dark.css');
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+    .button,
+    .button_outline,
+    .button_ghost,
+    .button_ghost-light,
+    .button_light {
+        width: 100%;
+    }
+}
+

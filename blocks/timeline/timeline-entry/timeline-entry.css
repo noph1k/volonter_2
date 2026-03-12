@@ -1,0 +1,58 @@
+@import url('./__arrow/timeline-entry__arrow.css');
+@import url('./__date/timeline-entry__date.css');
+@import url('./__format/timeline-entry__format.css');
+@import url('./__marker/timeline-entry__marker.css');
+@import url('./__meta/timeline-entry__meta.css');
+@import url('./__topline/timeline-entry__topline.css');
+@import url('./_animals/timeline-entry_animals.css');
+@import url('./_default/timeline-entry_default.css');
+@import url('./_eco/timeline-entry_eco.css');
+@import url('./_elderly/timeline-entry_elderly.css');
+@import url('./_kids/timeline-entry_kids.css');
+@import url('./_urban/timeline-entry_urban.css');
+
+.timeline-entry h3 {
+margin: 14px 0 10px;
+    font-size: 22px;
+    line-height: 1.2;
+    color: #151c49;
+}
+
+.timeline-entry p {
+margin: 0;
+    color: #6d7288;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.timeline-entry {
+position: relative;
+    display: grid;
+    grid-template-columns: 18px 1fr auto;
+    gap: 16px;
+    align-items: start;
+    padding: 24px;
+    border-radius: 26px;
+    border: 1px solid rgba(20, 27, 72, 0.08);
+    background: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-entry:hover {
+transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(23, 27, 58, 0.08);
+    outline: none;
+}
+
+.timeline-entry:focus-visible {
+transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(23, 27, 58, 0.08);
+    outline: none;
+}
+
+@media (max-width: 640px) {
+.timeline-entry {
+grid-template-columns: 18px 1fr;
+}
+}

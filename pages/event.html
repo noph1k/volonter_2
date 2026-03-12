@@ -6,14 +6,14 @@
     <meta name="description" content="Подробная карточка волонтёрского проекта." />
     <meta name="author" content="Сергей Тумачек" />
     <title>Проект</title>
-    <link rel="stylesheet" href="../blocks/__blocks.css" />
+    <link rel="stylesheet" href="event.css" />
 </head>
 <body class="page-shell page-event-detail">
     <header class="header">
         <div class="header__container home-shell">
             <a class="header__brand" href="../index.html" aria-label="ВолонтёрГород — главная"><span class="header__brand-icon">♥</span><span class="header__brand-text"><strong>ВолонтёрГород</strong><small>Социальные инициативы</small></span></a>
-            <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn"><span class="header__burger-line header__burger-line--first"></span><span class="header__burger-line header__burger-line--second"></span><span class="header__burger-line header__burger-line--third"></span></button>
-            <nav class="nav" id="mainNav" aria-label="Основная навигация"><ul class="nav__list"><li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li><li class="nav__item"><a href="events.html" class="nav__link nav__link--active">Проекты</a></li><li class="nav__item"><a href="timeline.html" class="nav__link">Мероприятия</a></li><li class="nav__item"><a href="stories.html" class="nav__link">Истории</a></li><li class="nav__item"><a href="education.html" class="nav__link">О портале</a></li></ul></nav>
+            <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn"><span class="header__burger-line header__burger-line_first"></span><span class="header__burger-line header__burger-line_second"></span><span class="header__burger-line header__burger-line_third"></span></button>
+            <nav class="nav" id="mainNav" aria-label="Основная навигация"><ul class="nav__list"><li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li><li class="nav__item"><a href="events.html" class="nav__link nav__link_active">Проекты</a></li><li class="nav__item"><a href="timeline.html" class="nav__link">Мероприятия</a></li><li class="nav__item"><a href="map.html" class="nav__link">Карта</a></li><li class="nav__item"><a href="stories.html" class="nav__link">Истории</a></li><li class="nav__item"><a href="education.html" class="nav__link">О портале</a></li></ul></nav>
             <a class="header__cta" href="volunteering.html">Стать волонтёром</a>
         </div>
     </header>
@@ -26,7 +26,7 @@
 
     <div id="detailRegistrationModal" class="portal-modal" aria-hidden="true" role="dialog" aria-labelledby="detailRegistrationTitle">
         <div class="portal-modal__overlay" data-detail-registration-close></div>
-        <div class="portal-modal__dialog portal-modal__dialog--wide">
+        <div class="portal-modal__dialog portal-modal__dialog_wide">
             <button class="portal-modal__close" type="button" aria-label="Закрыть" data-detail-registration-close>&times;</button>
             <p class="portal-modal__eyebrow">Форма регистрации</p>
             <h3 id="detailRegistrationTitle" class="portal-modal__title">Запись на проект</h3>
@@ -52,14 +52,14 @@
                         <input type="email" name="email" required autocomplete="email">
                     </label>
 
-                    <label class="field-group field-group--full">
+                    <label class="field-group field-group_full">
                         <span>Комментарий</span>
                         <input type="text" name="comment" placeholder="Опыт, удобные дни или важные детали">
                     </label>
                 </div>
                 <div class="form-actions">
                     <p id="detailRegistrationMessage" class="form-message" aria-live="polite"></p>
-                    <button class="button button--primary" type="submit">Отправить заявку</button>
+                    <button class="button button_primary" type="submit">Отправить заявку</button>
                 </div>
             </form>
         </div>
@@ -72,18 +72,23 @@
             <p class="portal-modal__eyebrow">Заявка отправлена</p>
             <h3 id="detailRegistrationSuccessTitle" class="portal-modal__title">Вы записаны на проект</h3>
             <p class="portal-modal__description">Анкета сохранена локально. Координатор проекта свяжется с вами по указанным контактам.</p>
-            <button class="button button--primary" type="button" data-detail-success-close>Понятно</button>
+            <button class="button button_primary" type="button" data-detail-success-close>Понятно</button>
         </div>
     </div>
 
-    <footer class="footer footer--portal"><div class="footer__inner home-shell"><div class="footer__grid"><div class="footer__brand-block"><a class="footer__brand" href="../index.html"><span class="footer__brand-icon">♥</span><span>ВолонтёрГород</span></a><p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять мир к лучшему вместе.</p><div class="footer__socials" aria-label="Социальные сети"><a href="#" aria-label="Instagram">◉</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Telegram">✈</a></div></div><div><h3 class="footer__heading">Навигация</h3><a class="footer__link" href="../index.html">Главная</a><a class="footer__link" href="events.html">Проекты</a><a class="footer__link" href="timeline.html">Мероприятия</a><a class="footer__link" href="stories.html">Истории</a><a class="footer__link" href="education.html">О портале</a><a class="footer__link" href="volunteering.html">Стать волонтёром</a></div><div><h3 class="footer__heading">Направления</h3><a class="footer__link" href="events.html">Помощь пожилым</a><a class="footer__link" href="events.html">Экология</a><a class="footer__link" href="events.html">Образование</a><a class="footer__link" href="events.html">Животные</a><a class="footer__link" href="events.html">Городская среда</a></div><div><h3 class="footer__heading">Контакты</h3><p class="footer__contact">ул. Ленина, 42, г. Тирасполь</p><p class="footer__contact">+373 (22) 123-45</p><p class="footer__contact">info@volonter-gorod.ru</p></div></div><div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p><p>&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1095;&#1080;&#1082;: &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1058;&#1091;&#1084;&#1072;&#1095;&#1077;&#1082;</p></div></div></footer>
+    <footer class="footer footer_portal"><div class="footer__inner home-shell"><div class="footer__grid"><div class="footer__brand-block"><a class="footer__brand" href="../index.html"><span class="footer__brand-icon">♥</span><span>ВолонтёрГород</span></a><p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять мир к лучшему вместе.</p><div class="footer__socials" aria-label="Социальные сети"><a class="footer__social-link" href="#" aria-label="Instagram">◉</a><a class="footer__social-link" href="#" aria-label="Facebook">f</a><a class="footer__social-link" href="#" aria-label="Telegram">✈</a></div></div><div><h3 class="footer__heading">Навигация</h3><a class="footer__link" href="../index.html">Главная</a><a class="footer__link" href="events.html">Проекты</a><a class="footer__link" href="timeline.html">Мероприятия</a><a class="footer__link" href="stories.html">Истории</a><a class="footer__link" href="education.html">О портале</a><a class="footer__link" href="volunteering.html">Стать волонтёром</a></div><div><h3 class="footer__heading">Направления</h3><a class="footer__link" href="events.html">Помощь пожилым</a><a class="footer__link" href="events.html">Экология</a><a class="footer__link" href="events.html">Образование</a><a class="footer__link" href="events.html">Животные</a><a class="footer__link" href="events.html">Городская среда</a></div><div><h3 class="footer__heading">Контакты</h3><p class="footer__contact">ул. Ленина, 42, г. Тирасполь</p><p class="footer__contact">+373 (22) 123-45</p><p class="footer__contact">info@volonter-gorod.ru</p></div></div><div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p></div></div></footer>
 
-    <script src="../scripts/data.js"></script>
-    <script src="../scripts/common.js"></script>
-    <script src="../blocks/header/header.js"></script>
-    <script src="../scripts/event.js"></script>
+    <script src="../scripts/data.js?v=20260312"></script>
+    <script src="../scripts/common.js?v=20260312"></script>
+    <script src="../blocks/layout/header/header.js?v=20260312"></script>
+    <script src="../scripts/event.js?v=20260312"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 

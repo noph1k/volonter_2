@@ -1,0 +1,46 @@
+@import url('./__container/header__container.css');
+@import url('./__brand/header__brand.css');
+@import url('./__brand-icon/header__brand-icon.css');
+@import url('./__brand-text/header__brand-text.css');
+@import url('./__burger/header__burger.css');
+@import url('./__burger/_active/header__burger_active.css');
+@import url('./__burger-line/header__burger-line.css');
+@import url('./__burger-line/_first/header__burger-line_first.css');
+@import url('./__burger-line/_second/header__burger-line_second.css');
+@import url('./__burger-line/_third/header__burger-line_third.css');
+@import url('./__cta/header__cta.css');
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid rgba(14, 20, 46, 0.06);
+    box-shadow: 0 8px 28px rgba(20, 24, 55, 0.08);
+    backdrop-filter: blur(18px);
+}
+
+@media (max-width: 900px) {
+    .header__container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 12px 0;
+    }
+
+    .header__cta {
+        order: 1;
+        min-width: 0;
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width: 640px) {
+    .header__brand-text small {
+        display: none;
+    }
+
+    .header__cta {
+        width: 100%;
+        justify-content: center;
+    }
+}

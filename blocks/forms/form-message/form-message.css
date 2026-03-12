@@ -1,0 +1,10 @@
+@import url('./_error/form-message_error.css');
+@import url('./_pending/form-message_pending.css');
+@import url('./_success/form-message_success.css');
+
+.form-message {
+margin: 0;
+    min-height: 22px;
+    font-size: 14px;
+    font-weight: 700;
+}

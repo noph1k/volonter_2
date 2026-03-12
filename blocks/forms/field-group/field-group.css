@@ -1,0 +1,74 @@
+@import url('./__error/field-group__error.css');
+@import url('./_full/field-group_full.css');
+
+.field-group {
+display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field-group span {
+font-size: 15px;
+    font-weight: 700;
+    color: #161d4a;
+}
+
+.field-group input {
+width: 100%;
+    min-height: 54px;
+    border-radius: 16px;
+    border: 1px solid rgba(20, 27, 72, 0.12);
+    background: #fbfbfd;
+    padding: 0 16px;
+    font-size: 15px;
+    color: #1f2340;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.field-group select {
+width: 100%;
+    min-height: 54px;
+    border-radius: 16px;
+    border: 1px solid rgba(20, 27, 72, 0.12);
+    background: #fbfbfd;
+    padding: 0 16px;
+    font-size: 15px;
+    color: #1f2340;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.field-group input:focus {
+outline: none;
+    border-color: #ff7a00;
+    box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.12);
+    background: #fff;
+}
+
+.field-group select:focus {
+outline: none;
+    border-color: #ff7a00;
+    box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.12);
+    background: #fff;
+}
+
+\.field-group_invalid input {
+border-color: #de4b3f;
+    box-shadow: 0 0 0 4px rgba(222, 75, 63, 0.1);
+}
+
+\.field-group_invalid select {
+border-color: #de4b3f;
+    box-shadow: 0 0 0 4px rgba(222, 75, 63, 0.1);
+}
+
+.field-group {
+display: grid;
+    gap: 10px;
+}
+
+.field-group span {
+color: #36405c;
+    font-size: 14px;
+    font-weight: 700;
+}
+

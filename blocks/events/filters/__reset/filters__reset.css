@@ -1,0 +1,30 @@
+.filters__reset {
+font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-dark);
+    background-color: transparent;
+    border: 2px solid var(--color-dark);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    align-self: flex-start;
+    margin-top: var(--spacing-sm);
+}
+
+.filters__reset:hover {
+background-color: var(--color-dark);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.2);
+}
+
+@media (max-width: 480px) {
+.filters__reset {
+font-size: 11px;
+        padding: 8px 16px;
+}
+}

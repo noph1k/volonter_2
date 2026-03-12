@@ -1,0 +1,24 @@
+.dashboard-card_accent {
+background: linear-gradient(135deg, #15183d 0%, #252a66 58%, #ff7a00 160%);
+    color: #fff;
+}
+
+.dashboard-card_accent .dashboard-card__eyebrow {
+color: #ffbf74;
+}
+
+.dashboard-card_accent h2 {
+color: #fff;
+}
+
+.dashboard-card_accent p {
+color: #fff;
+}
+
+.dashboard-card_accent span {
+color: #fff;
+}
+
+.dashboard-card_accent strong {
+color: #fff;
+}

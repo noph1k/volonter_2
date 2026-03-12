@@ -1,0 +1,20 @@
+@import url('./__inner/footer__inner.css');
+@import url('./__grid/footer__grid.css');
+@import url('./__brand/footer__brand.css');
+@import url('./__brand-icon/footer__brand-icon.css');
+@import url('./__text/footer__text.css');
+@import url('./__contact/footer__contact.css');
+@import url('./__link/footer__link.css');
+@import url('./__heading/footer__heading.css');
+@import url('./__socials/footer__socials.css');
+@import url('./__social-link/footer__social-link.css');
+@import url('./__bottom/footer__bottom.css');
+@import url('./_portal/footer_portal.css');
+
+.footer {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    background: #15183d;
+    text-align: left;
+}

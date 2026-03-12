@@ -1,0 +1,57 @@
+@import url('./__core/map-marker__core.css');
+@import url('./__count/map-marker__count.css');
+@import url('./__pulse/map-marker__pulse.css');
+@import url('./__ring/map-marker__ring.css');
+@import url('./_active/map-marker_active.css');
+
+.map-marker {
+cursor: pointer;
+    outline: none;
+}
+
+.map-marker:hover .map-marker__ring {
+transform: scale(1.08);
+}
+
+.map-marker:focus-visible .map-marker__ring {
+transform: scale(1.08);
+}
+
+.map-marker:hover .map-marker__core {
+transform: scale(1.12);
+}
+
+.map-marker:focus-visible .map-marker__core {
+transform: scale(1.12);
+}
+
+.map-marker {
+cursor: pointer;
+    outline: none;
+}
+
+.map-marker:hover .map-marker__pulse {
+transform: scale(1.08);
+    opacity: 1;
+}
+
+.map-marker:focus-visible .map-marker__pulse {
+transform: scale(1.08);
+    opacity: 1;
+}
+
+.map-marker:hover .map-marker__ring {
+transform: scale(1.08);
+}
+
+.map-marker:focus-visible .map-marker__ring {
+transform: scale(1.08);
+}
+
+.map-marker:hover .map-marker__core {
+transform: scale(1.12);
+}
+
+.map-marker:focus-visible .map-marker__core {
+transform: scale(1.12);
+}

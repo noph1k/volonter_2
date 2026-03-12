@@ -1,0 +1,8 @@
+.story-card_rich {
+display: grid;
+    overflow: hidden;
+    border-radius: 30px;
+    border: 1px solid rgba(20, 27, 72, 0.08);
+    background: linear-gradient(180deg, #ffffff 0%, #fff9f4 100%);
+    box-shadow: 0 20px 44px rgba(22, 27, 60, 0.06);
+}

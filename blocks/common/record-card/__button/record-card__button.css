@@ -1,0 +1,10 @@
+.record-card__button {
+min-width: 162px;
+}
+
+@media (max-width: 860px) {
+.record-card__button {
+min-width: 0;
+        width: 100%;
+}
+}

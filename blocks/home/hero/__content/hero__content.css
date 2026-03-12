@@ -1,0 +1,11 @@
+.hero__content {
+position: relative;
+    z-index: 1;
+    padding: 120px 0 56px;
+}
+
+@media (max-width: 900px) {
+.hero__content {
+padding-top: 92px;
+}
+}

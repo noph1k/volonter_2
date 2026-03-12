@@ -1,0 +1,16 @@
+.modal-card__media {
+    min-height: 0;
+}
+
+.modal-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .modal-card__media {
+        min-height: 220px;
+    }
+}

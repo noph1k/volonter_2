@@ -1,0 +1,6 @@
+.portal-modal__overlay {
+position: absolute;
+    inset: 0;
+    background: rgba(15, 18, 40, 0.62);
+    backdrop-filter: blur(4px);
+}

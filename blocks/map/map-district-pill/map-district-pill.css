@@ -1,0 +1,18 @@
+@import url('./_active/map-district-pill_active.css');
+
+.map-district-pill {
+display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #f4f6fb;
+    color: #46516d;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.map-district-pill {
+border: 1px solid rgba(20, 27, 72, 0.08);
+    cursor: pointer;
+}

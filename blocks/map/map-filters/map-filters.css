@@ -1,0 +1,10 @@
+@import url('./__buttons/map-filters__buttons.css');
+@import url('./__group/map-filters__group.css');
+@import url('./__label/map-filters__label.css');
+
+.map-filters {
+background-color: var(--color-gray-light);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-lg);
+}

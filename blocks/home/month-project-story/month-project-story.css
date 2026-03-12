@@ -1,0 +1,29 @@
+@import url('./__avatar/month-project-story__avatar.css');
+
+.month-project-story {
+display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 16px;
+    padding: 18px;
+    border-radius: 24px;
+    background: rgba(20, 27, 72, 0.04);
+}
+
+.month-project-story strong {
+margin: 0;
+}
+
+.month-project-story p {
+margin: 0;
+}
+
+.month-project-story strong {
+color: #141c48;
+    font-size: 16px;
+}
+
+.month-project-story p {
+margin-top: 8px;
+    color: #58627c;
+    line-height: 1.7;
+}

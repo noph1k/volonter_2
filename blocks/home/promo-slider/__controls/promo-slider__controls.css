@@ -1,0 +1,14 @@
+.promo-slider__controls {
+margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+@media (max-width: 900px) {
+.promo-slider__controls {
+flex-wrap: wrap;
+        justify-content: center;
+}
+}

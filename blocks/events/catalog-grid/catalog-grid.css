@@ -1,0 +1,22 @@
+@import url('./_fade-in/catalog-grid_fade-in.css');
+@import url('./_fade-out/catalog-grid_fade-out.css');
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    transition: opacity var(--transition-base);
+}
+
+@media (max-width: 768px) {
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+}

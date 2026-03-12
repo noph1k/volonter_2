@@ -1,0 +1,10 @@
+.event-detail__row-text {
+margin-bottom: var(--spacing-xs);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.event-detail__row-text:last-child {
+margin-bottom: 0;
+}

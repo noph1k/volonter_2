@@ -1,0 +1,14 @@
+@import url('./__heading/event-detail__heading.css');
+@import url('./__image/event-detail__image.css');
+@import url('./__info/event-detail__info.css');
+@import url('./__meta/event-detail__meta.css');
+@import url('./__row-text/event-detail__row-text.css');
+@import url('./__row/event-detail__row.css');
+@import url('./__schedule/event-detail__schedule.css');
+@import url('./__section/event-detail__section.css');
+@import url('./__text/event-detail__text.css');
+
+.event-detail {
+max-width: 900px;
+    margin: 0 auto;
+}

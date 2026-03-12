@@ -1,0 +1,10 @@
+.nav__item {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .nav__item {
+        width: 100%;
+    }
+}
