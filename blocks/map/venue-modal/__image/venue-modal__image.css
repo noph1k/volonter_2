@@ -1,0 +1,5 @@
+.venue-modal__image {
+margin-bottom: var(--spacing-lg);
+    border-radius: 8px;
+    overflow: hidden;
+}

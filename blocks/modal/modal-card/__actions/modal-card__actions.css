@@ -1,0 +1,12 @@
+.modal-card__actions {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 640px) {
+.modal-card__actions {
+display: grid;
+        grid-template-columns: 1fr;
+}
+}

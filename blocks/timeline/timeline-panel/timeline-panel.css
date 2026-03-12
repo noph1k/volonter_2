@@ -1,0 +1,6 @@
+@import url('./_active/timeline-panel_active.css');
+
+.timeline-panel {
+display: none;
+    margin-top: 22px;
+}

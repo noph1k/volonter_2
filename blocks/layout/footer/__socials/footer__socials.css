@@ -1,0 +1,5 @@
+.footer__socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}

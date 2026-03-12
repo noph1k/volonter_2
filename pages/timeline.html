@@ -6,7 +6,7 @@
     <meta name="description" content="Таймлайн предстоящих волонтёрских мероприятий с фильтрами, диаграммой и подробностями." />
     <meta name="author" content="Сергей Тумачек" />
     <title>Таймлайн мероприятий</title>
-    <link rel="stylesheet" href="../blocks/__blocks.css" />
+    <link rel="stylesheet" href="timeline.css" />
 
     <script type="application/ld+json">
     {
@@ -47,16 +47,16 @@
             </a>
 
             <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn">
-                <span class="header__burger-line header__burger-line--first"></span>
-                <span class="header__burger-line header__burger-line--second"></span>
-                <span class="header__burger-line header__burger-line--third"></span>
+                <span class="header__burger-line header__burger-line_first"></span>
+                <span class="header__burger-line header__burger-line_second"></span>
+                <span class="header__burger-line header__burger-line_third"></span>
             </button>
 
             <nav class="nav" id="mainNav" aria-label="Основная навигация">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
                     <li class="nav__item"><a href="events.html" class="nav__link">Проекты</a></li>
-                    <li class="nav__item"><a href="timeline.html" class="nav__link nav__link--active">Мероприятия</a></li>
+                    <li class="nav__item"><a href="timeline.html" class="nav__link nav__link_active">Мероприятия</a></li><li class="nav__item"><a href="map.html" class="nav__link">Карта</a></li>
                     <li class="nav__item"><a href="stories.html" class="nav__link">Истории</a></li><li class="nav__item"><a href="education.html" class="nav__link">О портале</a></li>
                 </ul>
             </nav>
@@ -66,7 +66,7 @@
     </header>
 
     <main class="page-main">
-        <section class="page-hero page-hero--timeline">
+        <section class="page-hero page-hero_timeline">
             <div class="page-hero__overlay"></div>
             <div class="page-hero__content home-shell">
                 <p class="page-hero__chip">Календарь добрых дел</p>
@@ -75,14 +75,14 @@
             </div>
         </section>
 
-        <section class="page-section page-section--pullup">
+        <section class="page-section page-section_pullup">
             <div class="home-shell timeline-overview">
-                <article class="dashboard-card dashboard-card--accent">
+                <article class="dashboard-card dashboard-card_accent">
                     <span class="dashboard-card__eyebrow">Режим</span>
                     <h2>Ближайшие события города</h2>
                     <p>Лента показывает только предстоящие мероприятия, отсортированные по времени: самые близкие события всегда наверху.</p>
                 </article>
-                <article class="dashboard-card dashboard-card--soft">
+                <article class="dashboard-card dashboard-card_soft">
                     <span class="dashboard-card__eyebrow">Статистика</span>
                     <h2 id="timelineCount">Найдено мероприятий: 0</h2>
                     <p id="timelineHint">Выбери направление или формат участия, чтобы быстро найти подходящий вариант.</p>
@@ -90,16 +90,16 @@
             </div>
         </section>
 
-        <section class="page-section page-section--compact">
+        <section class="page-section page-section_compact">
             <div class="home-shell timeline-layout">
-                <section class="surface-card surface-card--wide">
-                    <div class="surface-card__head surface-card__head--row timeline-toolbar">
+                <section class="surface-card surface-card_wide">
+                    <div class="surface-card__head surface-card__head_row timeline-toolbar">
                         <div>
                             <p class="surface-card__kicker">Фильтры</p>
                             <h2>Управление лентой</h2>
                         </div>
                         <div class="timeline-switch" role="tablist" aria-label="Режим отображения таймлайна">
-                            <button class="timeline-switch__btn timeline-switch__btn--active" data-timeline-mode="nearest" type="button">Ближайшие</button>
+                            <button class="timeline-switch__btn timeline-switch__btn_active" data-timeline-mode="nearest" type="button">Ближайшие</button>
                             <button class="timeline-switch__btn" data-timeline-mode="months" type="button">По месяцам</button>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                         </label>
                     </div>
 
-                    <div class="timeline-panel timeline-panel--active" id="timelineNearestPanel">
+                    <div class="timeline-panel timeline-panel_active" id="timelineNearestPanel">
                         <div id="timelineList" class="timeline-list"></div>
                     </div>
 
@@ -130,17 +130,17 @@
                     </div>
                 </section>
 
-                <aside class="surface-card surface-card--sidebar">
+                <aside class="surface-card surface-card_sidebar">
                     <div class="surface-card__head">
                         <p class="surface-card__kicker">Легенда</p>
                         <h2>Цвета направлений</h2>
                     </div>
                     <div class="legend-list">
-                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot--eco"></i> Экология</span>
-                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot--kids"></i> Образование и дети</span>
-                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot--elderly"></i> Помощь пожилым</span>
-                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot--animals"></i> Животные</span>
-                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot--urban"></i> Городская среда</span>
+                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot_eco"></i> Экология</span>
+                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot_kids"></i> Образование и дети</span>
+                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot_elderly"></i> Помощь пожилым</span>
+                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot_animals"></i> Животные</span>
+                        <span class="legend-list__item"><i class="legend-list__dot legend-list__dot_urban"></i> Городская среда</span>
                     </div>
                 </aside>
             </div>
@@ -149,13 +149,13 @@
 
     <div id="timelineModal" class="portal-modal" aria-hidden="true" role="dialog" aria-labelledby="timelineModalTitle">
         <div class="portal-modal__overlay" data-timeline-modal-close></div>
-        <div class="portal-modal__dialog portal-modal__dialog--wide">
+        <div class="portal-modal__dialog portal-modal__dialog_wide">
             <button class="portal-modal__close" type="button" aria-label="Закрыть" data-timeline-modal-close>×</button>
             <div id="timelineModalBody"></div>
         </div>
     </div>
 
-    <footer class="footer footer--portal">
+    <footer class="footer footer_portal">
         <div class="footer__inner home-shell">
             <div class="footer__grid">
                 <div class="footer__brand-block">
@@ -165,9 +165,9 @@
                     </a>
                     <p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять мир к лучшему вместе.</p>
                     <div class="footer__socials" aria-label="Социальные сети">
-                        <a href="#" aria-label="Instagram">◉</a>
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="Telegram">✈</a>
+                        <a class="footer__social-link" href="#" aria-label="Instagram">◉</a>
+                        <a class="footer__social-link" href="#" aria-label="Facebook">f</a>
+                        <a class="footer__social-link" href="#" aria-label="Telegram">✈</a>
                     </div>
                 </div>
 
@@ -198,18 +198,23 @@
                 </div>
             </div>
 
-            <div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p><p>&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1095;&#1080;&#1082;: &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1058;&#1091;&#1084;&#1072;&#1095;&#1077;&#1082;</p></div>
+            <div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p></div>
         </div>
     </footer>
 
     <script src="../scripts/polyfills.js"></script>
-    <script src="../scripts/data.js"></script>
-    <script src="../scripts/common.js"></script>
-    <script src="../blocks/header/header.js"></script>
+    <script src="../scripts/data.js?v=20260312"></script>
+    <script src="../scripts/common.js?v=20260312"></script>
+    <script src="../blocks/layout/header/header.js?v=20260312"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script src="../scripts/timeline.js"></script>
+    <script src="../scripts/timeline.js?v=20260312"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 

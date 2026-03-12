@@ -1,0 +1,15 @@
+@import url('./__close/portal-modal__close.css');
+@import url('./__description/portal-modal__description.css');
+@import url('./__dialog/_wide/portal-modal__dialog_wide.css');
+@import url('./__dialog/portal-modal__dialog.css');
+@import url('./__eyebrow/portal-modal__eyebrow.css');
+@import url('./__overlay/portal-modal__overlay.css');
+@import url('./__title/portal-modal__title.css');
+@import url('./_open/portal-modal_open.css');
+
+.portal-modal {
+position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 1300;
+}

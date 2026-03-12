@@ -1,0 +1,15 @@
+.map-marker__pulse {
+opacity: 0.7;
+}
+
+.map-marker__pulse {
+transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map-marker__pulse {
+transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.map-marker__pulse {
+opacity: 0.8;
+}

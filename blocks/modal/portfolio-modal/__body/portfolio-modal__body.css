@@ -1,0 +1,15 @@
+.portfolio-modal__body {
+padding: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+.portfolio-modal__body {
+padding: var(--spacing-lg);
+}
+}
+
+@media (max-width: 480px) {
+.portfolio-modal__body {
+padding: var(--spacing-md);
+}
+}

@@ -1,0 +1,6 @@
+.city-map__route {
+fill: none;
+    stroke: rgba(24, 31, 70, 0.18);
+    stroke-width: 10;
+    stroke-linecap: round;
+}

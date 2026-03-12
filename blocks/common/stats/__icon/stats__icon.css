@@ -1,0 +1,10 @@
+.stats__icon {
+width: 52px;
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-size: 24px;
+    font-weight: 700;
+}

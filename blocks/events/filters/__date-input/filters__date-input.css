@@ -1,0 +1,29 @@
+.filters__date-input {
+font-family: var(--font-body);
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 2px solid var(--color-gray);
+    border-radius: 8px;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    flex: 1;
+    min-width: 120px;
+}
+
+.filters__date-input:hover {
+border-color: var(--color-accent);
+}
+
+.filters__date-input:focus {
+outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+}
+
+@media (max-width: 768px) {
+.filters__date-input {
+width: 100%;
+}
+}

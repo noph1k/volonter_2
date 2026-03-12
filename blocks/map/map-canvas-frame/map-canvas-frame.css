@@ -1,0 +1,43 @@
+.map-canvas-frame {
+position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    border: 1px solid rgba(20, 27, 72, 0.08);
+    background: linear-gradient(180deg, #fbfcff 0%, #eef3fb 100%);
+    min-height: 620px;
+}
+
+@media (max-width: 860px) {
+.map-canvas-frame {
+min-height: 420px;
+}
+}
+
+@media (max-width: 640px) {
+.map-canvas-frame {
+min-height: 320px;
+        border-radius: 24px;
+}
+}
+
+.map-canvas-frame {
+position: relative;
+    min-height: 640px;
+    overflow: hidden;
+    border-radius: 32px;
+    border: 1px solid rgba(20, 27, 72, 0.08);
+    background: linear-gradient(180deg, #f6f8fb 0%, #edf2f7 100%);
+}
+
+@media (max-width: 900px) {
+.map-canvas-frame {
+min-height: 520px;
+}
+}
+
+@media (max-width: 640px) {
+.map-canvas-frame {
+min-height: 380px;
+        border-radius: 24px;
+}
+}

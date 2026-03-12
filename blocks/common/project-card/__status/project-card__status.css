@@ -1,0 +1,11 @@
+.project-card__status {
+position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.94);
+    color: #ef6b00;
+    font-size: 14px;
+    font-weight: 700;
+}

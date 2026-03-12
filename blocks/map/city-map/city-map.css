@@ -1,0 +1,32 @@
+@import url('./__district-label/city-map__district-label.css');
+@import url('./__district/_active/city-map__district_active.css');
+@import url('./__district/_center/city-map__district_center.css');
+@import url('./__district/_east/city-map__district_east.css');
+@import url('./__district/_empty/city-map__district_empty.css');
+@import url('./__district/_muted/city-map__district_muted.css');
+@import url('./__district/_north/city-map__district_north.css');
+@import url('./__district/_riverside/city-map__district_riverside.css');
+@import url('./__district/_south/city-map__district_south.css');
+@import url('./__district/_tech/city-map__district_tech.css');
+@import url('./__district/_west/city-map__district_west.css');
+@import url('./__district/city-map__district.css');
+@import url('./__grid/city-map__grid.css');
+@import url('./__river/city-map__river.css');
+@import url('./__roads/city-map__roads.css');
+@import url('./__route/_soft/city-map__route_soft.css');
+@import url('./__route/city-map__route.css');
+@import url('./__subtitle/city-map__subtitle.css');
+@import url('./__title/city-map__title.css');
+
+.city-map {
+width: 100%;
+    height: auto;
+    transform-origin: center center;
+    transition: transform 0.25s ease;
+}
+
+.city-map {
+width: 100%;
+    height: 100%;
+    display: block;
+}

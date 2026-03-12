@@ -1,0 +1,3 @@
+.portal-modal__dialog_wide {
+width: min(760px, calc(100% - 32px));
+}

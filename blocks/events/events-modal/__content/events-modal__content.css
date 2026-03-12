@@ -1,0 +1,9 @@
+.events-modal__content {
+background-color: var(--color-white);
+    border-radius: 8px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,36 @@
+@import url('./_active/filter-btn_active.css');
+
+.filter-btn {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-gray);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(230, 57, 70, 0.2);
+}
+
+@media (max-width: 768px) {
+    .filter-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-btn {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}

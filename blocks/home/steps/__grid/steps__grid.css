@@ -1,0 +1,12 @@
+.steps__grid {
+display: grid;
+    grid-template-columns: 1fr 60px 1fr 60px 1fr;
+    align-items: start;
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+.steps__grid {
+grid-template-columns: 1fr;
+}
+}

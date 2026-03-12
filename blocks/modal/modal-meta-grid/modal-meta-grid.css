@@ -1,0 +1,22 @@
+@import url('./_requirements/modal-meta-grid_requirements.css');
+
+.modal-meta-grid {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.modal-meta-grid span {
+color: #7a7f93;
+    font-size: 14px;
+}
+
+.modal-meta-grid {
+margin-top: 18px;
+}
+
+.modal-meta-grid span {
+padding: 10px 12px;
+    border-radius: 14px;
+    background: #f5f7fb;
+}

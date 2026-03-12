@@ -1,0 +1,35 @@
+@import url('./__actions-row/project-card__actions-row.css');
+@import url('./__body/project-card__body.css');
+@import url('./__image-wrap/project-card__image-wrap.css');
+@import url('./__image/project-card__image.css');
+@import url('./__meta/_bottom/project-card__meta_bottom.css');
+@import url('./__meta/project-card__meta.css');
+@import url('./__quick/project-card__quick.css');
+@import url('./__status/_green/project-card__status_green.css');
+@import url('./__status/project-card__status.css');
+@import url('./__tag/_orange/project-card__tag_orange.css');
+@import url('./__tag/_teal/project-card__tag_teal.css');
+@import url('./__tag/_violet/project-card__tag_violet.css');
+@import url('./__tag/project-card__tag.css');
+@import url('./__user-statuses/project-card__user-statuses.css');
+
+.project-card {
+overflow: hidden;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 14px 30px rgba(31, 35, 64, 0.08);
+}
+
+.project-card h3 {
+margin: 16px 0 12px;
+    font-size: 22px;
+    line-height: 1.2;
+    color: #161d4a;
+}
+
+.project-card p {
+margin: 0;
+    color: #6d7288;
+    font-size: 16px;
+    line-height: 1.7;
+}

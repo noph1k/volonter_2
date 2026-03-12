@@ -1,0 +1,11 @@
+.city-map__roads .city-map__road {
+display: none;
+}
+
+.city-map__roads .city-map__road_major {
+display: none;
+}
+
+.city-map__roads .city-map__road_dashed {
+display: none;
+}

@@ -1,4 +1,4 @@
-﻿const storiesState = {
+const storiesState = {
     direction: 'all'
 };
 
@@ -24,7 +24,7 @@ function renderStoryFilters() {
 
     filtersRoot.innerHTML = buttons.map(button => `
         <button
-            class="stories-filter ${button.value === storiesState.direction ? 'stories-filter--active' : ''}"
+            class="stories-filter ${button.value === storiesState.direction ? 'stories-filter_active' : ''}"
             type="button"
             data-direction="${button.value}"
         >${button.label}</button>
@@ -45,7 +45,7 @@ function renderStories() {
     }
 
     root.innerHTML = filtered.map(story => `
-        <article class="story-card--rich">
+        <article class="story-card_rich">
             <img src="${story.photo}" alt="${story.author}" loading="lazy" class="story-card__image">
             <div class="story-card__body">
                 <div class="story-card__meta">
@@ -83,7 +83,7 @@ function renderGallery() {
 
 function initFilters() {
     document.addEventListener('click', event => {
-        const button = event.target.closest('[data-direction]');
+        const button = getClosestTarget(event.target, '[data-direction]');
         if (!button || !button.closest('#storiesFilters')) return;
         storiesState.direction = button.dataset.direction;
         renderStoryFilters();
@@ -105,7 +105,7 @@ function initForm() {
 
         if (!name || !text || !rating) {
             result.textContent = 'Заполни имя, текст отзыва и оценку.';
-            result.className = 'stories-form-result is-error';
+            result.className = 'stories-form-result stories-form-result_error';
             return;
         }
 
@@ -122,3 +122,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initFilters();
     initForm();
 });
+

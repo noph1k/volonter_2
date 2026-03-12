@@ -1,0 +1,7 @@
+.venue-info__text {
+font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-xs);
+}

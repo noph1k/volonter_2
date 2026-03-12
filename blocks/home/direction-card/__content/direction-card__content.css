@@ -1,0 +1,14 @@
+.direction-card__content strong {
+display: block;
+    font-family: var(--font-heading);
+    font-size: 17px;
+    line-height: 1.2;
+    color: #141b48;
+}
+
+.direction-card__content small {
+display: block;
+    margin-top: 6px;
+    color: #6d7488;
+    font-size: 14px;
+}

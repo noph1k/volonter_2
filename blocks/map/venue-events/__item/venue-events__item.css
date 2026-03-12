@@ -1,0 +1,11 @@
+.venue-events__item {
+margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background-color: var(--color-gray-light);
+    border-radius: 8px;
+    transition: background-color var(--transition-base);
+}
+
+.venue-events__item:hover {
+background-color: var(--color-gray);
+}

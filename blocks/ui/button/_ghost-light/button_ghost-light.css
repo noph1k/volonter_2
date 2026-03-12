@@ -1,0 +1,6 @@
+.button_ghost-light {
+    padding: 18px 30px;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.12);
+}

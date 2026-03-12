@@ -1,0 +1,29 @@
+@import url('./__actions/map-canvas-toolbar__actions.css');
+
+.map-canvas-toolbar {
+display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+.map-canvas-toolbar {
+align-items: flex-start;
+}
+}
+
+.map-canvas-toolbar {
+display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+.map-canvas-toolbar {
+flex-direction: column;
+        align-items: stretch;
+}
+}

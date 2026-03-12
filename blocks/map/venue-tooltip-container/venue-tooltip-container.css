@@ -1,0 +1,23 @@
+.venue-tooltip-container {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+
+    /* Tooltip is always rendered with direction: 'top'. */
+    margin-top: -10px;
+}
+
+.venue-tooltip-container:before {
+    border-top-color: var(--color-white);
+    border-width: 6px;
+    margin-left: -6px;
+    top: 100%;
+}
+
+.venue-tooltip-container:after {
+    border-top-color: var(--color-gray);
+    border-width: 7px;
+    margin-left: -7px;
+    top: calc(100% + 1px);
+}

@@ -1,0 +1,17 @@
+@import url('./__actions/join-banner__actions.css');
+@import url('./__inner/join-banner__inner.css');\n@import url('./__lead/join-banner__lead.css');
+@import url('./__spark/join-banner__spark.css');
+
+.join-banner {
+background: linear-gradient(180deg, #ff8600 0%, #ff7a00 100%);
+    padding: 92px 0 84px;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+.join-banner {
+padding-top: 72px;
+        padding-bottom: 72px;
+}
+}
+

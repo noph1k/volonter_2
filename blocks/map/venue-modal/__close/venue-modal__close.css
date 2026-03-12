@@ -1,0 +1,22 @@
+.venue-modal__close {
+position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: var(--color-gray);
+    color: var(--color-white);
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-base);
+    z-index: 1002;
+}
+
+.venue-modal__close:hover {
+background-color: var(--color-accent);
+}

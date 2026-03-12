@@ -1,0 +1,39 @@
+.modal-card__body {
+    min-height: 0;
+    overflow: auto;
+    display: grid;
+    align-content: start;
+    gap: 16px;
+    padding: 34px;
+}
+
+.modal-card__body h2 {
+    margin: 0;
+}
+
+.modal-card__body p {
+    margin: 0;
+}
+
+.modal-card__body h2 {
+    color: #141c48;
+    font-size: 36px;
+    line-height: 1.1;
+}
+
+.modal-card__body p {
+    color: #6d7488;
+    line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+    .modal-card__body {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 640px) {
+    .modal-card__body h2 {
+        font-size: 28px;
+    }
+}

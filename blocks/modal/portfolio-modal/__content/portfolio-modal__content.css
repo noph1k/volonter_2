@@ -1,0 +1,21 @@
+.portfolio-modal__content {
+position: relative;
+    background-color: var(--color-white);
+    border-radius: 24px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(44, 44, 44, 0.4);
+    transform: scale(0.95);
+    transition: transform var(--transition-base);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+.portfolio-modal__content {
+max-width: 100%;
+        border-radius: 16px;
+        max-height: 95vh;
+}
+}

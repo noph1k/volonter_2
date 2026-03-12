@@ -1,0 +1,7 @@
+.event-detail-card__hero {
+position: relative;
+    overflow: hidden;
+    border-radius: 32px;
+    min-height: 520px;
+    background: #15183d;
+}

@@ -1,0 +1,23 @@
+.modal-card__details {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.modal-card__details span {
+display: inline-flex;
+    align-items: center;
+    padding: 9px 12px;
+    border-radius: 999px;
+    background: #f4f6fb;
+    color: #55607b;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+.modal-card__details {
+display: grid;
+        grid-template-columns: 1fr;
+}
+}

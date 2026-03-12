@@ -1,0 +1,7 @@
+.portfolio-modal-work__image-wrapper {
+width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--color-gray-light);
+    box-shadow: 0 8px 24px rgba(44, 44, 44, 0.12);
+}

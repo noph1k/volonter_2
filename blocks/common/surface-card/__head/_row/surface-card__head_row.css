@@ -1,0 +1,13 @@
+.surface-card__head_row {
+display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+@media (max-width: 860px) {
+.surface-card__head_row {
+flex-direction: column;
+        align-items: flex-start;
+}
+}

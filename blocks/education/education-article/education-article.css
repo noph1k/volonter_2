@@ -1,0 +1,8 @@
+@import url('./__meta/education-article__meta.css');
+@import url('./__nav/education-article__nav.css');
+@import url('./__section/education-article__section.css');
+
+.education-article {
+display: grid;
+    gap: 24px;
+}

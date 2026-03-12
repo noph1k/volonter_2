@@ -1,0 +1,11 @@
+.map-wrapper {
+display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+.map-wrapper {
+flex-direction: column;
+}
+}

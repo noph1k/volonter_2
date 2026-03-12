@@ -1,0 +1,16 @@
+.modal-card__meta {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.modal-card__meta span {
+display: inline-flex;
+    align-items: center;
+    padding: 9px 12px;
+    border-radius: 999px;
+    background: #f4f6fb;
+    color: #55607b;
+    font-size: 13px;
+    font-weight: 700;
+}

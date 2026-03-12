@@ -1,0 +1,23 @@
+@import url('./__arrow/direction-card__arrow.css');
+@import url('./__content/direction-card__content.css');
+@import url('./_animals/direction-card_animals.css');
+@import url('./_eco/direction-card_eco.css');
+@import url('./_elderly/direction-card_elderly.css');
+@import url('./_kids/direction-card_kids.css');
+@import url('./_urban/direction-card_urban.css');
+
+.direction-card {
+--direction-color: #94a3b8;
+    display: grid;
+    grid-template-columns: 1fr 18px;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 24px;
+    min-height: 96px;
+    background: #fff;
+    border-radius: 20px;
+    border-left: 6px solid var(--direction-color);
+    box-shadow: 0 10px 24px rgba(30, 35, 70, 0.06);
+    text-decoration: none;
+    color: inherit;
+}

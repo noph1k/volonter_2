@@ -1,0 +1,10 @@
+.surface-card__head p {
+margin: 14px 0 0;
+    color: #70758a;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.surface-card__head {
+margin-bottom: 26px;
+}

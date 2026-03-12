@@ -1,0 +1,16 @@
+@import url('./__content/event-card-modal__content.css');
+@import url('./__image/event-card-modal__image.css');
+@import url('./__link/event-card-modal__link.css');
+@import url('./__title/event-card-modal__title.css');
+
+.event-card-modal {
+background-color: var(--color-white);
+    border: 1px solid var(--color-gray);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    overflow: hidden;
+}
+
+.event-card-modal:hover {
+transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(44, 44, 44, 0.12);
+}

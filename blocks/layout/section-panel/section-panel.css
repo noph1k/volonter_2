@@ -1,0 +1,13 @@
+@import url('./_compact/section-panel_compact.css');
+
+.section-panel {
+background: #f6f6f6;
+    padding: 92px 0;
+}
+
+@media (max-width: 640px) {
+.section-panel {
+padding-top: 72px;
+        padding-bottom: 72px;
+}
+}

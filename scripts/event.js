@@ -1,4 +1,4 @@
-﻿const PROJECT_REGISTRATION_FORMS_KEY = 'eventRegistrationForms';
+const PROJECT_REGISTRATION_FORMS_KEY = 'eventRegistrationForms';
 const VOLUNTEER_APPLICATIONS_KEY = 'volunteerApplications';
 
 let detailRegistrationCleanup = null;
@@ -80,7 +80,7 @@ function renderEventDetail() {
             <div class="event-detail-card__hero">
                 <img class="event-detail-card__image" src="${event.photos[0]}" alt="${event.title}">
                 <div class="event-detail-card__overlay">
-                    <div class="project-card__user-statuses">${buildStatusLabels(event.id).map(label => `<span class="project-status project-status--${label.key}">${label.text}</span>`).join('')}</div>
+                    <div class="project-card__user-statuses">${buildStatusLabels(event.id).map(label => `<span class="project-status project-status_${label.key}">${label.text}</span>`).join('')}</div>
                     <span class="record-card__pill">${direction.label}</span>
                     <h1>${event.title}</h1>
                     <p>${event.description}</p>
@@ -88,7 +88,7 @@ function renderEventDetail() {
             </div>
             <div class="event-detail-card__body">
                 <div class="event-detail-card__grid">
-                    <section class="surface-card surface-card--compact">
+                    <section class="surface-card surface-card_compact">
                         <div class="surface-card__head"><p class="surface-card__kicker">Основное</p><h2>О проекте</h2></div>
                         <div class="record-card__details">
                             <span><strong>Формат:</strong> ${event.type}</span>
@@ -99,7 +99,7 @@ function renderEventDetail() {
                             <span><strong>Координаты SVG:</strong> ${event.place.coordinates.svgX}, ${event.place.coordinates.svgY}</span>
                         </div>
                     </section>
-                    <section class="surface-card surface-card--compact">
+                    <section class="surface-card surface-card_compact">
                         <div class="surface-card__head"><p class="surface-card__kicker">Контакты</p><h2>Организатор</h2></div>
                         <div class="record-card__details">
                             <span><strong>Имя:</strong> ${event.organizer.name}</span>
@@ -107,7 +107,7 @@ function renderEventDetail() {
                             <span><strong>Email:</strong> ${event.organizer.email}</span>
                         </div>
                     </section>
-                    <section class="surface-card surface-card--compact">
+                    <section class="surface-card surface-card_compact">
                         <div class="surface-card__head"><p class="surface-card__kicker">Требования</p><h2>Что важно участнику</h2></div>
                         <div class="record-card__details">
                             <span><strong>Возраст:</strong> ${event.requirements.age}</span>
@@ -115,13 +115,13 @@ function renderEventDetail() {
                             <span><strong>Экипировка:</strong> ${event.requirements.equipment.join(', ')}</span>
                         </div>
                     </section>
-                    <section class="surface-card surface-card--compact">
+                    <section class="surface-card surface-card_compact">
                         <div class="surface-card__head"><p class="surface-card__kicker">Действия</p><h2>Управление статусом</h2></div>
-                        <div class="catalog-card__actions catalog-card__actions--stack">
-                            <button class="button ${state.favorite ? 'button--ghost-dark' : 'button--primary'} record-card__button" type="button" data-detail-favorite="${event.id}">${state.favorite ? 'Убрать из избранного' : 'Добавить в избранное'}</button>
-                            <button class="button button--primary record-card__button" type="button" data-detail-register-open="${event.id}">${state.registered ? 'Изменить заявку' : 'Записаться на проект'}</button>
-                            ${state.registered ? `<button class="button button--ghost-dark record-card__button" type="button" data-detail-unregister="${event.id}">Отменить запись</button>` : ''}
-                            <a class="button button--outline record-card__button" href="volunteering.html">Открыть кабинет</a>
+                        <div class="catalog-card__actions catalog-card__actions_stack">
+                            <button class="button ${state.favorite ? 'button_ghost-dark' : 'button_primary'} record-card__button" type="button" data-detail-favorite="${event.id}">${state.favorite ? 'Убрать из избранного' : 'Добавить в избранное'}</button>
+                            <button class="button button_primary record-card__button" type="button" data-detail-register-open="${event.id}">${state.registered ? 'Изменить заявку' : 'Записаться на проект'}</button>
+                            ${state.registered ? `<button class="button button_ghost-dark record-card__button" type="button" data-detail-unregister="${event.id}">Отменить запись</button>` : ''}
+                            <a class="button button_outline record-card__button" href="volunteering.html">Открыть кабинет</a>
                         </div>
                     </section>
                 </div>
@@ -154,7 +154,7 @@ function openDetailRegistrationModal(eventId) {
     message.textContent = '';
     message.className = 'form-message';
 
-    modal.classList.add('portal-modal--open');
+    modal.classList.add('portal-modal_open');
     modal.setAttribute('aria-hidden', 'false');
 
     if (detailRegistrationCleanup) detailRegistrationCleanup();
@@ -167,7 +167,7 @@ function openDetailRegistrationModal(eventId) {
 function closeDetailRegistrationModal() {
     const modal = document.getElementById('detailRegistrationModal');
     if (!modal) return;
-    modal.classList.remove('portal-modal--open');
+    modal.classList.remove('portal-modal_open');
     modal.setAttribute('aria-hidden', 'true');
 
     if (detailRegistrationCleanup) {
@@ -181,7 +181,7 @@ function openDetailSuccessModal() {
     const modal = document.getElementById('detailRegistrationSuccessModal');
     if (!modal) return;
 
-    modal.classList.add('portal-modal--open');
+    modal.classList.add('portal-modal_open');
     modal.setAttribute('aria-hidden', 'false');
 
     if (detailSuccessCleanup) detailSuccessCleanup();
@@ -195,7 +195,7 @@ function closeDetailSuccessModal() {
     const modal = document.getElementById('detailRegistrationSuccessModal');
     if (!modal) return;
 
-    modal.classList.remove('portal-modal--open');
+    modal.classList.remove('portal-modal_open');
     modal.setAttribute('aria-hidden', 'true');
 
     if (detailSuccessCleanup) {
@@ -220,19 +220,19 @@ function submitDetailRegistration(form) {
 
     if (!payload.firstName || !payload.lastName || !payload.phone || !payload.email) {
         message.textContent = 'Заполни имя, фамилию, телефон и email.';
-        message.className = 'form-message form-message--error';
+        message.className = 'form-message form-message_error';
         return;
     }
 
     if (!isMoldovaPhone(payload.phone)) {
         message.textContent = 'Телефон должен начинаться с +373.';
-        message.className = 'form-message form-message--error';
+        message.className = 'form-message form-message_error';
         return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
         message.textContent = 'Проверь email.';
-        message.className = 'form-message form-message--error';
+        message.className = 'form-message form-message_error';
         return;
     }
 
@@ -241,7 +241,7 @@ function submitDetailRegistration(form) {
     upsertVolunteerApplication(eventId, payload);
 
     message.textContent = 'Заявка сохранена.';
-    message.className = 'form-message form-message--success';
+    message.className = 'form-message form-message_success';
 
     renderEventDetail();
 
@@ -262,32 +262,32 @@ function initDetailRegistrationForm() {
 }
 
 document.addEventListener('click', event => {
-    const fav = event.target.closest('[data-detail-favorite]');
+    const fav = getClosestTarget(event.target, '[data-detail-favorite]');
     if (fav) {
         toggleFavorite(Number(fav.dataset.detailFavorite));
         renderEventDetail();
         return;
     }
 
-    const registerOpen = event.target.closest('[data-detail-register-open]');
+    const registerOpen = getClosestTarget(event.target, '[data-detail-register-open]');
     if (registerOpen) {
         openDetailRegistrationModal(Number(registerOpen.dataset.detailRegisterOpen));
         return;
     }
 
-    const unregisterButton = event.target.closest('[data-detail-unregister]');
+    const unregisterButton = getClosestTarget(event.target, '[data-detail-unregister]');
     if (unregisterButton) {
         unregisterFromEvent(Number(unregisterButton.dataset.detailUnregister));
         renderEventDetail();
         return;
     }
 
-    if (event.target.closest('[data-detail-registration-close]')) {
+    if (getClosestTarget(event.target, '[data-detail-registration-close]')) {
         closeDetailRegistrationModal();
         return;
     }
 
-    if (event.target.closest('[data-detail-success-close]')) {
+    if (getClosestTarget(event.target, '[data-detail-success-close]')) {
         closeDetailSuccessModal();
     }
 });
@@ -303,6 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderEventDetail();
     initDetailRegistrationForm();
 });
+
 
 
 

@@ -1,0 +1,27 @@
+@import url('./_interactive/mini-project_interactive.css');
+@import url('./__favorite/_active/mini-project__favorite_active.css');
+@import url('./__favorite/mini-project__favorite.css');
+@import url('./__meta/mini-project__meta.css');
+@import url('./__tag/mini-project__tag.css');
+@import url('./__top/mini-project__top.css');
+
+.mini-project {
+padding: 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(20, 27, 72, 0.08);
+    background: #fff;
+}
+
+.mini-project h3 {
+margin: 14px 0 10px;
+    font-size: 22px;
+    line-height: 1.2;
+    color: #151c49;
+}
+
+.mini-project p {
+margin: 0;
+    color: #6d7288;
+    font-size: 15px;
+    line-height: 1.7;
+}

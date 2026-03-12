@@ -1,0 +1,19 @@
+.home-nearest-card {
+padding: 14px;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 14px;
+    background: #fff;
+    display: grid;
+    gap: 10px;
+}
+
+.home-nearest-card h4 {
+margin: 0;
+    font-size: 1rem;
+}
+
+.home-nearest-card p {
+margin: 0;
+    color: #5b6478;
+    font-size: 0.95rem;
+}

@@ -1,0 +1,9 @@
+.map-venue-card_active {
+border-color: rgba(255, 122, 0, 0.35);
+    box-shadow: 0 20px 42px rgba(255, 122, 0, 0.12);
+}
+
+.map-venue-card_active {
+border-color: rgba(255, 122, 0, 0.34);
+    box-shadow: 0 22px 44px rgba(255, 122, 0, 0.12);
+}

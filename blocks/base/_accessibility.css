@@ -1,17 +1,4 @@
-﻿/* Стили для доступности */
-
-/* Скрытый контент для скринридеров */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
+/* Стили для доступности */
 
 /* Фокус для интерактивных элементов */
 a:focus,
@@ -32,22 +19,6 @@ textarea:focus {
 /* Убираем outline для мыши, но оставляем для клавиатуры */
 *:focus:not(:focus-visible) {
     outline: none;
-}
-
-/* Улучшение контраста для текста */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--color-accent);
-    color: var(--color-white);
-    padding: 8px;
-    text-decoration: none;
-    z-index: 100;
-}
-
-.skip-link:focus {
-    top: 0;
 }
 
 /* Улучшение читаемости для людей с нарушениями зрения */
@@ -84,4 +55,5 @@ select,
 textarea {
     min-height: 44px;
 }
+
 

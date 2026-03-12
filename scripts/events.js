@@ -13,6 +13,13 @@ const eventsState = {
 let projectModalCleanup = null;
 let registrationModalCleanup = null;
 
+function closestTarget(target, selector) {
+    if (!target || !selector) return null;
+    if (target instanceof Element) return target.closest(selector);
+    if (target.parentElement) return target.parentElement.closest(selector);
+    return null;
+}
+
 function getFilteredEvents() {
     const filtered = [...events]
         .filter(event => eventsState.genre === 'all' || event.genre === eventsState.genre)
@@ -125,14 +132,14 @@ function renderProjectGrid() {
         const isPast = new Date(item.dateStart) < new Date();
         const status = isPast ? '\u0417\u0430\u0432\u0435\u0440\u0448\u0451\u043d' : item.status;
         return `
-            <article class="catalog-card catalog-card--interactive" data-project-card="${item.id}" tabindex="0" aria-label="Открыть проект ${item.title}">
+            <article class="catalog-card catalog-card_interactive" data-project-card="${item.id}" tabindex="0" aria-label="Открыть проект ${item.title}">
                 <img class="catalog-card__image" src="${item.photos[0]}" alt="${item.title}" loading="lazy">
                 <div class="catalog-card__body">
                     <div class="catalog-card__status-row">
                         <span class="record-card__pill">${direction.label}</span>
-                        <span class="record-card__pill record-card__pill--soft">${status}</span>
+                        <span class="record-card__pill record-card__pill_soft">${status}</span>
                     </div>
-                    <div class="project-card__user-statuses">${buildStatusLabels(item.id).map(label => `<span class="project-status project-status--${label.key}">${label.text}</span>`).join('')}</div>
+                    <div class="project-card__user-statuses">${buildStatusLabels(item.id).map(label => `<span class="project-status project-status_${label.key}">${label.text}</span>`).join('')}</div>
                     <h3>${item.title}</h3>
                     <p>${item.description.slice(0, 220)}...</p>
                     <div class="record-card__details">
@@ -143,8 +150,8 @@ function renderProjectGrid() {
                         <span><strong>Свободно:</strong> ${item.freeSpots} мест</span>
                     </div>
                     <div class="catalog-card__actions">
-                        <button class="button button--outline record-card__button" type="button" data-project-open="${item.id}">Подробнее</button>
-                        <button class="button ${state.favorite ? 'button--ghost-dark' : 'button--primary'} record-card__button" type="button" data-project-favorite="${item.id}">${state.favorite ? 'Убрать из избранного' : 'В избранное'}</button>
+                        <button class="button button_outline record-card__button" type="button" data-project-open="${item.id}">Подробнее</button>
+                        <button class="button ${state.favorite ? 'button_ghost-dark' : 'button_primary'} record-card__button" type="button" data-project-favorite="${item.id}">${state.favorite ? 'Убрать из избранного' : 'В избранное'}</button>
                     </div>
                 </div>
             </article>
@@ -170,15 +177,15 @@ function renderProjectModal(eventId) {
             <span><strong>Контакт:</strong> ${item.organizer.phone}</span>
             <span><strong>Свободно:</strong> ${item.freeSpots} мест</span>
         </div>
-        <div class="modal-meta-grid modal-meta-grid--requirements">
+        <div class="modal-meta-grid modal-meta-grid_requirements">
             <span><strong>Возраст:</strong> ${item.requirements.age}</span>
             <span><strong>Навыки:</strong> ${item.requirements.skills.join(', ')}</span>
             <span><strong>Что взять:</strong> ${item.requirements.equipment.join(', ')}</span>
         </div>
-        <div class="catalog-card__actions catalog-card__actions--stack">
-            <button class="button ${state.registered ? 'button--ghost-dark' : 'button--primary'}" type="button" data-project-register-open="${item.id}">${state.registered ? 'Изменить регистрацию' : 'Записаться'}</button>
-            <button class="button ${state.favorite ? 'button--ghost-dark' : 'button--primary'}" type="button" data-project-favorite="${item.id}">${state.favorite ? 'Убрать из избранного' : 'В избранное'}</button>
-            <a class="button button--outline" href="event.html?id=${item.id}">Открыть страницу проекта</a>
+        <div class="catalog-card__actions catalog-card__actions_stack">
+            <button class="button ${state.registered ? 'button_ghost-dark' : 'button_primary'}" type="button" data-project-register-open="${item.id}">${state.registered ? 'Изменить регистрацию' : 'Записаться'}</button>
+            <button class="button ${state.favorite ? 'button_ghost-dark' : 'button_primary'}" type="button" data-project-favorite="${item.id}">${state.favorite ? 'Убрать из избранного' : 'В избранное'}</button>
+            <a class="button button_outline" href="event.html?id=${item.id}">Открыть страницу проекта</a>
         </div>
     `;
 }
@@ -188,8 +195,9 @@ function openProjectModal(eventId) {
     if (!modal) return;
     eventsState.activeEventId = Number(eventId);
     renderProjectModal(eventsState.activeEventId);
-    modal.classList.add('portal-modal--open');
+    modal.classList.add('portal-modal_open');
     modal.setAttribute('aria-hidden', 'false');
+    modal.style.display = 'block';
     document.body.classList.add('page-modal-open');
 
     if (projectModalCleanup) projectModalCleanup();
@@ -202,8 +210,9 @@ function openProjectModal(eventId) {
 function closeProjectModal() {
     const modal = document.getElementById('projectModal');
     if (!modal) return;
-    modal.classList.remove('portal-modal--open');
+    modal.classList.remove('portal-modal_open');
     modal.setAttribute('aria-hidden', 'true');
+    modal.style.display = '';
     eventsState.activeEventId = null;
     if (!eventsState.registrationEventId) document.body.classList.remove('page-modal-open');
 
@@ -241,8 +250,9 @@ function openRegistrationModal(eventId) {
         form.elements.comment.value = saved.comment || '';
     }
 
-    modal.classList.add('portal-modal--open');
+    modal.classList.add('portal-modal_open');
     modal.setAttribute('aria-hidden', 'false');
+    modal.style.display = 'block';
     document.body.classList.add('page-modal-open');
 
     if (registrationModalCleanup) registrationModalCleanup();
@@ -255,8 +265,9 @@ function openRegistrationModal(eventId) {
 function closeRegistrationModal() {
     const modal = document.getElementById('projectRegistrationModal');
     if (!modal) return;
-    modal.classList.remove('portal-modal--open');
+    modal.classList.remove('portal-modal_open');
     modal.setAttribute('aria-hidden', 'true');
+    modal.style.display = '';
     eventsState.registrationEventId = null;
     if (!eventsState.activeEventId) document.body.classList.remove('page-modal-open');
 
@@ -281,13 +292,13 @@ function submitProjectRegistration(form) {
 
     if (!payload.firstName || !payload.lastName || !payload.phone || !payload.email) {
         message.textContent = 'Заполни имя, фамилию, телефон и email.';
-        message.className = 'form-message form-message--error';
+        message.className = 'form-message form-message_error';
         return;
     }
 
     if (!isMoldovaPhone(payload.phone)) {
         message.textContent = 'Телефон должен начинаться с +373.';
-        message.className = 'form-message form-message--error';
+        message.className = 'form-message form-message_error';
         return;
     }
 
@@ -296,7 +307,7 @@ function submitProjectRegistration(form) {
     upsertVolunteerApplication(eventId, payload);
 
     message.textContent = 'Заявка сохранена. Регистрация на проект оформлена.';
-    message.className = 'form-message form-message--success';
+    message.className = 'form-message form-message_success';
 
     renderProjectGrid();
     if (eventsState.activeEventId === eventId) renderProjectModal(eventId);
@@ -317,19 +328,19 @@ function initProjectModals() {
     }
 
     document.addEventListener('click', event => {
-        const card = event.target.closest('[data-project-card]');
-        if (card && !event.target.closest('button, a, input, select, textarea, label')) {
+        const card = closestTarget(event.target, '[data-project-card]');
+        if (card && !closestTarget(event.target, 'button, a, input, select, textarea, label')) {
             openProjectModal(Number(card.dataset.projectCard));
             return;
         }
 
-        const open = event.target.closest('[data-project-open]');
+        const open = closestTarget(event.target, '[data-project-open]');
         if (open) {
             openProjectModal(Number(open.dataset.projectOpen));
             return;
         }
 
-        const favorite = event.target.closest('[data-project-favorite]');
+        const favorite = closestTarget(event.target, '[data-project-favorite]');
         if (favorite) {
             const id = Number(favorite.dataset.projectFavorite);
             toggleFavorite(id);
@@ -338,24 +349,24 @@ function initProjectModals() {
             return;
         }
 
-        const registerOpen = event.target.closest('[data-project-register-open]');
+        const registerOpen = closestTarget(event.target, '[data-project-register-open]');
         if (registerOpen) {
             openRegistrationModal(Number(registerOpen.dataset.projectRegisterOpen));
             return;
         }
 
-        if (event.target.closest('[data-project-modal-close]')) {
+        if (closestTarget(event.target, '[data-project-modal-close]')) {
             closeProjectModal();
             return;
         }
 
-        if (event.target.closest('[data-project-registration-close]')) {
+        if (closestTarget(event.target, '[data-project-registration-close]')) {
             closeRegistrationModal();
         }
-    });
+    }, true);
 
     document.addEventListener('keydown', event => {
-        const card = event.target.closest('[data-project-card]');
+        const card = closestTarget(event.target, '[data-project-card]');
         if (card && (event.key === 'Enter' || event.key === ' ')) {
             event.preventDefault();
             openProjectModal(Number(card.dataset.projectCard));
@@ -369,7 +380,7 @@ function initProjectModals() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initEventsPage() {
     populateProjectFilters();
     initProjectModals();
 
@@ -396,7 +407,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderProjectGrid();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEventsPage);
+} else {
+    initEventsPage();
+}
+
 
 
 

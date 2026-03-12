@@ -1,0 +1,6 @@
+.venue-events__title {
+font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    flex: 1;
+}

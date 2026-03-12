@@ -1,0 +1,10 @@
+.mini-project__favorite {
+margin-left: auto;
+    border: 1px solid rgba(20, 27, 72, 0.12);
+    background: #fff;
+    color: #38405f;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 700;
+}

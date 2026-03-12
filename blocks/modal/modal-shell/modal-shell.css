@@ -1,0 +1,25 @@
+@import url('./__backdrop/modal-shell__backdrop.css');
+
+.modal-shell {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+
+    /* Allow tall dialogs to stay within the viewport by scrolling the shell. */
+    overflow: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal-shell[hidden] {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .modal-shell {
+        padding: 12px;
+    }
+}

@@ -1,0 +1,7 @@
+@import url('./__input/stories-form__input.css');
+@import url('./__textarea/stories-form__textarea.css');
+
+.stories-form {
+display: grid;
+    gap: 18px;
+}

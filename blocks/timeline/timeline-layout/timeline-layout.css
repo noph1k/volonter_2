@@ -1,0 +1,15 @@
+.timeline-layout {
+display: grid;
+    gap: 24px;
+}
+
+.timeline-layout {
+grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.82fr);
+    align-items: start;
+}
+
+@media (max-width: 1100px) {
+.timeline-layout {
+grid-template-columns: 1fr;
+}
+}

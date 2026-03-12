@@ -1,0 +1,7 @@
+.venue-tooltip__events {
+display: block;
+    font-size: 12px;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-top: 4px;
+}

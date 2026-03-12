@@ -1,0 +1,36 @@
+@import url('./__actions/modal-card__actions.css');
+@import url('./__body/modal-card__body.css');
+@import url('./__close/modal-card__close.css');
+@import url('./__details/modal-card__details.css');
+@import url('./__media/modal-card__media.css');
+@import url('./__meta/modal-card__meta.css');
+@import url('./_wide/modal-card_wide.css');
+
+.modal-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 960px);
+    max-height: calc(100vh - 48px);
+    max-height: calc(100dvh - 48px);
+    display: grid;
+    grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1fr);
+    overflow: hidden;
+    border-radius: 32px;
+    background: #fff;
+    box-shadow: 0 28px 60px rgba(12, 16, 41, 0.32);
+}
+
+@media (max-width: 900px) {
+    .modal-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(220px, 34vh) minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .modal-card {
+        max-height: calc(100vh - 24px);
+        max-height: calc(100dvh - 24px);
+        border-radius: 26px;
+    }
+}

@@ -1,0 +1,14 @@
+.timeline-overview {
+display: grid;
+    gap: 24px;
+}
+
+.timeline-overview {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 860px) {
+.timeline-overview {
+grid-template-columns: 1fr;
+}
+}

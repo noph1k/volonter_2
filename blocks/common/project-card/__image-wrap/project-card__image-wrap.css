@@ -1,0 +1,10 @@
+.project-card__image-wrap {
+position: relative;
+    height: 300px;
+}
+
+@media (max-width: 640px) {
+.project-card__image-wrap {
+height: 240px;
+}
+}

@@ -1,0 +1,9 @@
+.promo-card__action {
+width: fit-content;
+}
+
+@media (max-width: 640px) {
+.promo-card__action {
+width: 100%;
+}
+}

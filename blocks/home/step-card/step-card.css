@@ -1,0 +1,22 @@
+@import url('./__number/_orange/step-card__number_orange.css');
+@import url('./__number/_teal/step-card__number_teal.css');
+@import url('./__number/_violet/step-card__number_violet.css');
+@import url('./__number/step-card__number.css');
+
+.step-card {
+text-align: center;
+}
+
+.step-card h3 {
+margin: 0 0 16px;
+    font-size: 22px;
+    color: #141c49;
+}
+
+.step-card p {
+max-width: 290px;
+    margin: 0 auto;
+    color: #70758a;
+    font-size: 17px;
+    line-height: 1.7;
+}

@@ -1,0 +1,13 @@
+.voice-spotlight__actions {
+display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+.voice-spotlight__actions {
+flex-direction: column;
+        align-items: stretch;
+}
+}

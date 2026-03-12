@@ -1,0 +1,4 @@
+.venue-modal__header {
+margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-md);
+}

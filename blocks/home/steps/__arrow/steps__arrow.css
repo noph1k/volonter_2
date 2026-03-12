@@ -1,0 +1,14 @@
+.steps__arrow {
+display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 18px;
+    color: #d4d5dd;
+    font-size: 34px;
+}
+
+@media (max-width: 900px) {
+.steps__arrow {
+display: none;
+}
+}

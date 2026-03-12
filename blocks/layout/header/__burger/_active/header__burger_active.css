@@ -1,0 +1,11 @@
+.header__burger_active .header__burger-line_first {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.header__burger_active .header__burger-line_second {
+    opacity: 0;
+}
+
+.header__burger_active .header__burger-line_third {
+    transform: rotate(-45deg) translate(8px, -8px);
+}

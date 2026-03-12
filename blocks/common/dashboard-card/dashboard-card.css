@@ -1,0 +1,36 @@
+@import url('./__eyebrow/dashboard-card__eyebrow.css');
+@import url('./__stats/dashboard-card__stats.css');
+@import url('./_accent/dashboard-card_accent.css');
+@import url('./_soft/dashboard-card_soft.css');
+
+.dashboard-card {
+border-radius: 30px;
+    background: #fff;
+    border: 1px solid rgba(25, 32, 70, 0.08);
+    box-shadow: 0 20px 48px rgba(24, 28, 56, 0.08);
+}
+
+.dashboard-card {
+padding: 32px;
+}
+
+.dashboard-card h2 {
+margin: 0;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    color: #141c49;
+}
+
+.dashboard-card p {
+margin: 14px 0 0;
+    color: #70758a;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+@media (max-width: 640px) {
+.dashboard-card {
+padding: 24px;
+        border-radius: 24px;
+}
+}

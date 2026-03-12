@@ -1,0 +1,26 @@
+@import url('./__chip/page-hero__chip.css');
+@import url('./__content/page-hero__content.css');
+@import url('./__overlay/page-hero__overlay.css');
+@import url('./__text/page-hero__text.css');
+@import url('./__title/page-hero__title.css');
+@import url('./_education/page-hero_education.css');
+@import url('./_education-stories/page-hero_education-stories.css');
+@import url('./_map/page-hero_map.css');
+@import url('./_timeline/page-hero_timeline.css');
+@import url('./_volunteering/page-hero_volunteering.css');
+
+.page-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    color: #fff;
+    background-color: #15183d;
+}
+
+@media (max-width: 640px) {
+    .page-hero {
+        min-height: 360px;
+    }
+}

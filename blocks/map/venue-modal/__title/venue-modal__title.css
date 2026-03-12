@@ -1,0 +1,13 @@
+.venue-modal__title {
+font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-dark);
+}
+
+@media (max-width: 768px) {
+.venue-modal__title {
+font-size: 22px;
+}
+}

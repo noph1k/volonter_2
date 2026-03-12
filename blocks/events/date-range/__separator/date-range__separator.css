@@ -1,0 +1,11 @@
+.date-range__separator {
+font-family: var(--font-body);
+    color: var(--color-dark);
+    opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+.date-range__separator {
+display: none;
+}
+}

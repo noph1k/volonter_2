@@ -1,0 +1,10 @@
+.record-card__details span {
+color: #7a7f93;
+    font-size: 14px;
+}
+
+.record-card__details {
+display: grid;
+    gap: 8px;
+    margin-top: 14px;
+}

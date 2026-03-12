@@ -1,0 +1,27 @@
+@import url('./__actions/hero__actions.css');
+@import url('./__backdrop/hero__backdrop.css');
+@import url('./__chip/hero__chip.css');
+@import url('./__content/hero__content.css');
+@import url('./__glow/_left/hero__glow_left.css');
+@import url('./__glow/_right/hero__glow_right.css');
+@import url('./__glow/hero__glow.css');
+@import url('./__scroll/hero__scroll.css');
+@import url('./__subtitle/hero__subtitle.css');
+@import url('./__title/hero__title.css');
+
+.hero {
+position: relative;
+    min-height: 815px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background:
+        linear-gradient(90deg, rgba(25, 22, 48, 0.78) 0%, rgba(45, 28, 36, 0.55) 38%, rgba(238, 108, 42, 0.55) 100%),
+        url("https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+}
+
+@media (max-width: 900px) {
+.hero {
+min-height: 720px;
+}
+}

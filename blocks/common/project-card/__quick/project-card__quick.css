@@ -1,0 +1,10 @@
+.project-card__quick {
+white-space: nowrap;
+    padding: 0 18px;
+}
+
+@media (max-width: 640px) {
+.project-card__quick {
+width: 100%;
+}
+}

@@ -1,0 +1,19 @@
+.portfolio-modal-work__image {
+width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    max-height: 60vh;
+}
+
+@media (max-width: 768px) {
+.portfolio-modal-work__image {
+max-height: 50vh;
+}
+}
+
+@media (max-width: 480px) {
+.portfolio-modal-work__image {
+max-height: 40vh;
+}
+}

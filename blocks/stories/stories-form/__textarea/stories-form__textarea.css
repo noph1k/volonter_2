@@ -1,0 +1,14 @@
+.stories-form__textarea {
+width: 100%;
+    padding: 16px 18px;
+    border: 1px solid rgba(20, 27, 72, 0.12);
+    border-radius: 18px;
+    background: #fff;
+    color: #1f274f;
+    font: inherit;
+}
+
+.stories-form__textarea {
+resize: vertical;
+    min-height: 140px;
+}

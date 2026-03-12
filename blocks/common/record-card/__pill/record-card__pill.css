@@ -1,0 +1,10 @@
+.record-card__pill {
+display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #eef5ff;
+    color: #2c6adf;
+    font-size: 13px;
+    font-weight: 700;
+}

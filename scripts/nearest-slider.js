@@ -1,4 +1,4 @@
-﻿function parseDateSafe(value) {
+function parseDateSafe(value) {
     if (!value) return Number.POSITIVE_INFINITY;
     const d = new Date(value);
     return Number.isNaN(d.getTime()) ? Number.POSITIVE_INFINITY : d.getTime();
@@ -72,7 +72,7 @@ function initNearestSliderById(rootId, limit = 4) {
 
     function render() {
         track.style.transform = `translateX(${index * -100}%)`;
-        dots.forEach((dot, i) => dot.classList.toggle('nearest-slider__dot--active', i === index));
+        dots.forEach((dot, i) => dot.classList.toggle('nearest-slider__dot_active', i === index));
     }
 
     prevBtn.addEventListener('click', () => {

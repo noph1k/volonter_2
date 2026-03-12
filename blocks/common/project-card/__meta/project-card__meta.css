@@ -1,0 +1,10 @@
+.project-card__meta {
+margin-top: 18px;
+    padding-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    color: #7d8090;
+    font-size: 15px;
+    border-top: 1px solid rgba(20, 27, 72, 0.08);
+}

@@ -1,0 +1,21 @@
+.header__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+@media (max-width: 900px) {
+    .header__burger {
+        display: flex;
+        position: static;
+        transform: none;
+        order: 2;
+    }
+}

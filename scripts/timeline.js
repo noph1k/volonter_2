@@ -1,4 +1,4 @@
-﻿const timelineState = { genre: 'all', type: 'all', mode: 'nearest' };
+const timelineState = { genre: 'all', type: 'all', mode: 'nearest' };
 let timelineChart = null;
 let timelineModalCleanup = null;
 
@@ -36,11 +36,11 @@ function renderTimelineList(list) {
     root.innerHTML = list.map(item => {
         const tone = getDirectionMeta(item.genre).tone;
         return `
-            <article class="timeline-entry timeline-entry--${tone}" data-event-id="${item.id}" tabindex="0" role="button">
+            <article class="timeline-entry timeline-entry_${tone}" data-event-id="${item.id}" tabindex="0" role="button">
                 <div class="timeline-entry__marker"></div>
                 <div class="timeline-entry__body">
                     <div class="timeline-entry__topline"><span class="timeline-entry__date">${item.date}</span><span class="timeline-entry__format">${item.type}</span></div>
-                    <div class="project-card__user-statuses">${buildStatusLabels(item.id).map(label => `<span class="project-status project-status--${label.key}">${label.text}</span>`).join('')}</div>
+                    <div class="project-card__user-statuses">${buildStatusLabels(item.id).map(label => `<span class="project-status project-status_${label.key}">${label.text}</span>`).join('')}</div>
                     <h3>${item.title}</h3>
                     <p>${item.description.slice(0, 180)}...</p>
                     <div class="timeline-entry__meta"><span>${getDirectionMeta(item.genre).label}</span><span>${item.place.venueName || item.place.address}</span><span>${item.freeSpots} мест</span></div>
@@ -72,14 +72,14 @@ function renderModal(item) {
         <h3 id="timelineModalTitle" class="portal-modal__title">${item.title}</h3>
         <div class="modal-meta-grid"><span><strong>Дата:</strong> ${item.date}</span><span><strong>Формат:</strong> ${item.type}</span><span><strong>Место:</strong> ${item.place.venueName || item.place.address}</span><span><strong>Организатор:</strong> ${item.organizer.name}</span></div>
         <p class="portal-modal__description">${item.description}</p>
-        <div class="catalog-card__actions catalog-card__actions--stack"><button class="button ${state.favorite ? 'button--ghost-dark' : 'button--primary'}" type="button" data-modal-favorite="${item.id}">${state.favorite ? 'Убрать из избранного' : 'В избранное'}</button><button class="button ${state.registered ? 'button--ghost-dark' : 'button--primary'}" type="button" data-modal-register="${item.id}">${state.registered ? 'Отменить запись' : 'Записаться'}</button><a class="button button--outline" href="event.html?id=${item.id}">Открыть проект</a></div>
+        <div class="catalog-card__actions catalog-card__actions_stack"><button class="button ${state.favorite ? 'button_ghost-dark' : 'button_primary'}" type="button" data-modal-favorite="${item.id}">${state.favorite ? 'Убрать из избранного' : 'В избранное'}</button><button class="button ${state.registered ? 'button_ghost-dark' : 'button_primary'}" type="button" data-modal-register="${item.id}">${state.registered ? 'Отменить запись' : 'Записаться'}</button><a class="button button_outline" href="event.html?id=${item.id}">Открыть проект</a></div>
     `;
 }
 
 function syncMode() {
-    document.querySelectorAll('[data-timeline-mode]').forEach(button => button.classList.toggle('timeline-switch__btn--active', button.dataset.timelineMode === timelineState.mode));
-    document.getElementById('timelineNearestPanel').classList.toggle('timeline-panel--active', timelineState.mode === 'nearest');
-    document.getElementById('timelineMonthsPanel').classList.toggle('timeline-panel--active', timelineState.mode === 'months');
+    document.querySelectorAll('[data-timeline-mode]').forEach(button => button.classList.toggle('timeline-switch__btn_active', button.dataset.timelineMode === timelineState.mode));
+    document.getElementById('timelineNearestPanel').classList.toggle('timeline-panel_active', timelineState.mode === 'nearest');
+    document.getElementById('timelineMonthsPanel').classList.toggle('timeline-panel_active', timelineState.mode === 'months');
 }
 
 function updateTimeline() {
@@ -94,7 +94,7 @@ function updateTimeline() {
 function openModal() {
     const modal = document.getElementById('timelineModal');
     if (!modal) return;
-    modal.classList.add('portal-modal--open');
+    modal.classList.add('portal-modal_open');
     modal.setAttribute('aria-hidden', 'false');
 
     if (timelineModalCleanup) timelineModalCleanup();
@@ -106,7 +106,7 @@ function openModal() {
 function closeModal() {
     const modal = document.getElementById('timelineModal');
     if (!modal) return;
-    modal.classList.remove('portal-modal--open');
+    modal.classList.remove('portal-modal_open');
     modal.setAttribute('aria-hidden', 'true');
 
     if (timelineModalCleanup) {
@@ -126,20 +126,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('click', event => {
-    const entry = event.target.closest('[data-event-id]');
+    const entry = getClosestTarget(event.target, '[data-event-id]');
     if (entry) {
         const item = getEventById(Number(entry.dataset.eventId));
         if (item) { renderModal(item); openModal(); }
     }
-    const fav = event.target.closest('[data-modal-favorite]');
+    const fav = getClosestTarget(event.target, '[data-modal-favorite]');
     if (fav) {
         const id = Number(fav.dataset.modalFavorite); toggleFavorite(id); renderModal(getEventById(id)); updateTimeline();
     }
-    const reg = event.target.closest('[data-modal-register]');
+    const reg = getClosestTarget(event.target, '[data-modal-register]');
     if (reg) {
         const id = Number(reg.dataset.modalRegister); toggleEventRegistration(id); renderModal(getEventById(id)); updateTimeline();
     }
-    if (event.target.closest('[data-timeline-modal-close]')) closeModal();
+    if (getClosestTarget(event.target, '[data-timeline-modal-close]')) closeModal();
 });
 
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); });

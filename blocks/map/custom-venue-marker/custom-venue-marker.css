@@ -1,0 +1,10 @@
+.custom-venue-marker {
+background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.custom-venue-marker:hover {
+transform: scale(1.2);
+}

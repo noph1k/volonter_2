@@ -1,0 +1,4 @@
+.direction-card__arrow {
+color: var(--direction-color);
+    font-size: 24px;
+}

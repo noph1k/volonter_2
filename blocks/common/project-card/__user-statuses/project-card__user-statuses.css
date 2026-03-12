@@ -1,0 +1,6 @@
+.project-card__user-statuses {
+display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}

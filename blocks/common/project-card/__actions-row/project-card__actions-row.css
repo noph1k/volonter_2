@@ -1,0 +1,12 @@
+.project-card__actions-row {
+display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+@media (max-width: 640px) {
+.project-card__actions-row {
+grid-template-columns: 1fr;
+}
+}

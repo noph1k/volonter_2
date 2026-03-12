@@ -1,0 +1,4 @@
+.events-grid_fade-out {
+opacity: 0;
+    pointer-events: none;
+}

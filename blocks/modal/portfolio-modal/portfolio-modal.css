@@ -1,0 +1,30 @@
+@import url('./__body/portfolio-modal__body.css');
+@import url('./__close/portfolio-modal__close.css');
+@import url('./__content/portfolio-modal__content.css');
+@import url('./__header/portfolio-modal__header.css');
+@import url('./__overlay/portfolio-modal__overlay.css');
+@import url('./__title/portfolio-modal__title.css');
+@import url('./_active/portfolio-modal_active.css');
+
+.portfolio-modal {
+position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 44, 44, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: var(--spacing-md);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+@media (max-width: 480px) {
+.portfolio-modal {
+padding: var(--spacing-sm);
+}
+}

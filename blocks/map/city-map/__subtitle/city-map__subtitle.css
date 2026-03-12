@@ -1,0 +1,10 @@
+.city-map__subtitle {
+font-family: var(--font-heading);
+    fill: #141c48;
+}
+
+.city-map__subtitle {
+font-size: 13px;
+    font-weight: 600;
+    opacity: 0.66;
+}

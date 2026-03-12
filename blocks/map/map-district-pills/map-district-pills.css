@@ -1,0 +1,12 @@
+.map-district-pills {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 640px) {
+.map-district-pills {
+display: grid;
+        grid-template-columns: 1fr;
+}
+}

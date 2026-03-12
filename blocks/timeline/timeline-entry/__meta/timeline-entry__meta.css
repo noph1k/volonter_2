@@ -1,0 +1,14 @@
+.timeline-entry__meta {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.timeline-entry__meta span {
+color: #7a7f93;
+    font-size: 14px;
+}
+
+.timeline-entry__meta {
+margin-top: 14px;
+}

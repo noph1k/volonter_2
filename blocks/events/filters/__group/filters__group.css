@@ -1,0 +1,11 @@
+.filters__group {
+display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+@media (max-width: 480px) {
+.filters__group {
+gap: var(--spacing-xs);
+}
+}

@@ -6,20 +6,20 @@
     <meta name="description" content="Каталог волонтёрских проектов по направлениям помощи, формату участия и ключевым параметрам." />
     <meta name="author" content="Сергей Тумачек" />
     <title>Каталог проектов | ВолонтёрГород</title>
-    <link rel="stylesheet" href="../blocks/__blocks.css" />
+    <link rel="stylesheet" href="events.css" />
 </head>
 <body class="page-shell page-events">
     <header class="header">
         <div class="header__container home-shell">
             <a class="header__brand" href="../index.html" aria-label="ВолонтёрГород — главная"><span class="header__brand-icon">&#9829;</span><span class="header__brand-text"><strong>ВолонтёрГород</strong><small>Социальные инициативы</small></span></a>
-            <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn"><span class="header__burger-line header__burger-line--first"></span><span class="header__burger-line header__burger-line--second"></span><span class="header__burger-line header__burger-line--third"></span></button>
-            <nav class="nav" id="mainNav" aria-label="Основная навигация"><ul class="nav__list"><li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li><li class="nav__item"><a href="events.html" class="nav__link nav__link--active">Проекты</a></li><li class="nav__item"><a href="timeline.html" class="nav__link">Мероприятия</a></li><li class="nav__item"><a href="map.html" class="nav__link">Карта</a></li><li class="nav__item"><a href="stories.html" class="nav__link">Истории</a></li><li class="nav__item"><a href="education.html" class="nav__link">О портале</a></li></ul></nav>
+            <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn"><span class="header__burger-line header__burger-line_first"></span><span class="header__burger-line header__burger-line_second"></span><span class="header__burger-line header__burger-line_third"></span></button>
+            <nav class="nav" id="mainNav" aria-label="Основная навигация"><ul class="nav__list"><li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li><li class="nav__item"><a href="events.html" class="nav__link nav__link_active">Проекты</a></li><li class="nav__item"><a href="timeline.html" class="nav__link">Мероприятия</a></li><li class="nav__item"><a href="map.html" class="nav__link">Карта</a></li><li class="nav__item"><a href="stories.html" class="nav__link">Истории</a></li><li class="nav__item"><a href="education.html" class="nav__link">О портале</a></li></ul></nav>
             <a class="header__cta" href="volunteering.html">Стать волонтёром</a>
         </div>
     </header>
 
     <main class="page-main">
-        <section class="page-hero page-hero--timeline">
+        <section class="page-hero page-hero_timeline">
             <div class="page-hero__overlay"></div>
             <div class="page-hero__content home-shell">
                 <p class="page-hero__chip">Каталог инициатив</p>
@@ -28,10 +28,10 @@
             </div>
         </section>
 
-        <section class="page-section page-section--pullup">
+        <section class="page-section page-section_pullup">
             <div class="home-shell">
-                <section class="surface-card surface-card--wide" aria-label="Фильтры каталога проектов">
-                    <div class="surface-card__head surface-card__head--row timeline-toolbar">
+                <section class="surface-card surface-card_wide" aria-label="Фильтры каталога проектов">
+                    <div class="surface-card__head surface-card__head_row timeline-toolbar">
                         <div>
                             <p class="surface-card__kicker">Фильтры</p>
                             <h2>Подбор проекта</h2>
@@ -60,7 +60,7 @@
                                 <option value="spots">По свободным местам</option>
                             </select>
                         </label>
-                        <label class="field-group field-group--full">
+                        <label class="field-group field-group_full">
                             <span>Поиск</span>
                             <input id="eventsSearch" type="search" placeholder="Название, описание, адрес, ключевые слова" />
                         </label>
@@ -69,7 +69,7 @@
             </div>
         </section>
 
-        <section class="page-section page-section--compact">
+        <section class="page-section page-section_compact">
             <div class="home-shell">
                 <div id="eventsGrid" class="project-catalog" itemprop="mainEntity"></div>
             </div>
@@ -78,7 +78,7 @@
 
     <div id="projectModal" class="portal-modal" aria-hidden="true" role="dialog" aria-labelledby="projectModalTitle">
         <div class="portal-modal__overlay" data-project-modal-close></div>
-        <div class="portal-modal__dialog portal-modal__dialog--wide">
+        <div class="portal-modal__dialog portal-modal__dialog_wide">
             <button class="portal-modal__close" type="button" aria-label="Закрыть" data-project-modal-close>&times;</button>
             <div id="projectModalBody"></div>
         </div>
@@ -86,7 +86,7 @@
 
     <div id="projectRegistrationModal" class="portal-modal" aria-hidden="true" role="dialog" aria-labelledby="projectRegistrationTitle">
         <div class="portal-modal__overlay" data-project-registration-close></div>
-        <div class="portal-modal__dialog portal-modal__dialog--wide">
+        <div class="portal-modal__dialog portal-modal__dialog_wide">
             <button class="portal-modal__close" type="button" aria-label="Закрыть" data-project-registration-close>&times;</button>
             <p class="portal-modal__eyebrow">Форма регистрации</p>
             <h3 id="projectRegistrationTitle" class="portal-modal__title">Регистрация на проект</h3>
@@ -99,17 +99,17 @@
                     <label class="field-group"><span>Телефон *</span><input name="phone" type="tel" required autocomplete="tel" pattern="^\+373[0-9\s\-()]{8,}$" title="Номер должен начинаться с +373" placeholder="+373 69 123 456" /></label>
                     <label class="field-group"><span>Email *</span><input name="email" type="email" required autocomplete="email" /></label>
                     
-                    <label class="field-group field-group--full"><span>Комментарий</span><input name="comment" type="text" placeholder="Например, удобное время или опыт участия" /></label>
+                    <label class="field-group field-group_full"><span>Комментарий</span><input name="comment" type="text" placeholder="Например, удобное время или опыт участия" /></label>
                 </div>
                 <div class="form-actions">
                     <p id="projectRegistrationMessage" class="form-message" aria-live="polite"></p>
-                    <button type="submit" class="button button--primary">Отправить заявку</button>
+                    <button type="submit" class="button button_primary">Отправить заявку</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <footer class="footer footer--portal"><div class="footer__inner home-shell"><div class="footer__grid"><div class="footer__brand-block"><a class="footer__brand" href="../index.html"><span class="footer__brand-icon">&#9829;</span><span>ВолонтёрГород</span></a><p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять город к лучшему вместе.</p><div class="footer__socials" aria-label="Социальные сети"><a href="#" aria-label="Instagram">◉</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Telegram">✈</a></div></div><div><h3 class="footer__heading">Навигация</h3><a class="footer__link" href="../index.html">Главная</a><a class="footer__link" href="events.html">Проекты</a><a class="footer__link" href="timeline.html">Мероприятия</a><a class="footer__link" href="stories.html">Истории</a><a class="footer__link" href="education.html">О портале</a><a class="footer__link" href="volunteering.html">Стать волонтёром</a></div><div><h3 class="footer__heading">Направления</h3><a class="footer__link" href="events.html?direction=Экология">Экология</a><a class="footer__link" href="events.html?direction=Дети">Дети</a><a class="footer__link" href="events.html?direction=Пожилые">Пожилые</a><a class="footer__link" href="events.html?direction=Животные">Животные</a><a class="footer__link" href="events.html?direction=Городская среда">Городская среда</a></div><div><h3 class="footer__heading">Контакты</h3><p class="footer__contact">ул. Ленина, 42, г. Тирасполь</p><p class="footer__contact">+373 (22) 123-45</p><p class="footer__contact">info@volonter-gorod.ru</p></div></div><div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>&#9829;</span> для города и людей</p><p>&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1095;&#1080;&#1082;: &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1058;&#1091;&#1084;&#1072;&#1095;&#1077;&#1082;</p></div></div></footer>
+    <footer class="footer footer_portal"><div class="footer__inner home-shell"><div class="footer__grid"><div class="footer__brand-block"><a class="footer__brand" href="../index.html"><span class="footer__brand-icon">&#9829;</span><span>ВолонтёрГород</span></a><p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять город к лучшему вместе.</p><div class="footer__socials" aria-label="Социальные сети"><a class="footer__social-link" href="#" aria-label="Instagram">◉</a><a class="footer__social-link" href="#" aria-label="Facebook">f</a><a class="footer__social-link" href="#" aria-label="Telegram">✈</a></div></div><div><h3 class="footer__heading">Навигация</h3><a class="footer__link" href="../index.html">Главная</a><a class="footer__link" href="events.html">Проекты</a><a class="footer__link" href="timeline.html">Мероприятия</a><a class="footer__link" href="stories.html">Истории</a><a class="footer__link" href="education.html">О портале</a><a class="footer__link" href="volunteering.html">Стать волонтёром</a></div><div><h3 class="footer__heading">Направления</h3><a class="footer__link" href="events.html?direction=Экология">Экология</a><a class="footer__link" href="events.html?direction=Дети">Дети</a><a class="footer__link" href="events.html?direction=Пожилые">Пожилые</a><a class="footer__link" href="events.html?direction=Животные">Животные</a><a class="footer__link" href="events.html?direction=Городская среда">Городская среда</a></div><div><h3 class="footer__heading">Контакты</h3><p class="footer__contact">ул. Ленина, 42, г. Тирасполь</p><p class="footer__contact">+373 (22) 123-45</p><p class="footer__contact">info@volonter-gorod.ru</p></div></div><div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>&#9829;</span> для города и людей</p></div></div></footer>
 
     <script type="application/ld+json">
     {
@@ -138,12 +138,16 @@
     }
     </script>
 
-    <script src="../scripts/data.js"></script>
-    <script src="../scripts/common.js"></script>
-    <script src="../blocks/header/header.js"></script>
-    <script src="../scripts/events.js"></script>
+    <script src="../scripts/data.js?v=20260312"></script>
+    <script src="../scripts/common.js?v=20260312"></script>
+    <script src="../blocks/layout/header/header.js?v=20260312"></script>
+    <script src="../scripts/events.js?v=20260312"></script>
 </body>
 </html>
+
+
+
+
 
 
 

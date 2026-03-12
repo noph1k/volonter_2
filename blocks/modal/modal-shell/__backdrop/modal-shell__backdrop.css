@@ -1,0 +1,6 @@
+.modal-shell__backdrop {
+position: absolute;
+    inset: 0;
+    background: rgba(10, 14, 34, 0.7);
+    backdrop-filter: blur(8px);
+}

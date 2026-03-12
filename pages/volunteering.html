@@ -6,7 +6,7 @@
     <meta name="description" content="Форма регистрации волонтёра, избранные проекты и поданные заявки." />
     <meta name="author" content="Сергей Тумачек" />
     <title>Моё волонтёрство</title>
-    <link rel="stylesheet" href="../blocks/__blocks.css" />
+    <link rel="stylesheet" href="volunteering.css" />
 
     <script type="application/ld+json">
     {
@@ -47,16 +47,16 @@
             </a>
 
             <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" id="burgerBtn">
-                <span class="header__burger-line header__burger-line--first"></span>
-                <span class="header__burger-line header__burger-line--second"></span>
-                <span class="header__burger-line header__burger-line--third"></span>
+                <span class="header__burger-line header__burger-line_first"></span>
+                <span class="header__burger-line header__burger-line_second"></span>
+                <span class="header__burger-line header__burger-line_third"></span>
             </button>
 
             <nav class="nav" id="mainNav" aria-label="Основная навигация">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="../index.html" class="nav__link">Главная</a></li>
                     <li class="nav__item"><a href="events.html" class="nav__link">Проекты</a></li>
-                    <li class="nav__item"><a href="timeline.html" class="nav__link">Мероприятия</a></li>
+                    <li class="nav__item"><a href="timeline.html" class="nav__link">Мероприятия</a></li><li class="nav__item"><a href="map.html" class="nav__link">Карта</a></li>
                     <li class="nav__item"><a href="stories.html" class="nav__link">Истории</a></li><li class="nav__item"><a href="education.html" class="nav__link">О портале</a></li>
                 </ul>
             </nav>
@@ -66,7 +66,7 @@
     </header>
 
     <main class="page-main">
-        <section class="page-hero page-hero--volunteering">
+        <section class="page-hero page-hero_volunteering">
             <div class="page-hero__overlay"></div>
             <div class="page-hero__content home-shell">
                 <p class="page-hero__chip">Личный кабинет волонтёра</p>
@@ -75,10 +75,10 @@
             </div>
         </section>
 
-        <section class="page-section page-section--pullup">
+        <section class="page-section page-section_pullup">
             <div class="home-shell volunteer-dashboard">
                 <div class="dashboard-grid">
-                    <article class="dashboard-card dashboard-card--accent">
+                    <article class="dashboard-card dashboard-card_accent">
                         <span class="dashboard-card__eyebrow">Сводка</span>
                         <h2>Твой кабинет помощи</h2>
                         <p>Заполни анкету, сохрани проекты в избранное и быстро возвращайся к тем направлениям, которые тебе подходят.</p>
@@ -94,7 +94,7 @@
                         </div>
                     </article>
 
-                    <article class="dashboard-card dashboard-card--soft">
+                    <article class="dashboard-card dashboard-card_soft">
                         <span class="dashboard-card__eyebrow">Подсказка</span>
                         <h2>Как это работает</h2>
                         <ul class="dashboard-list">
@@ -110,7 +110,7 @@
 
         <section class="page-section">
             <div class="home-shell page-layout">
-                <div class="surface-card surface-card--form">
+                <div class="surface-card surface-card_form">
                     <div class="surface-card__head">
                         <p class="surface-card__kicker">Шаг 1</p>
                         <h2>Форма регистрации волонтёра</h2>
@@ -139,7 +139,7 @@
                                 <input id="email" name="email" type="email" required autocomplete="email" />
                                 <small class="field-group__error" data-error-for="email"></small>
                             </label>
-                            <label class="field-group field-group--full">
+                            <label class="field-group field-group_full">
                                 <span>Предпочтительное направление помощи *</span>
                                 <select id="preferredDirection" name="preferredDirection" required>
                                     <option value="">Выберите направление</option>
@@ -174,9 +174,9 @@
                             </fieldset>
                         </div>
 
-                        <fieldset class="choice-card choice-card--skills" data-group="skills">
+                        <fieldset class="choice-card choice-card_skills" data-group="skills">
                             <legend>Навыки и опыт *</legend>
-                            <div class="choice-card__options choice-card__options--wrap">
+                            <div class="choice-card__options choice-card__options_wrap">
                                 <label class="choice-pill"><input type="checkbox" name="skills" value="Организаторские" /> <span>Организаторские</span></label>
                                 <label class="choice-pill"><input type="checkbox" name="skills" value="Физические" /> <span>Физические</span></label>
                                 <label class="choice-pill"><input type="checkbox" name="skills" value="Творческие" /> <span>Творческие</span></label>
@@ -187,12 +187,12 @@
 
                         <div class="form-actions">
                             <p id="volunteerFormMessage" class="form-message" aria-live="polite"></p>
-                            <button type="submit" class="button button--primary">Отправить заявку</button>
+                            <button type="submit" class="button button_primary">Отправить заявку</button>
                         </div>
                     </form>
                 </div>
 
-                <aside class="surface-card surface-card--sidebar">
+                <aside class="surface-card surface-card_sidebar">
                     <div class="surface-card__head">
                         <p class="surface-card__kicker">Шаг 2</p>
                         <h2>Быстрый подбор</h2>
@@ -203,10 +203,10 @@
             </div>
         </section>
 
-        <section class="page-section page-section--compact">
+        <section class="page-section page-section_compact">
             <div class="home-shell volunteer-panels">
                 <section class="surface-card">
-                    <div class="surface-card__head surface-card__head--row">
+                    <div class="surface-card__head surface-card__head_row">
                         <div>
                             <p class="surface-card__kicker">Избранное</p>
                             <h2>Сохранённые проекты</h2>
@@ -217,7 +217,7 @@
                 </section>
 
                 <section class="surface-card">
-                    <div class="surface-card__head surface-card__head--row">
+                    <div class="surface-card__head surface-card__head_row">
                         <div>
                             <p class="surface-card__kicker">Заявки</p>
                             <h2>Поданные анкеты</h2>
@@ -237,11 +237,11 @@
             <p class="portal-modal__eyebrow">Заявка отправлена</p>
             <h3 id="applicationModalTitle" class="portal-modal__title">Спасибо, мы всё получили</h3>
             <p class="portal-modal__description">Анкета сохранена локально и отправлена на обработку. Координатор свяжется с тобой после подтверждения участия.</p>
-            <button class="button button--primary" type="button" data-app-modal-close>Понятно</button>
+            <button class="button button_primary" type="button" data-app-modal-close>Понятно</button>
         </div>
     </div>
 
-    <footer class="footer footer--portal">
+    <footer class="footer footer_portal">
         <div class="footer__inner home-shell">
             <div class="footer__grid">
                 <div class="footer__brand-block">
@@ -251,9 +251,9 @@
                     </a>
                     <p class="footer__text">Платформа для объединения неравнодушных людей, которые хотят менять мир к лучшему вместе.</p>
                     <div class="footer__socials" aria-label="Социальные сети">
-                        <a href="#" aria-label="Instagram">◉</a>
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="Telegram">✈</a>
+                        <a class="footer__social-link" href="#" aria-label="Instagram">◉</a>
+                        <a class="footer__social-link" href="#" aria-label="Facebook">f</a>
+                        <a class="footer__social-link" href="#" aria-label="Telegram">✈</a>
                     </div>
                 </div>
 
@@ -284,17 +284,22 @@
                 </div>
             </div>
 
-            <div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p><p>&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1095;&#1080;&#1082;: &#1057;&#1077;&#1088;&#1075;&#1077;&#1081; &#1058;&#1091;&#1084;&#1072;&#1095;&#1077;&#1082;</p></div>
+            <div class="footer__bottom"><p>© 2026 ВолонтёрГород. Все права защищены.</p><p>Сделано с <span>♥</span> для города и людей</p></div>
         </div>
     </footer>
 
     <script src="../scripts/polyfills.js"></script>
-    <script src="../scripts/data.js"></script>
-    <script src="../scripts/common.js"></script>
-    <script src="../blocks/header/header.js"></script>
-    <script src="../scripts/volunteering.js"></script>
+    <script src="../scripts/data.js?v=20260312"></script>
+    <script src="../scripts/common.js?v=20260312"></script>
+    <script src="../blocks/layout/header/header.js?v=20260312"></script>
+    <script src="../scripts/volunteering.js?v=20260312"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 

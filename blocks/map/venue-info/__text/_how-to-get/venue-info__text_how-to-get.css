@@ -1,0 +1,6 @@
+.venue-info__text_how-to-get {
+font-style: italic;
+    color: var(--color-dark);
+    opacity: 0.85;
+    margin-top: var(--spacing-xs);
+}

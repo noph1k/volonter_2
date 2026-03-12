@@ -1,0 +1,8 @@
+@import url('./__text/events-empty__text.css');
+
+.events-empty {
+text-align: center;
+    padding: var(--spacing-xxl);
+    color: var(--color-dark);
+    opacity: 0.6;
+}

@@ -1,0 +1,13 @@
+.map-marker__count {
+fill: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    pointer-events: none;
+}
+
+.map-marker__count {
+fill: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    pointer-events: none;
+}

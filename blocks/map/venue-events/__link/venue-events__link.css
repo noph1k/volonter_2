@@ -1,0 +1,12 @@
+.venue-events__link {
+display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-dark);
+    gap: var(--spacing-md);
+}
+
+.venue-events__link:hover .venue-events__title {
+color: var(--color-accent);
+}

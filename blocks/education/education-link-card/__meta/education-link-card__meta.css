@@ -1,0 +1,16 @@
+.education-link-card__meta {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.education-link-card__meta span {
+display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #f4f6fb;
+    color: #56607a;
+    font-size: 13px;
+    font-weight: 700;
+}

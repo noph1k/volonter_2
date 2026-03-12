@@ -1,0 +1,7 @@
+.event-detail__row {
+margin-bottom: var(--spacing-sm);
+}
+
+.event-detail__row:last-child {
+margin-bottom: 0;
+}

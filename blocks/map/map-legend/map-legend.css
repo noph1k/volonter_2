@@ -1,0 +1,49 @@
+@import url('./__dot/map-legend__dot.css');
+@import url('./__item/map-legend__item.css');
+@import url('./__items/map-legend__items.css');
+@import url('./__label/map-legend__label.css');
+@import url('./__marker/_art-center/map-legend__marker_art-center.css');
+@import url('./__marker/_cluster/map-legend__marker_cluster.css');
+@import url('./__marker/_gallery/map-legend__marker_gallery.css');
+@import url('./__marker/_museum/map-legend__marker_museum.css');
+@import url('./__marker/map-legend__marker.css');
+@import url('./__title/map-legend__title.css');
+
+.map-legend {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 640px) {
+.map-legend {
+display: grid;
+        grid-template-columns: 1fr 1fr;
+}
+}
+
+.map-legend {
+display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 640px) {
+.map-legend {
+display: grid;
+        grid-template-columns: 1fr;
+}
+}
+
+.map-legend {
+background-color: var(--color-gray-light);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+@media (max-width: 768px) {
+.map-legend {
+min-width: auto;
+}
+}

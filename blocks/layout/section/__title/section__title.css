@@ -1,0 +1,15 @@
+.section__title {
+margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.section__title::after {
+content: '';
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    width: 72px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-accent), rgba(230, 57, 70, 0.2));
+}

@@ -1,0 +1,17 @@
+.hero__chip {
+width: fit-content;
+    margin-bottom: 30px;
+    padding: 12px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #f5f1ef;
+    font-size: 15px;
+    font-weight: 700;
+    backdrop-filter: blur(12px);
+}
+
+.hero__chip span {
+color: #ff9d1d;
+    margin-right: 8px;
+}

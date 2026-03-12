@@ -1,0 +1,20 @@
+.empty-state {
+padding: 28px;
+    border-radius: 24px;
+    border: 1px dashed rgba(20, 27, 72, 0.16);
+    background: #fbfbfd;
+    text-align: center;
+}
+
+.empty-state strong {
+display: block;
+    margin-bottom: 8px;
+    color: #151c49;
+    font-size: 20px;
+}
+
+.empty-state p {
+margin: 0;
+    color: #73788c;
+    line-height: 1.7;
+}

@@ -1,0 +1,7 @@
+@import url('./__grid/volunteer-form__grid.css');
+
+.volunteer-form {
+display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
