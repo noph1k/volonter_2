@@ -401,10 +401,10 @@ const stories = [
         author: 'Леонид Савин',
         role: 'волонтер экологических акций',
         age: 34,
-        photo: 'https://images.unsplash.com/photo-1469571486292-b53601020f77?auto=format&fit=crop&w=900&q=80',
+        photo: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80',
         gallery: [
             'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1469571486292-b53601020f77?auto=format&fit=crop&w=1200&q=80'
+            'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80'
         ],
         rating: 5,
         featured: true
@@ -419,7 +419,7 @@ const stories = [
         author: 'Мария Белова',
         role: 'наставница проекта для подростков',
         age: 27,
-        photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43b?auto=format&fit=crop&w=900&q=80',
+        photo: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=900&q=80',
         gallery: [
             'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80',
             'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80'
@@ -538,7 +538,7 @@ const stories = [
 ];
 
 const storyGallery = [
-    { id: 1, direction: 'Экология', title: 'Команда на берегу после уборки', eventLabel: 'Чистый берег', image: 'https://images.unsplash.com/photo-1469571486292-b53601020f77?auto=format&fit=crop&w=1200&q=80' },
+    { id: 1, direction: 'Экология', title: 'Команда на берегу после уборки', eventLabel: 'Чистый берег', image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80' },
     { id: 2, direction: 'Дети', title: 'Мастер-класс в детском центре', eventLabel: 'Уроки добра', image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80' },
     { id: 3, direction: 'Животные', title: 'Прогулка с собаками приюта', eventLabel: 'Шаг навстречу', image: 'https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1200&q=80' },
     { id: 4, direction: 'Пожилые', title: 'Теплый визит и чаепитие', eventLabel: 'Теплый визит', image: 'https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=1200&q=80' },
