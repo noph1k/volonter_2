@@ -93,8 +93,8 @@ catalog_art/
 1. Клонируйте репозиторий:
 
 ```bash
-git clone git@github.com:Kagutsuchi-106/catalog.git
-cd catalog_art
+git clone https://github.com/noph1k/volonter_2
+cd volonter
 ```
 
 2. Откройте `index.html` в браузере.
